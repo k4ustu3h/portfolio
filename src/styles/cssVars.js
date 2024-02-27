@@ -1,0 +1,136 @@
+import { experimental_extendTheme as extendTheme } from "@mui/material/styles";
+import pallette from "./pallette.json";
+
+export const cssVars = extendTheme({
+	colorSchemes: {
+		light: {
+			palette: {
+				background: {
+					default: pallette.schemes.light.surface,
+				},
+				surface: {
+					container: {
+						low: pallette.schemes.light.surfaceContainerLow,
+					},
+				},
+				primary: {
+					container: pallette.schemes.light.primaryContainer,
+					main: pallette.schemes.light.primary,
+				},
+				secondary: {
+					container: pallette.schemes.light.secondaryContainer,
+					main: pallette.schemes.light.secondary,
+				},
+				tertiary: {
+					container: pallette.schemes.light.tertiaryContainer,
+					main: pallette.schemes.light.tertiary,
+				},
+				error: {
+					main: pallette.schemes.light.error,
+				},
+			},
+		},
+		dark: {
+			palette: {
+				background: {
+					default: pallette.schemes.dark.surface,
+				},
+				surface: {
+					container: {
+						low: pallette.schemes.dark.surfaceContainerLow,
+					},
+				},
+				primary: {
+					container: pallette.schemes.dark.primaryContainer,
+					main: pallette.schemes.dark.primary,
+				},
+				secondary: {
+					container: pallette.schemes.dark.secondaryContainer,
+					main: pallette.schemes.dark.secondary,
+				},
+				tertiary: {
+					container: pallette.schemes.dark.tertiaryContainer,
+					main: pallette.schemes.dark.tertiary,
+				},
+				error: {
+					main: pallette.schemes.dark.error,
+				},
+			},
+		},
+	},
+	typography: {
+		fontFamily: "Outfit",
+		logo: {
+			fontFamily: "Afacad",
+			fontStyle: "italic",
+			fontSize: 48,
+			fontWeight: 666,
+			userSelect: "none",
+		},
+		h3: {
+			fontWeight: "bold",
+		},
+	},
+	components: {
+		MuiButton: {
+			variants: [
+				{
+					props: { variant: "filled" },
+					style: {
+						height: 40,
+						color: pallette.schemes.dark.onPrimary,
+						paddingLeft: 24,
+						paddingRight: 24,
+						borderRadius: 20,
+						backgroundColor: pallette.schemes.dark.primary,
+						":hover": {
+							backgroundColor: pallette.palettes.primary[90],
+							color: pallette.schemes.dark.onPrimary,
+						},
+						textTransform: "none",
+					},
+				},
+				{
+					props: { variant: "text" },
+					style: {
+						height: 40,
+						paddingLeft: 12,
+						paddingRight: 12,
+						borderRadius: 20,
+						textTransform: "none",
+					},
+				},
+				{
+					props: { variant: "outlined" },
+					style: {
+						height: 40,
+						paddingLeft: 24,
+						paddingRight: 24,
+						borderRadius: 20,
+						textTransform: "none",
+					},
+				},
+			],
+		},
+		MuiCard: {
+			variants: [
+				{
+					props: { variant: "elevated" },
+					style: {
+						backgroundColor:
+							pallette.schemes.dark.surfaceContainerLow,
+						borderRadius: 24,
+					},
+				},
+			],
+		},
+		MuiDivider: {
+			variants: [
+				{
+					props: { variant: "middle" },
+					style: { height: 1, backgroundColor: "white" },
+				},
+			],
+		},
+	},
+});

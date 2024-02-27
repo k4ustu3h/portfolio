@@ -36,7 +36,7 @@ export default function ProjectCard() {
 	];
 	return (
 		<>
-			{projects.map((project) => {
+			{projects.map((project, index) => {
 				return (
 					<Stack
 						direction="row"
@@ -53,7 +53,13 @@ export default function ProjectCard() {
 								</Typography>
 							</CardContent>
 							<CardActions sx={{ m: 2 }}>
-								<Button href={project.link} variant="filled">
+								<Button
+									href={project.link}
+									sx={{
+										mt: index === 0 || index === 2 ? 4 : "",
+									}}
+									variant="filled"
+								>
 									Learn More
 								</Button>
 							</CardActions>

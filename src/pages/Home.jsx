@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { CssBaseline, Experimental_CssVarsProvider } from "@mui/material";
-import MenuBar from "../components/surfaces/MenuBar.jsx";
 import Hero from "../components/sections/Hero.jsx";
 import About from "../components/sections/About.jsx";
 import Projects from "../components/sections/Projects.jsx";
 import Footer from "../components/sections/Footer.jsx";
 import { cssVars } from "../styles/cssVars.js";
+import NavBar from "../components/surfaces/NavBar.jsx";
 
 export default function Home() {
 	const [repos, setRepos] = useState([]);
@@ -30,7 +30,7 @@ export default function Home() {
 	return (
 		<Experimental_CssVarsProvider theme={cssVars} defaultMode="dark">
 			<CssBaseline />
-			<MenuBar />
+			<NavBar />
 			<Hero />
 			<About />
 			<Projects />

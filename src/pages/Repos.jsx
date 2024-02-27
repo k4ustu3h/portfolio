@@ -9,8 +9,8 @@ import {
 	Grid,
 	Typography,
 } from "@mui/material";
-import MenuBar from "../components/surfaces/MenuBar.jsx";
 import { cssVars } from "../styles/cssVars.js";
+import NavBar from "../components/surfaces/NavBar.jsx";
 
 export default function Repos() {
 	const [repos, setRepos] = useState([]);
@@ -35,7 +35,7 @@ export default function Repos() {
 	return (
 		<Experimental_CssVarsProvider theme={cssVars} defaultMode="dark">
 			<CssBaseline />
-			<MenuBar />
+			<NavBar />
 			<Box sx={{ mt: 8 }}>
 				<Typography align="center" py={2} variant="h2">
 					Repos

@@ -20,11 +20,13 @@ export default function About() {
 							width: "50vw",
 						}}
 					>
-						<MonochromeIcon>
-							<Typography fontSize="inherit" variant="logo">
-								kl.
-							</Typography>
-						</MonochromeIcon>
+						<Box height={256} width={256}>
+							<MonochromeIcon props={128}>
+								<Typography fontSize="inherit" variant="logo">
+									kl.
+								</Typography>
+							</MonochromeIcon>
+						</Box>
 					</Container>
 					<Stack maxWidth={"45vw"}>
 						<Typography variant="h3" align="left" my={2}>

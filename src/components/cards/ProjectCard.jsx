@@ -6,6 +6,7 @@ import {
 	CardContent,
 	CardActions,
 	Button,
+	Box,
 } from "@mui/material";
 import React from "react";
 import MonochromeIcon from "../surfaces/MonochromeIcon";
@@ -64,9 +65,14 @@ export default function ProjectCard() {
 								</Button>
 							</CardActions>
 						</Card>
-						<MonochromeIcon>
-							<Icon icon={project.icon} />
-						</MonochromeIcon>
+						<Box
+							height={256}
+							width={256}
+						>
+							<MonochromeIcon props={128}>
+								<Icon icon={project.icon} />
+							</MonochromeIcon>
+						</Box>
 					</Stack>
 				);
 			})}

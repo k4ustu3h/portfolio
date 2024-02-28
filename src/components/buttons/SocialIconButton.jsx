@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import { Button, Grid, IconButton, Stack } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import React from "react";
 
 export default function SocialIconButton() {
@@ -74,14 +74,18 @@ export default function SocialIconButton() {
 		},
 	];
 	return (
-		<Stack direction="row" mt={1} spacing={1}>
+		<Box justifyContent="center" display="flex" flexWrap="wrap">
 			{skills.map((skill) => {
 				return (
-					<IconButton href={skill.link} key={skill.icon}>
+					<IconButton
+						href={skill.link}
+						key={skill.icon}
+						sx={{ mx: 0.5 }}
+					>
 						<Icon icon={skill.icon} />
 					</IconButton>
 				);
 			})}
-		</Stack>
+		</Box>
 	);
 }

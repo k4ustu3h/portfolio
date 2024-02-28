@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Icon } from "@iconify/react";
 import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";

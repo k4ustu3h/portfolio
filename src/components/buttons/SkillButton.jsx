@@ -1,6 +1,7 @@
-import { Icon } from "@iconify/react";
-import { Button, Grid } from "@mui/material";
 import React from "react";
+import { Icon } from "@iconify/react";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
 
 export default function SkillButton() {
 	const skills = [

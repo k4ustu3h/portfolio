@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { CssBaseline, Experimental_CssVarsProvider } from "@mui/material";
-import Hero from "../components/sections/Hero.jsx";
-import About from "../components/sections/About.jsx";
-import Projects from "../components/sections/Projects.jsx";
-import Footer from "../components/sections/Footer.jsx";
+import { Experimental_CssVarsProvider } from "@mui/material";
+import CssBaseline from "@mui/material/CssBaseline";
 import { cssVars } from "../styles/cssVars.js";
+import About from "../components/sections/About.jsx";
+import Footer from "../components/sections/Footer.jsx";
+import Hero from "../components/sections/Hero.jsx";
 import NavBar from "../components/surfaces/NavBar.jsx";
+import Projects from "../components/sections/Projects.jsx";
 
 export default function Home() {
 	const [repos, setRepos] = useState([]);

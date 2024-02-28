@@ -1,7 +1,7 @@
-import { experimental_extendTheme as extendTheme } from "@mui/material/styles";
+import experimental_extendTheme from "@mui/material/styles/experimental_extendTheme";
 import pallette from "./pallette.json";
 
-export const cssVars = extendTheme({
+export const cssVars = experimental_extendTheme({
 	colorSchemes: {
 		light: {
 			palette: {

@@ -1,5 +1,6 @@
-import { Box, Stack, Typography } from "@mui/material";
 import React from "react";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 import SocialIconButton from "../buttons/SocialIconButton";
 
 export default function Footer() {

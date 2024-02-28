@@ -1,10 +1,10 @@
-import * as React from "react";
+import React from "react";
+import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
+import CardActionArea from "@mui/material/CardActionArea";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import CardActionArea from "@mui/material/CardActionArea";
 
 export default function RepoCard({ repo }) {
 	const forksUrl = `${repo.html_url}/forks`;

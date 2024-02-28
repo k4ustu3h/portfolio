@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import RepoCard from "../components/cards/RepoCard.jsx";
-import {
-	Box,
-	Container,
-	CssBaseline,
-	Experimental_CssVarsProvider,
-	Grid,
-	Typography,
-} from "@mui/material";
+import { Experimental_CssVarsProvider } from "@mui/material";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import CssBaseline from "@mui/material/CssBaseline";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 import { cssVars } from "../styles/cssVars.js";
 import NavBar from "../components/surfaces/NavBar.jsx";
+import RepoCard from "../components/cards/RepoCard.jsx";
 
 export default function Repos() {
 	const [repos, setRepos] = useState([]);

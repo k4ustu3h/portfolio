@@ -1,7 +1,11 @@
-import { Box, Typography, Stack, SvgIcon, Container } from "@mui/material";
 import React from "react";
-import SkillButton from "../buttons/SkillButton";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Stack from "@mui/material/Stack";
+import SvgIcon from "@mui/material/SvgIcon";
+import Typography from "@mui/material/Typography";
 import MonochromeIcon from "../surfaces/MonochromeIcon";
+import SkillButton from "../buttons/SkillButton";
 
 export default function About() {
 	return (

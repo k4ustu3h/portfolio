@@ -1,5 +1,6 @@
-import { Box, Stack } from "@mui/material";
 import React from "react";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
 import ProjectCard from "../cards/ProjectCard";
 
 export default function Projects() {

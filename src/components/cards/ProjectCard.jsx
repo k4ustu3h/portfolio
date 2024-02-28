@@ -1,15 +1,13 @@
-import { Icon } from "@iconify/react";
-import {
-	Typography,
-	Stack,
-	Card,
-	CardContent,
-	CardActions,
-	Button,
-	Box,
-	useMediaQuery,
-} from "@mui/material";
 import React from "react";
+import { Icon } from "@iconify/react";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import MonochromeIcon from "../surfaces/MonochromeIcon";
 
 export default function ProjectCard() {

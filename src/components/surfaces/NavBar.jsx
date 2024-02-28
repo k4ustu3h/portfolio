@@ -1,11 +1,11 @@
-import * as React from "react";
+import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import ScrollToTop from "../buttons/ScrollToTop";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import ScrollToTop from "../buttons/ScrollToTop";
 
 export default function NavBar() {
 	const isSmallScreen = useMediaQuery("(max-width: 600px)");

@@ -1,7 +1,12 @@
 import { Box } from "@mui/material";
 import React from "react";
 
-export default function MonochromeIcon({ children, props }) {
+export default function MonochromeIcon({
+	backgroundColor,
+	children,
+	color,
+	size,
+}) {
 	return (
 		<Box
 			alignSelf="center"
@@ -12,10 +17,10 @@ export default function MonochromeIcon({ children, props }) {
 				width: "100%",
 				height: "100%",
 				borderRadius: "50%",
-				backgroundColor: "background.default",
+				backgroundColor: backgroundColor,
 			}}
-			fontSize={props}
-			color="primary.main"
+			fontSize={size}
+			color={color}
 		>
 			{children}
 		</Box>

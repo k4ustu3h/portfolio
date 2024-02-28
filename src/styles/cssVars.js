@@ -10,11 +10,13 @@ export const cssVars = extendTheme({
 				},
 				surface: {
 					container: {
+						inverse: pallette.schemes.light.inverseSurface,
 						low: pallette.schemes.light.surfaceContainerLow,
 					},
 				},
 				primary: {
 					container: pallette.schemes.light.primaryContainer,
+					inverse: pallette.schemes.light.inversePrimary,
 					main: pallette.schemes.light.primary,
 				},
 				secondary: {
@@ -37,11 +39,13 @@ export const cssVars = extendTheme({
 				},
 				surface: {
 					container: {
+						inverse: pallette.schemes.dark.inverseSurface,
 						low: pallette.schemes.dark.surfaceContainerLow,
 					},
 				},
 				primary: {
 					container: pallette.schemes.dark.primaryContainer,
+					inverse: pallette.schemes.dark.inversePrimary,
 					main: pallette.schemes.dark.primary,
 				},
 				secondary: {

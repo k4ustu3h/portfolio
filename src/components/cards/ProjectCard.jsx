@@ -7,11 +7,14 @@ import {
 	CardActions,
 	Button,
 	Box,
+	useMediaQuery,
 } from "@mui/material";
 import React from "react";
 import MonochromeIcon from "../surfaces/MonochromeIcon";
 
 export default function ProjectCard() {
+	const isSmallScreen = useMediaQuery("(max-width: 860px)");
+
 	const projects = [
 		{
 			heading: "Food To Go",
@@ -53,23 +56,52 @@ export default function ProjectCard() {
 									{project.description}
 								</Typography>
 							</CardContent>
-							<CardActions sx={{ m: 2 }}>
+							<CardActions
+								sx={{
+									justifyContent: "space-between",
+									m: 2,
+								}}
+							>
 								<Button
 									href={project.link}
 									sx={{
-										mt: index === 0 || index === 2 ? 4 : "",
+										mt: isSmallScreen
+											? 5
+											: index === 0 || index === 2
+											? 4
+											: "",
 									}}
 									variant="filled"
 								>
 									Learn More
 								</Button>
+								<Box
+									display={isSmallScreen ? "inherit" : "none"}
+									height={84}
+									width={84}
+								>
+									<MonochromeIcon
+										backgroundColor={
+											"surface.container.inverse"
+										}
+										color="primary.inverse"
+										size={42}
+									>
+										<Icon icon={project.icon} />
+									</MonochromeIcon>
+								</Box>
 							</CardActions>
 						</Card>
 						<Box
+							display={isSmallScreen ? "none" : "inherit"}
 							height={256}
 							width={256}
 						>
-							<MonochromeIcon props={128}>
+							<MonochromeIcon
+								backgroundColor="background.default"
+								color="primary.main"
+								size={128}
+							>
 								<Icon icon={project.icon} />
 							</MonochromeIcon>
 						</Box>

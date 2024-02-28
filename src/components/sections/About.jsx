@@ -21,7 +21,11 @@ export default function About() {
 						}}
 					>
 						<Box height={256} width={256}>
-							<MonochromeIcon props={128}>
+							<MonochromeIcon
+								backgroundColor="background.default"
+								color="primary.main"
+								size={128}
+							>
 								<Typography fontSize="inherit" variant="logo">
 									kl.
 								</Typography>

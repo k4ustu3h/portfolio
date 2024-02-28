@@ -2,6 +2,7 @@ import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import ScrollToTop from "../buttons/ScrollToTop";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -18,7 +19,7 @@ export default function NavBar() {
 		{ label: "Repositories", link: "/repos" },
 	];
 	return (
-		<Box sx={{ flexGrow: 1 }}>
+		<Box id="back-to-top-anchor" sx={{ flexGrow: 1 }}>
 			<AppBar color="transparent" elevation={0} position="absolute">
 				<Toolbar>
 					<Box p={2} sx={{ flexGrow: 1 }}>
@@ -45,6 +46,7 @@ export default function NavBar() {
 					})}
 				</Toolbar>
 			</AppBar>
+			<ScrollToTop />
 		</Box>
 	);
 }

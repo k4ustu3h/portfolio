@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
 import Toolbar from "@mui/material/Toolbar";
@@ -8,6 +9,8 @@ import ScrollToTop from "../buttons/ScrollToTop";
 
 export default function NavBar() {
 	const isSmallScreen = useMediaQuery("(max-width: 600px)");
+
+	const location = useLocation();
 
 	const pages = [
 		{ label: "Home", link: "/" },
@@ -30,7 +33,11 @@ export default function NavBar() {
 				{pages.map((page, index) => {
 					return (
 						<Button
-							color="inherit"
+							color={
+								location.pathname === page.link
+									? "inherit"
+									: "secondary"
+							}
 							href={page.link}
 							key={page.label}
 							size="large"

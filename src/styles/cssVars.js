@@ -14,9 +14,13 @@ export const cssVars = experimental_extendTheme({
 						low: pallette.schemes.light.surfaceContainerLow,
 					},
 				},
+				on: {
+					primary: pallette.schemes.light.onPrimary,
+				},
 				primary: {
 					container: pallette.schemes.light.primaryContainer,
 					inverse: pallette.schemes.light.inversePrimary,
+					hover: pallette.palettes.primary[50],
 					main: pallette.schemes.light.primary,
 				},
 				secondary: {
@@ -43,8 +47,12 @@ export const cssVars = experimental_extendTheme({
 						low: pallette.schemes.dark.surfaceContainerLow,
 					},
 				},
+				on: {
+					primary: pallette.schemes.dark.onPrimary,
+				},
 				primary: {
 					container: pallette.schemes.dark.primaryContainer,
+					hover: pallette.palettes.primary[70],
 					inverse: pallette.schemes.dark.inversePrimary,
 					main: pallette.schemes.dark.primary,
 				},
@@ -80,19 +88,18 @@ export const cssVars = experimental_extendTheme({
 			variants: [
 				{
 					props: { variant: "filled" },
-					style: {
+					style: ({ theme }) => ({
 						height: 40,
-						color: pallette.schemes.dark.onPrimary,
+						color: theme.palette.on.primary,
 						paddingLeft: 24,
 						paddingRight: 24,
 						borderRadius: 20,
-						backgroundColor: pallette.schemes.dark.primary,
+						backgroundColor: theme.palette.primary.main,
 						":hover": {
-							backgroundColor: pallette.palettes.primary[90],
-							color: pallette.schemes.dark.onPrimary,
+							backgroundColor: theme.palette.primary.hover,
 						},
 						textTransform: "none",
-					},
+					}),
 				},
 				{
 					props: { variant: "text" },
@@ -120,19 +127,10 @@ export const cssVars = experimental_extendTheme({
 			variants: [
 				{
 					props: { variant: "elevated" },
-					style: {
-						backgroundColor:
-							pallette.schemes.dark.surfaceContainerLow,
+					style: ({ theme }) => ({
+						backgroundColor: theme.palette.surface.container.low,
 						borderRadius: 24,
-					},
-				},
-			],
-		},
-		MuiDivider: {
-			variants: [
-				{
-					props: { variant: "middle" },
-					style: { height: 1, backgroundColor: "white" },
+					}),
 				},
 			],
 		},

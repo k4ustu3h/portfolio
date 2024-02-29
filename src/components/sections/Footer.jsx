@@ -1,7 +1,7 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import SocialIconButton from "../buttons/SocialIconButton";
+import SocialIconButton from "../icons/SocialIconButton";
 
 export default function Footer() {
 	return (

@@ -9,7 +9,7 @@ import Stack from "@mui/material/Stack";
 import SvgIcon from "@mui/material/SvgIcon";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import MonochromeIcon from "../surfaces/MonochromeIcon";
+import MonochromeIcon from "../icons/MonochromeIcon";
 
 function ForkIcons() {
 	return (

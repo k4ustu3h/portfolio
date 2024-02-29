@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid";
 import SvgIcon from "@mui/material/SvgIcon";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import MonochromeIcon from "../surfaces/MonochromeIcon";
+import MonochromeIcon from "../icons/MonochromeIcon";
 import SkillButton from "../buttons/SkillButton";
 
 export default function About() {

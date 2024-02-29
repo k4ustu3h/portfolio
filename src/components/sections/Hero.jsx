@@ -2,25 +2,29 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import Typewriter from "../typography/Typewriter";
 
 export default function Hero() {
+	const isSmallScreen = useMediaQuery("(max-width: 600px)");
+
 	return (
 		<Box
-			p={8}
+			p={isSmallScreen ? 4 : 8}
 			className="Hero"
+			fontSize={isSmallScreen ? "8vw" : "4.5vw"}
 			sx={{
-				display: "flex",
-				justifyContent: "flex-start",
 				alignItems: "end",
-				minHeight: "100vh",
+				display: "flex",
+				height: "100vh",
+				justifyContent: "flex-start",
 			}}
 		>
 			<Stack justifyContent="center">
 				<Typography
-					fontSize={"1em"}
 					align="left"
 					className="weight-change"
+					fontSize="1em"
 				>
 					Just another
 				</Typography>

@@ -1,6 +1,5 @@
 import React from "react";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -10,8 +9,6 @@ import ScrollToTop from "../buttons/ScrollToTop";
 export default function NavBar() {
 	const isSmallScreen = useMediaQuery("(max-width: 600px)");
 
-	const display = isSmallScreen ? "none" : "inherit";
-
 	const pages = [
 		{ label: "Home", link: "/" },
 		{ label: "About", link: "/#about" },
@@ -19,34 +16,40 @@ export default function NavBar() {
 		{ label: "Repositories", link: "/repos" },
 	];
 	return (
-		<Box id="back-to-top-anchor" sx={{ flexGrow: 1 }}>
-			<AppBar color="transparent" elevation={0} position="absolute">
-				<Toolbar>
-					<Box p={2} sx={{ flexGrow: 1 }}>
-						<Typography variant="logo">kl.</Typography>
-					</Box>
-					{pages.map((page, index) => {
-						return (
-							<Button
-								key={page.label}
-								size="large"
-								color="inherit"
-								href={page.link}
-								sx={{
-									display:
-										index === 1 || index === 2
-											? display
-											: "",
-									mx: 1,
-								}}
-							>
-								{page.label}
-							</Button>
-						);
-					})}
-				</Toolbar>
-			</AppBar>
+		<AppBar
+			color="transparent"
+			elevation={0}
+			id="back-to-top-anchor"
+			position="absolute"
+			sx={{ px: 4, py: 2 }}
+		>
+			<Toolbar>
+				<Typography flexGrow={1} variant="logo">
+					kl.
+				</Typography>
+				{pages.map((page, index) => {
+					return (
+						<Button
+							color="inherit"
+							href={page.link}
+							key={page.label}
+							size="large"
+							sx={{
+								display:
+									index === 1 || index === 2
+										? isSmallScreen
+											? "none"
+											: "inherit"
+										: "",
+								mx: 1,
+							}}
+						>
+							{page.label}
+						</Button>
+					);
+				})}
+			</Toolbar>
 			<ScrollToTop />
-		</Box>
+		</AppBar>
 	);
 }

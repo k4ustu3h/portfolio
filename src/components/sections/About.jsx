@@ -47,8 +47,8 @@ export default function About() {
 			</Grid>
 			<Grid item md={8} mt={6}>
 				<SvgIcon sx={{ fontSize: "4.5em" }}>
-					<svg fill="currentColor" viewBox="0 0 256 256">
-						<path d="M153 0h-50v68L54.98 19.98 19.63 55.34 67.29 103H0v50h68l-48.02 48.02 35.36 35.35L103 188.72V256h50v-67.29l47.65 47.65L236 201l-48-48h68v-50h-67.29l47.65-47.65L201 20l-48 48V0Z" />
+					<svg fill="currentColor">
+						<path d="M9.5 0v5.96L5.28 1.75 1.75 5.28 5.96 9.5H0v5h5.96l-4.21 4.22 3.53 3.53 4.22-4.21V24h5v-5.96l4.22 4.21 3.53-3.53-4.21-4.22H24v-5h-5.96l4.21-4.22-3.53-3.53-4.22 4.21V0h-5z" />
 					</svg>
 				</SvgIcon>
 				<Typography variant="h3" align="left" my={2}>

@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Experimental_CssVarsProvider } from "@mui/material";
-import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
 import { cssVars } from "../styles/cssVars.js";
 import NavBar from "../components/surfaces/NavBar.jsx";
 import RepoCard from "../components/cards/RepoCard.jsx";
@@ -34,27 +32,15 @@ export default function Repos() {
 		<Experimental_CssVarsProvider theme={cssVars} defaultMode="dark">
 			<CssBaseline />
 			<NavBar />
-			<Box sx={{ mt: 8 }}>
-				<Typography align="center" py={2} variant="h2">
-					Repos
-				</Typography>
-				<Container sx={{ alignContent: "center", p: 2 }}>
-					<Grid container spacing={4}>
-						{repos.map((repo) => (
-							<Grid
-								key={repo.id}
-								item
-								xs={12}
-								sm={8}
-								md={6}
-								lg={4}
-							>
-								<RepoCard repo={repo} />
-							</Grid>
-						))}
-					</Grid>
-				</Container>
-			</Box>
+			<Container sx={{ alignContent: "center", p: 2, mt: 16 }}>
+				<Grid container spacing={4}>
+					{repos.map((repo) => (
+						<Grid key={repo.id} item xs={12} sm={8} md={6} lg={4}>
+							<RepoCard repo={repo} />
+						</Grid>
+					))}
+				</Grid>
+			</Container>
 		</Experimental_CssVarsProvider>
 	);
 }

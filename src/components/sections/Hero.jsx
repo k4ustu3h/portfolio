@@ -10,9 +10,10 @@ export default function Hero() {
 
 	return (
 		<Box
-			p={isSmallScreen ? 4 : 8}
 			className="Hero"
 			fontSize={isSmallScreen ? "8vw" : "4.5vw"}
+			p={isSmallScreen ? 4 : 8}
+			pb={isSmallScreen ? 10 : 6}
 			sx={{
 				alignItems: "end",
 				display: "flex",

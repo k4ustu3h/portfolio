@@ -12,7 +12,7 @@ export default function Hero() {
 		<Stack
 			alignItems="end"
 			direction="row"
-			height="100vh"
+			height="89vh"
 			p={isSmallScreen ? 4 : 8}
 			pb={isSmallScreen ? 10 : 6}
 		>

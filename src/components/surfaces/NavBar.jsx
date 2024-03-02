@@ -23,7 +23,7 @@ export default function NavBar() {
 			color="transparent"
 			elevation={0}
 			id="back-to-top-anchor"
-			position="absolute"
+			position="static"
 			sx={{ px: 4, py: 2 }}
 		>
 			<Toolbar>

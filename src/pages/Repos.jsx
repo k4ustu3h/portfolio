@@ -32,7 +32,7 @@ export default function Repos() {
 		<Experimental_CssVarsProvider theme={cssVars} defaultMode="dark">
 			<CssBaseline />
 			<NavBar />
-			<Container sx={{ alignContent: "center", p: 2, mt: 16 }}>
+			<Container sx={{ alignContent: "center", p: 2 }}>
 				<Grid container spacing={4}>
 					{repos.map((repo) => (
 						<Grid key={repo.id} item xs={12} sm={8} md={6} lg={4}>

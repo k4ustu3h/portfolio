@@ -82,6 +82,9 @@ export const cssVars = experimental_extendTheme({
 		h3: {
 			fontWeight: "bold",
 		},
+		clock: {
+			fontSize: 128,
+		},
 	},
 	components: {
 		MuiButton: {

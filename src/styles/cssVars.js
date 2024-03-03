@@ -1,5 +1,6 @@
 import experimental_extendTheme from "@mui/material/styles/experimental_extendTheme";
 import pallette from "./pallette.json";
+import { customComponents } from "./customComponents";
 
 export const cssVars = experimental_extendTheme({
 	colorSchemes: {
@@ -82,9 +83,7 @@ export const cssVars = experimental_extendTheme({
 		h3: {
 			fontWeight: "bold",
 		},
-		clock: {
-			fontSize: 128,
-		},
+		clock: customComponents.typography.clock,
 	},
 	components: {
 		MuiButton: {

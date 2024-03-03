@@ -3,31 +3,36 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
 export default function BasicClock() {
-	const [currentTime, setCurrentTime] = useState(new Date());
+	const [time, setTime] = useState(new Date());
 
 	useEffect(() => {
 		const intervalId = setInterval(() => {
-			setCurrentTime(new Date());
+			setTime(new Date());
 		}, 1000);
 
 		return () => clearInterval(intervalId);
 	}, []);
 
-	const formattedMinutes = (minutes) =>
-		minutes < 10 ? `0${minutes}` : minutes.toString();
+	const formattedTime = (value) => String(value).padStart(2, "0");
 
-	const hours = currentTime.toLocaleTimeString([], { hour: "2-digit" });
-	const minutes = formattedMinutes(currentTime.getMinutes());
+	const hours = formattedTime(time.getHours());
+	const minutes = formattedTime(time.getMinutes());
+
+	const getLetterSpacing = (value) =>
+		String(value).includes("1") ? 2 : "normal";
 
 	return (
 		<Box alignItems="center" display="flex" flexDirection="column">
-			<Typography variant="clock">{hours}</Typography>
 			<Typography
 				variant="clock"
+				sx={{ letterSpacing: getLetterSpacing(hours) }}
+			>
+				{hours}
+			</Typography>
+			<Typography
 				mt={-8}
-				sx={{
-					letterSpacing: minutes.includes("1") ? "2px" : "normal",
-				}}
+				variant="clock"
+				sx={{ letterSpacing: getLetterSpacing(minutes) }}
 			>
 				{minutes}
 			</Typography>

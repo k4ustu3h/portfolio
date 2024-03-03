@@ -17,14 +17,6 @@ export default function LockScreen() {
 				backgroundImage: `url(${bhaktapurDurbarSquare})`,
 				backgroundPosition: "center",
 				backgroundSize: "cover",
-				fontWeight: 700,
-				transition: "250ms linear",
-				transitionProperty: "font-weight",
-				userSelect: "none",
-				":hover": {
-					fontWeight: 300,
-					color: "white",
-				},
 			}}
 		>
 			<LockScreenOverlay />

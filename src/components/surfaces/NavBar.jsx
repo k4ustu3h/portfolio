@@ -27,9 +27,10 @@ export default function NavBar() {
 			sx={{ px: 4, py: 2 }}
 		>
 			<Toolbar>
-				<Typography flexGrow={1} variant="logo">
+				<Typography className="Logo" variant="logo">
 					kl.
 				</Typography>
+				<div style={{ flexGrow: 1 }}></div>
 				{pages.map((page, index) => {
 					return (
 						<Button

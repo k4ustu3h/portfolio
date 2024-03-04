@@ -75,9 +75,9 @@ export const cssVars = experimental_extendTheme({
 		fontFamily: "Outfit",
 		logo: {
 			fontFamily: "Afacad",
-			fontStyle: "italic",
 			fontSize: 48,
-			fontWeight: 666,
+			fontStyle: "italic",
+			fontWeight: "bold",
 			userSelect: "none",
 		},
 		h3: {

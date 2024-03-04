@@ -9,6 +9,30 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+.Logo {
+	animation: gradient 8s ease-in-out infinite;
+	background: linear-gradient(90deg, #d50000, #a0f, #2962ff);
+	background-clip: text;
+	background-size: 200% 200%;
+	transition: background 0.5s ease;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 .Hero {
 	font-variation-settings: "wght" 700;
 	user-select: none;

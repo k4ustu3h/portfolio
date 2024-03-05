@@ -2,71 +2,75 @@ import experimental_extendTheme from "@mui/material/styles/experimental_extendTh
 import pallette from "./pallette.json";
 import { customComponents } from "./customComponents";
 
+const lightPalette = pallette.schemes.light;
+const darkPalette = pallette.schemes.dark;
+const primaryTones = pallette.palettes.primary;
+
 export const cssVars = experimental_extendTheme({
 	colorSchemes: {
 		light: {
 			palette: {
 				background: {
-					default: pallette.schemes.light.surface,
+					default: lightPalette.surface,
 				},
 				surface: {
 					container: {
-						inverse: pallette.schemes.light.inverseSurface,
-						low: pallette.schemes.light.surfaceContainerLow,
+						inverse: lightPalette.inverseSurface,
+						low: lightPalette.surfaceContainerLow,
 					},
 				},
 				on: {
-					primary: pallette.schemes.light.onPrimary,
+					primary: lightPalette.onPrimary,
 				},
 				primary: {
-					container: pallette.schemes.light.primaryContainer,
-					inverse: pallette.schemes.light.inversePrimary,
-					hover: pallette.palettes.primary[50],
-					main: pallette.schemes.light.primary,
+					container: lightPalette.primaryContainer,
+					inverse: lightPalette.inversePrimary,
+					hover: primaryTones[50],
+					main: lightPalette.primary,
 				},
 				secondary: {
-					container: pallette.schemes.light.secondaryContainer,
-					main: pallette.schemes.light.secondary,
+					container: lightPalette.secondaryContainer,
+					main: lightPalette.secondary,
 				},
 				tertiary: {
-					container: pallette.schemes.light.tertiaryContainer,
-					main: pallette.schemes.light.tertiary,
+					container: lightPalette.tertiaryContainer,
+					main: lightPalette.tertiary,
 				},
 				error: {
-					main: pallette.schemes.light.error,
+					main: lightPalette.error,
 				},
 			},
 		},
 		dark: {
 			palette: {
 				background: {
-					default: pallette.schemes.dark.surface,
+					default: darkPalette.surface,
 				},
 				surface: {
 					container: {
-						inverse: pallette.schemes.dark.inverseSurface,
-						low: pallette.schemes.dark.surfaceContainerLow,
+						inverse: darkPalette.inverseSurface,
+						low: darkPalette.surfaceContainerLow,
 					},
 				},
 				on: {
-					primary: pallette.schemes.dark.onPrimary,
+					primary: darkPalette.onPrimary,
 				},
 				primary: {
-					container: pallette.schemes.dark.primaryContainer,
-					hover: pallette.palettes.primary[70],
-					inverse: pallette.schemes.dark.inversePrimary,
-					main: pallette.schemes.dark.primary,
+					container: darkPalette.primaryContainer,
+					hover: primaryTones[70],
+					inverse: darkPalette.inversePrimary,
+					main: darkPalette.primary,
 				},
 				secondary: {
-					container: pallette.schemes.dark.secondaryContainer,
-					main: pallette.schemes.dark.secondary,
+					container: darkPalette.secondaryContainer,
+					main: darkPalette.secondary,
 				},
 				tertiary: {
-					container: pallette.schemes.dark.tertiaryContainer,
-					main: pallette.schemes.dark.tertiary,
+					container: darkPalette.tertiaryContainer,
+					main: darkPalette.tertiary,
 				},
 				error: {
-					main: pallette.schemes.dark.error,
+					main: darkPalette.error,
 				},
 			},
 		},

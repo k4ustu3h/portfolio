@@ -14,7 +14,7 @@ export default function Hero() {
 			alignItems={isSmallScreen ? "" : "end"}
 			direction={isSmallScreen ? "column" : "row-reverse"}
 			height="89vh"
-			p={isSmallScreen ? 4 : 8}
+			px={isSmallScreen ? 4 : 8}
 			pb={isSmallScreen ? 10 : 6}
 			spacing={isSmallScreen ? 6 : 0}
 		>

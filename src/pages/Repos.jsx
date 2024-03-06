@@ -1,31 +1,32 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { Experimental_CssVarsProvider } from "@mui/material";
+import Divider from "@mui/material/Divider";
 import Container from "@mui/material/Container";
 import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 import { cssVars } from "../styles/cssVars.js";
+import Footer from "../components/sections/Footer.jsx";
 import NavBar from "../components/surfaces/NavBar.jsx";
-import RepoCard from "../components/cards/RepoCard.jsx";
+import RepoCard from "../components/cards/RepoCard";
 
 export default function Repos() {
-	const [repos, setRepos] = useState([]);
+	const [repos, setRepos] = useState({ forkedRepos: [], sourceRepos: [] });
 
 	useEffect(() => {
-		const fetchRepos = async () => {
-			const response = await axios.get(
-				"https://api.github.com/users/k4ustu3h/repos?per_page=100&sort=stars&include_all_commits=true",
-				{
-					params: {
-						per_page: 100,
-						sort: "stars",
-						include_all_commits: true,
-					},
-				}
+		const fetchData = async () => {
+			const response = await fetch(
+				`https://api.github.com/users/k4ustu3h/repos`
 			);
-			setRepos(response.data);
+			const data = await response.json();
+
+			setRepos({
+				forkedRepos: data.filter((repo) => repo.fork),
+				sourceRepos: data.filter((repo) => !repo.fork),
+			});
 		};
-		fetchRepos();
+
+		fetchData();
 	}, []);
 
 	return (
@@ -33,14 +34,51 @@ export default function Repos() {
 			<CssBaseline />
 			<NavBar />
 			<Container sx={{ alignContent: "center", p: 2 }}>
-				<Grid container spacing={4}>
-					{repos.map((repo) => (
-						<Grid key={repo.id} item xs={12} sm={8} md={6} lg={4}>
-							<RepoCard repo={repo} />
+				{repos.sourceRepos.length > 0 && (
+					<Container>
+						<Typography py={4} variant="h4">
+							Source Repositories
+						</Typography>
+						<Grid container spacing={4}>
+							{repos.sourceRepos.map((repo) => (
+								<Grid
+									key={repo.id}
+									item
+									xs={12}
+									sm={8}
+									md={6}
+									lg={4}
+								>
+									<RepoCard repo={repo} />
+								</Grid>
+							))}
 						</Grid>
-					))}
-				</Grid>
+					</Container>
+				)}
+				<Divider sx={{ py: 4 }} variant="middle" />
+				{repos.forkedRepos.length > 0 && (
+					<Container sx={{ py: 4 }}>
+						<Typography py={4} variant="h4">
+							Forked Repositories
+						</Typography>
+						<Grid container spacing={4}>
+							{repos.forkedRepos.map((repo) => (
+								<Grid
+									key={repo.id}
+									item
+									xs={12}
+									sm={8}
+									md={6}
+									lg={4}
+								>
+									<RepoCard repo={repo} />
+								</Grid>
+							))}
+						</Grid>
+					</Container>
+				)}
 			</Container>
+			<Footer />
 		</Experimental_CssVarsProvider>
 	);
 }

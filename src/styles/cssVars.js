@@ -5,6 +5,7 @@ import { customComponents } from "./customComponents";
 const lightPalette = pallette.schemes.light;
 const darkPalette = pallette.schemes.dark;
 const primaryTones = pallette.palettes.primary;
+const secondaryTones = pallette.palettes.secondary;
 
 export const cssVars = experimental_extendTheme({
 	colorSchemes: {
@@ -30,7 +31,11 @@ export const cssVars = experimental_extendTheme({
 				},
 				secondary: {
 					container: lightPalette.secondaryContainer,
+					hover: secondaryTones[95],
 					main: lightPalette.secondary,
+					on: {
+						container: lightPalette.onSecondaryContainer,
+					},
 				},
 				tertiary: {
 					container: lightPalette.tertiaryContainer,
@@ -63,7 +68,11 @@ export const cssVars = experimental_extendTheme({
 				},
 				secondary: {
 					container: darkPalette.secondaryContainer,
+					hover: secondaryTones[25],
 					main: darkPalette.secondary,
+					on: {
+						container: darkPalette.onSecondaryContainer,
+					},
 				},
 				tertiary: {
 					container: darkPalette.tertiaryContainer,
@@ -116,6 +125,21 @@ export const cssVars = experimental_extendTheme({
 						borderRadius: 20,
 						textTransform: "none",
 					},
+				},
+				{
+					props: { variant: "tonal" },
+					style: ({ theme }) => ({
+						height: 40,
+						color: theme.palette.secondary.on.container,
+						paddingLeft: 24,
+						paddingRight: 24,
+						borderRadius: 20,
+						backgroundColor: theme.palette.secondary.container,
+						":hover": {
+							backgroundColor: theme.palette.secondary.hover,
+						},
+						textTransform: "none",
+					}),
 				},
 				{
 					props: { variant: "outlined" },

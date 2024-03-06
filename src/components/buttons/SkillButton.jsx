@@ -59,7 +59,7 @@ export default function SkillButton() {
 						<Button
 							href={skill.link}
 							startIcon={<Icon icon={skill.icon} width={18} />}
-							variant="outlined"
+							variant="tonal"
 						>
 							{skill.label}
 						</Button>

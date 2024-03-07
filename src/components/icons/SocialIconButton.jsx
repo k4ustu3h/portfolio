@@ -75,10 +75,16 @@ export default function SocialIconButton() {
 		},
 	];
 	return (
-		<Box justifyContent="center" display="flex" flexWrap="wrap">
+		<Box
+			color="section.footer.text"
+			display="flex"
+			flexWrap="wrap"
+			justifyContent="center"
+		>
 			{skills.map((skill) => {
 				return (
 					<IconButton
+						color="inherit"
 						href={skill.link}
 						key={skill.icon}
 						sx={{ mx: 0.5 }}

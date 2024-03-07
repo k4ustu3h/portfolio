@@ -6,10 +6,11 @@ import SocialIconButton from "../icons/SocialIconButton";
 export default function Footer() {
 	return (
 		<Box
+			color="section.footer.text"
 			p={8}
 			sx={{
 				alignItems: "center",
-				bgcolor: "tertiary.container",
+				bgcolor: "section.footer.background",
 				borderTop: 4,
 				borderColor: "background.default",
 				display: "flex",

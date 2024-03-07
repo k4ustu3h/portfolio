@@ -12,6 +12,7 @@ export default function Hero() {
 	return (
 		<Stack
 			alignItems={isSmallScreen ? "" : "end"}
+			color="on.surface"
 			direction={isSmallScreen ? "column" : "row-reverse"}
 			height="89vh"
 			px={isSmallScreen ? 4 : 8}

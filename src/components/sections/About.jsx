@@ -14,11 +14,12 @@ export default function About() {
 
 	return (
 		<Grid
+			color="section.about.text"
 			container
 			id="about"
 			p={isSmallScreen ? 4 : 8}
 			sx={{
-				bgcolor: "primary.container",
+				bgcolor: "section.about.background",
 				height: isSmallScreen ? "inherit" : "100vh",
 			}}
 		>

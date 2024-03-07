@@ -8,7 +8,7 @@ export default function Projects() {
 		<Box
 			id="projects"
 			sx={{
-				bgcolor: "secondary.container",
+				bgcolor: "section.projects",
 				borderTop: 4,
 				borderColor: "background.default",
 			}}

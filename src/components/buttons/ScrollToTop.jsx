@@ -10,11 +10,8 @@ export default function ScrollToTop() {
 		threshold: 100,
 	});
 
-	const handleClick = (event) => {
-		const anchor = (event.target.ownerDocument || document).querySelector(
-			"#back-to-top-anchor"
-		);
-
+	const handleClick = () => {
+		const anchor = document.querySelector("#back-to-top-anchor");
 		if (anchor) {
 			anchor.scrollIntoView({ behavior: "smooth", block: "center" });
 		}
@@ -24,14 +21,9 @@ export default function ScrollToTop() {
 		<Slide direction="up" in={trigger} mountOnEnter unmountOnExit>
 			<Box
 				onClick={handleClick}
-				role="presentation"
-				sx={{ position: "fixed", bottom: 16, right: 16, zIndex: 20 }}
+				sx={{ position: "fixed", zIndex: 20, right: 16, bottom: 16 }}
 			>
-				<Fab
-					aria-label="scroll back to top"
-					color="secondary"
-					sx={{ borderRadius: 4 }}
-				>
+				<Fab variant="scroll-to-top">
 					<Icon icon="mdi:chevron-up" width="24" />
 				</Fab>
 			</Box>

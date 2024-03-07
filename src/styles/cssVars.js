@@ -19,6 +19,7 @@ export const cssVars = experimental_extendTheme({
 				},
 				on: {
 					primary: darkPalette.onPrimary,
+					surface: darkPalette.onSurface,
 				},
 				primary: {
 					container: darkPalette.primaryContainer,
@@ -32,6 +33,17 @@ export const cssVars = experimental_extendTheme({
 					main: darkPalette.secondary,
 					on: {
 						container: darkPalette.onSecondaryContainer,
+					},
+				},
+				section: {
+					about: {
+						background: pallette.coreColors.primary,
+						text: darkPalette.onPrimaryFixed,
+					},
+					projects: darkPalette.secondaryFixed,
+					footer: {
+						background: darkPalette.tertiaryContainer,
+						text: darkPalette.onTertiaryContainer,
 					},
 				},
 				surface: {
@@ -56,6 +68,7 @@ export const cssVars = experimental_extendTheme({
 				},
 				on: {
 					primary: lightPalette.onPrimary,
+					surface: lightPalette.onSurface,
 				},
 				primary: {
 					container: lightPalette.primaryContainer,
@@ -69,6 +82,17 @@ export const cssVars = experimental_extendTheme({
 					main: lightPalette.secondary,
 					on: {
 						container: lightPalette.onSecondaryContainer,
+					},
+				},
+				section: {
+					about: {
+						background: pallette.coreColors.primary,
+						text: lightPalette.onPrimaryFixed,
+					},
+					projects: lightPalette.secondaryFixed,
+					footer: {
+						background: lightPalette.tertiaryContainer,
+						text: lightPalette.onTertiaryContainer,
 					},
 				},
 				surface: {
@@ -146,6 +170,21 @@ export const cssVars = experimental_extendTheme({
 					style: ({ theme }) => ({
 						backgroundColor: theme.palette.surface.container.low,
 						borderRadius: 24,
+					}),
+				},
+			],
+		},
+		MuiFab: {
+			variants: [
+				{
+					props: { variant: "scroll-to-top" },
+					style: ({ theme }) => ({
+						backgroundColor: theme.palette.secondary.container,
+						borderRadius: 16,
+						color: theme.palette.secondary.on.container,
+						":hover": {
+							backgroundColor: theme.palette.secondary.hover,
+						},
 					}),
 				},
 			],

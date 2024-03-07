@@ -6,9 +6,19 @@ import Grid from "@mui/material/Grid";
 export default function SkillButton() {
 	const skills = [
 		{
-			icon: "simple-icons:kotlin",
-			label: "Kotlin",
-			link: "https://kotlinlang.org/",
+			icon: "simple-icons:androidstudio",
+			label: "Android Studio",
+			link: "https://developer.android.com/studio",
+		},
+		{
+			icon: "simple-icons:figma",
+			label: "Figma",
+			link: "https://www.figma.com/",
+		},
+		{
+			icon: "simple-icons:inkscape",
+			label: "Inkscape",
+			link: "https://inkscape.org/",
 		},
 		{
 			icon: "simple-icons:javascript",
@@ -21,24 +31,14 @@ export default function SkillButton() {
 			link: "https://developer.android.com/jetpack/compose",
 		},
 		{
-			icon: "simple-icons:react",
-			label: "ReactJS",
-			link: "https://react.dev/",
+			icon: "simple-icons:kotlin",
+			label: "Kotlin",
+			link: "https://kotlinlang.org/",
 		},
 		{
-			icon: "simple-icons:figma",
-			label: "Figma",
-			link: "https://www.figma.com/",
-		},
-		{
-			icon: "simple-icons:androidstudio",
-			label: "Android Studio",
-			link: "https://developer.android.com/studio",
-		},
-		{
-			icon: "simple-icons:visualstudiocode",
-			label: "Visual Studio Code",
-			link: "https://code.visualstudio.com/",
+			icon: "simple-icons:manjaro",
+			label: "Manjaro",
+			link: "https://manjaro.org/",
 		},
 		{
 			icon: "simple-icons:materialdesign",
@@ -46,9 +46,24 @@ export default function SkillButton() {
 			link: "https://material.io/",
 		},
 		{
-			icon: "simple-icons:manjaro",
-			label: "Manjaro",
-			link: "https://manjaro.org/",
+			icon: "simple-icons:mui",
+			label: "MUI",
+			link: "https://mui.com/",
+		},
+		{
+			icon: "simple-icons:nodedotjs",
+			label: "NodeJS",
+			link: "https://nodejs.org/",
+		},
+		{
+			icon: "simple-icons:react",
+			label: "ReactJS",
+			link: "https://react.dev/",
+		},
+		{
+			icon: "simple-icons:visualstudiocode",
+			label: "Visual Studio Code",
+			link: "https://code.visualstudio.com/",
 		},
 	];
 	return (

@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
 import Toolbar from "@mui/material/Toolbar";
@@ -32,6 +32,7 @@ export default function NavBar() {
 				</Typography>
 				<div style={{ flexGrow: 1 }}></div>
 				{pages.map((page, index) => {
+					const aboutAndProjects = index === 1 || index === 2;
 					return (
 						<Button
 							color={
@@ -39,18 +40,19 @@ export default function NavBar() {
 									? "inherit"
 									: "secondary"
 							}
-							href={page.link}
+							component={aboutAndProjects ? Button : Link}
+							href={aboutAndProjects ? page.link : ""}
 							key={page.label}
 							size="large"
 							sx={{
-								display:
-									index === 1 || index === 2
-										? isSmallScreen
-											? "none"
-											: "inherit"
-										: "",
+								display: aboutAndProjects
+									? isSmallScreen
+										? "none"
+										: "inherit"
+									: "",
 								mx: 1,
 							}}
+							to={aboutAndProjects ? "" : page.link}
 						>
 							{page.label}
 						</Button>

@@ -5,8 +5,12 @@ import CardActionArea from "@mui/material/CardActionArea";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function RepoCard({ repo }) {
+	const isSmallScreen = useMediaQuery("(max-width: 600px)");
+	const buttonSize = isSmallScreen ? "small" : "";
+
 	const forksUrl = `${repo.html_url}/forks`;
 	const stargazersUrl = `${repo.html_url}/stargazers`;
 	return (
@@ -22,11 +26,13 @@ export default function RepoCard({ repo }) {
 				</CardContent>
 			</CardActionArea>
 			<CardActions>
-				<Button href={stargazersUrl}>
+				<Button href={stargazersUrl} size={buttonSize}>
 					Stars: {repo.stargazers_count}
 				</Button>
-				<Button href={forksUrl}>Forks: {repo.forks_count}</Button>
-				<Button>Language: {repo.language}</Button>
+				<Button href={forksUrl} size={buttonSize}>
+					Forks: {repo.forks_count}
+				</Button>
+				<Button size={buttonSize}>Language: {repo.language}</Button>
 			</CardActions>
 		</Card>
 	);

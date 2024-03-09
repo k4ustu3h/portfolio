@@ -19,7 +19,10 @@ export const cssVars = experimental_extendTheme({
 				},
 				on: {
 					primary: darkPalette.onPrimary,
-					surface: darkPalette.onSurface,
+					surface: {
+						main: darkPalette.onSurface,
+						variant: darkPalette.onSurfaceVariant,
+					},
 				},
 				primary: {
 					container: darkPalette.primaryContainer,
@@ -48,6 +51,7 @@ export const cssVars = experimental_extendTheme({
 				},
 				surface: {
 					container: {
+						high: darkPalette.surfaceContainerHigh,
 						inverse: darkPalette.inverseSurface,
 						low: darkPalette.surfaceContainerLow,
 					},
@@ -68,7 +72,10 @@ export const cssVars = experimental_extendTheme({
 				},
 				on: {
 					primary: lightPalette.onPrimary,
-					surface: lightPalette.onSurface,
+					surface: {
+						main: lightPalette.onSurface,
+						variant: lightPalette.onSurfaceVariant,
+					},
 				},
 				primary: {
 					container: lightPalette.primaryContainer,
@@ -97,6 +104,7 @@ export const cssVars = experimental_extendTheme({
 				},
 				surface: {
 					container: {
+						high: lightPalette.surfaceContainerHigh,
 						inverse: lightPalette.inverseSurface,
 						low: lightPalette.surfaceContainerLow,
 					},
@@ -170,6 +178,27 @@ export const cssVars = experimental_extendTheme({
 					style: ({ theme }) => ({
 						backgroundColor: theme.palette.surface.container.low,
 						borderRadius: 24,
+						color: theme.palette.on.surface.main,
+					}),
+				},
+			],
+		},
+		MuiChip: {
+			styleOverrides: {
+				root: {
+					borderRadius: 8,
+				},
+				label: {
+					paddingLeft: 16,
+					paddingRight: 16,
+				},
+			},
+			variants: [
+				{
+					props: { variant: "filled" },
+					style: ({ theme }) => ({
+						backgroundColor: theme.palette.surface.container.high,
+						color: theme.palette.on.surfaceVariant,
 					}),
 				},
 			],

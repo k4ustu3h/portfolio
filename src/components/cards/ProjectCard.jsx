@@ -57,17 +57,36 @@ export default function ProjectCard() {
 						key={project.heading}
 					>
 						<Card sx={{ width: 512 }} variant="elevated">
-							<CardContent sx={{ m: 2 }}>
-								<Typography fontWeight="bold" variant="h5">
-									{project.heading}
-								</Typography>
-								<Typography mt={2} variant="body2">
-									{project.description}
-								</Typography>
+							<CardContent>
+								<Box display="flex">
+									<Box>
+										<Typography
+											fontWeight="bold"
+											variant="h5"
+										>
+											{project.heading}
+										</Typography>
+										<Typography mt={2} variant="body2">
+											{project.description}
+										</Typography>
+									</Box>
+									<Box
+										display={
+											isSmallScreen ? "inherit" : "none"
+										}
+										fontSize={48}
+										p={1}
+									>
+										{index === 0 || index === 2 ? (
+											<Icon icon={project.icon} />
+										) : (
+											<ForkIcons />
+										)}
+									</Box>
+								</Box>
 							</CardContent>
 							<CardActions
 								sx={{
-									justifyContent: "space-between",
 									m: 2,
 								}}
 							>
@@ -84,25 +103,6 @@ export default function ProjectCard() {
 								>
 									Learn More
 								</Button>
-								<Box
-									display={isSmallScreen ? "inherit" : "none"}
-									height={84}
-									width={84}
-								>
-									<MonochromeIcon
-										backgroundColor={
-											"surface.container.inverse"
-										}
-										color="primary.inverse"
-										size={42}
-									>
-										{index === 0 || index === 2 ? (
-											<Icon icon={project.icon} />
-										) : (
-											<ForkIcons />
-										)}
-									</MonochromeIcon>
-								</Box>
 							</CardActions>
 						</Card>
 						<Box

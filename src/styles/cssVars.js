@@ -172,16 +172,36 @@ export const cssVars = experimental_extendTheme({
 			],
 		},
 		MuiCard: {
+			styleOverrides: {
+				root: {
+					borderRadius: 24,
+				},
+			},
 			variants: [
 				{
 					props: { variant: "elevated" },
 					style: ({ theme }) => ({
 						backgroundColor: theme.palette.surface.container.low,
-						borderRadius: 24,
 						color: theme.palette.on.surface.main,
 					}),
 				},
 			],
+		},
+		MuiCardActions: {
+			styleOverrides: {
+				root: {
+					justifyContent: "end",
+				},
+			},
+		},
+		MuiCardContent: {
+			styleOverrides: {
+				root: {
+					paddingLeft: 32,
+					paddingRight: 32,
+					paddingTop: 32,
+				},
+			},
 		},
 		MuiChip: {
 			styleOverrides: {

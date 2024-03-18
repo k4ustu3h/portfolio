@@ -29,22 +29,43 @@ export default function ProjectCard() {
 			heading: "Food To Go",
 			description:
 				"A food delivery website created with ReactJS, with backend created with MongoDB, Express and NodeJS.",
-			link: "https://foodtogo.tech",
 			icon: "ic:twotone-delivery-dining",
+			primaryAction: {
+				label: "Visit website",
+				link: "https://foodtogo.tech/",
+			},
+			secondaryAction: {
+				label: "Source Code",
+				link: "https://github.com/k4ustu3h/foodtogo",
+			},
 		},
 		{
 			heading: "Forkicons",
 			description:
 				"Forkicons is a fork of Lawnicons, an icon pack developed by the Lawnchair team. Forkicons restores the original themed icons of apps and adds icons for apps that doesn't have one, instead of the outlined icons in the original Lawnicons.",
-			link: "https://github.com/k4ustu3h/forkicons",
-			icon: "mdi:silverware-fork",
+			primaryAction: {
+				label: "Download",
+				link: "https://nightly.link/k4ustu3h/forkicons/workflows/build_debug_apk/develop/Debug%20APK",
+			},
+			secondaryAction: {
+				label: "Source Code",
+				link: "https://github.com/k4ustu3h/forkicons",
+			},
 		},
 		{
 			heading: "Just Another Material Theme",
 			description:
 				"A dark(er) theme inspired by Dracula but with Material colors for Visual Studio Code.",
-			link: "https://marketplace.visualstudio.com/items?itemName=k4ustu3h.theme-jamt",
 			icon: "mdi:microsoft-visual-studio-code",
+
+			primaryAction: {
+				label: "Install",
+				link: "https://marketplace.visualstudio.com/items?itemName=k4ustu3h.theme-jamt",
+			},
+			secondaryAction: {
+				label: "Source Code",
+				link: "https://github.com/k4ustu3h/jamt-vscode",
+			},
 		},
 	];
 	return (
@@ -91,7 +112,20 @@ export default function ProjectCard() {
 								}}
 							>
 								<Button
-									href={project.link}
+									href={project.secondaryAction.link}
+									sx={{
+										mt: isSmallScreen
+											? 5
+											: index === 0 || index === 2
+											? 4
+											: "",
+									}}
+									variant="outlined"
+								>
+									{project.secondaryAction.label}
+								</Button>
+								<Button
+									href={project.primaryAction.link}
 									sx={{
 										mt: isSmallScreen
 											? 5
@@ -101,7 +135,7 @@ export default function ProjectCard() {
 									}}
 									variant="filled"
 								>
-									Learn More
+									{project.primaryAction.label}
 								</Button>
 							</CardActions>
 						</Card>

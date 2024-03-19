@@ -1,15 +1,24 @@
-const xs = "@media (max-width: 600px)";
-const sm = "@media (min-width: 600px) and (max-width: 900px)";
-const md = "@media (min-width: 900px) and (max-width: 1200px)";
-const lg = "@media (min-width: 1200px) and (max-width: 1536px)";
-const xl = "@media (min-width: 1536px)";
+import breakpoints from "./breakpoints.json";
+
+const md = `@media ${breakpoints.height.md}`;
+const sm = `@media ${breakpoints.height.sm}`;
+const xs = `@media ${breakpoints.height.xs}`;
 
 export const customComponents = {
 	typography: {
 		clock: {
 			fontSize: 128,
+			[md]: {
+				fontSize: 80,
+				lineHeight: 1.8,
+			},
+			[sm]: {
+				fontSize: 60,
+				lineHeight: 2,
+			},
 			[xs]: {
-				fontSize: 100,
+				fontSize: 40,
+				lineHeight: 2.5,
 			},
 		},
 	},

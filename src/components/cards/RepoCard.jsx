@@ -8,10 +8,11 @@ import CardContent from "@mui/material/CardContent";
 import Chip from "@mui/material/Chip";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import breakpoints from "../../styles/breakpoints.json";
 
 export default function RepoCard({ repo }) {
-	const isSmallScreen = useMediaQuery("(max-width: 600px)");
-	const buttonSize = isSmallScreen ? "small" : "";
+	const xs = useMediaQuery(breakpoints.width.xs);
+	const buttonSize = xs ? "small" : "";
 
 	const archiveStatus = repo.archived ? "" : "none";
 	const languageOrNot = repo.language === null ? "none" : "";

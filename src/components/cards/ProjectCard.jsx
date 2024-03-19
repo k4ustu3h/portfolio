@@ -9,6 +9,7 @@ import Stack from "@mui/material/Stack";
 import SvgIcon from "@mui/material/SvgIcon";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import breakpoints from "../../styles/breakpoints.json";
 import MonochromeIcon from "../icons/MonochromeIcon";
 
 function ForkIcons() {
@@ -22,7 +23,8 @@ function ForkIcons() {
 }
 
 export default function ProjectCard() {
-	const isSmallScreen = useMediaQuery("(max-width: 860px)");
+	const md = useMediaQuery(breakpoints.width.md);
+	const xs = useMediaQuery(breakpoints.width.xs);
 
 	const projects = [
 		{
@@ -92,9 +94,7 @@ export default function ProjectCard() {
 										</Typography>
 									</Box>
 									<Box
-										display={
-											isSmallScreen ? "inherit" : "none"
-										}
+										display={md || xs ? "inherit" : "none"}
 										fontSize={48}
 										p={1}
 									>
@@ -114,11 +114,12 @@ export default function ProjectCard() {
 								<Button
 									href={project.secondaryAction.link}
 									sx={{
-										mt: isSmallScreen
-											? 5
-											: index === 0 || index === 2
-											? 4
-											: "",
+										mt:
+											md || xs
+												? 5
+												: index === 0 || index === 2
+												? 4
+												: "",
 									}}
 									variant="outlined"
 								>
@@ -127,11 +128,12 @@ export default function ProjectCard() {
 								<Button
 									href={project.primaryAction.link}
 									sx={{
-										mt: isSmallScreen
-											? 5
-											: index === 0 || index === 2
-											? 4
-											: "",
+										mt:
+											md || xs
+												? 5
+												: index === 0 || index === 2
+												? 4
+												: "",
 									}}
 									variant="filled"
 								>
@@ -140,7 +142,7 @@ export default function ProjectCard() {
 							</CardActions>
 						</Card>
 						<Box
-							display={isSmallScreen ? "none" : "inherit"}
+							display={md || xs ? "none" : "inherit"}
 							height={256}
 							width={256}
 						>

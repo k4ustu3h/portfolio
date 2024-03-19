@@ -5,10 +5,11 @@ import Button from "@mui/material/Button";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import breakpoints from "../../styles/breakpoints.json";
 import ScrollToTop from "../buttons/ScrollToTop";
 
 export default function NavBar() {
-	const isSmallScreen = useMediaQuery("(max-width: 600px)");
+	const xs = useMediaQuery(breakpoints.width.xs);
 
 	const location = useLocation();
 
@@ -46,7 +47,7 @@ export default function NavBar() {
 							size="large"
 							sx={{
 								display: aboutAndProjects
-									? isSmallScreen
+									? xs
 										? "none"
 										: "inherit"
 									: "",

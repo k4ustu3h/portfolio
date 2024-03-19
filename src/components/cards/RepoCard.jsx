@@ -20,7 +20,7 @@ export default function RepoCard({ repo }) {
 	const stargazersUrl = `${repo.html_url}/stargazers`;
 
 	return (
-		<Card sx={{ maxWidth: 450 }} variant="elevated">
+		<Card variant="elevated">
 			<CardActionArea href={repo.html_url}>
 				<CardContent>
 					<Box display="flex" justifyContent="space-between">

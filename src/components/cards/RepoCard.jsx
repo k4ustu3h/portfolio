@@ -7,13 +7,8 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Chip from "@mui/material/Chip";
 import Typography from "@mui/material/Typography";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import breakpoints from "../../styles/breakpoints.json";
 
 export default function RepoCard({ repo }) {
-	const xs = useMediaQuery(breakpoints.width.xs);
-	const buttonSize = xs ? "small" : "";
-
 	const archiveStatus = repo.archived ? "" : "none";
 	const languageOrNot = repo.language === null ? "none" : "";
 
@@ -21,7 +16,7 @@ export default function RepoCard({ repo }) {
 	const stargazersUrl = `${repo.html_url}/stargazers`;
 
 	return (
-		<Card variant="elevated">
+		<Card key={repo.id} variant="elevated">
 			<CardActionArea href={repo.html_url}>
 				<CardContent>
 					<Box display="flex" justifyContent="space-between">
@@ -39,13 +34,13 @@ export default function RepoCard({ repo }) {
 				</CardContent>
 			</CardActionArea>
 			<CardActions>
-				<Button href={stargazersUrl} size={buttonSize}>
+				<Button href={stargazersUrl} size="small">
 					Stars: {repo.stargazers_count}
 				</Button>
-				<Button href={forksUrl} size={buttonSize}>
+				<Button href={forksUrl} size="small">
 					Forks: {repo.forks_count}
 				</Button>
-				<Button size={buttonSize} sx={{ display: languageOrNot }}>
+				<Button size="small" sx={{ display: languageOrNot }}>
 					Language: {repo.language}
 				</Button>
 			</CardActions>

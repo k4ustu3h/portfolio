@@ -1,4 +1,5 @@
 import React from "react";
+import { Icon } from "@iconify/react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
@@ -10,7 +11,13 @@ import Typography from "@mui/material/Typography";
 
 export default function RepoCard({ repo }) {
 	const archiveStatus = repo.archived ? "" : "none";
-	const languageOrNot = repo.language === null ? "none" : "";
+	const forkedOrNot = repo.forks_count
+		? "icon-park-solid:fork"
+		: "icon-park-outline:fork";
+	const languageOrNot = repo.language ? "" : "none";
+	const starredOrNot = repo.stargazers_count
+		? "ic:round-star"
+		: "ic:round-star-border";
 
 	const forksUrl = `${repo.html_url}/forks`;
 	const stargazersUrl = `${repo.html_url}/stargazers`;
@@ -20,7 +27,7 @@ export default function RepoCard({ repo }) {
 			<CardActionArea href={repo.html_url}>
 				<CardContent>
 					<Box display="flex" justifyContent="space-between">
-						<Typography gutterBottom variant="h5" component="div">
+						<Typography gutterBottom variant="h5">
 							{repo.name}
 						</Typography>
 						<Chip
@@ -34,14 +41,29 @@ export default function RepoCard({ repo }) {
 				</CardContent>
 			</CardActionArea>
 			<CardActions>
-				<Button href={stargazersUrl} size="small">
-					Stars: {repo.stargazers_count}
+				<Button href={stargazersUrl}>
+					<Icon
+						fontSize={18}
+						icon={starredOrNot}
+						style={{ marginRight: 8 }}
+					/>
+					{repo.stargazers_count}
 				</Button>
-				<Button href={forksUrl} size="small">
-					Forks: {repo.forks_count}
+				<Button href={forksUrl}>
+					<Icon
+						fontSize={18}
+						icon={forkedOrNot}
+						style={{ marginRight: 8 }}
+					/>
+					{repo.forks_count}
 				</Button>
-				<Button size="small" sx={{ display: languageOrNot }}>
-					Language: {repo.language}
+				<Button sx={{ display: languageOrNot }}>
+					<Icon
+						fontSize={18}
+						icon="ic:round-code"
+						style={{ marginRight: 8 }}
+					/>
+					{repo.language}
 				</Button>
 			</CardActions>
 		</Card>

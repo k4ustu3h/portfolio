@@ -55,9 +55,7 @@ export default function Repos() {
 		<Experimental_CssVarsProvider theme={cssVars} defaultMode="dark">
 			<CssBaseline />
 			<NavBar />
-			<Container
-				sx={{ alignContent: "center", color: "on.surface", p: 2 }}
-			>
+			<Container sx={{ color: "on.surface", py: 2 }}>
 				<Container>
 					<Typography py={4} variant="h4">
 						Source Repositories

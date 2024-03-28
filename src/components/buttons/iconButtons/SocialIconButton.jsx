@@ -80,6 +80,7 @@ export default function SocialIconButton() {
 			display="flex"
 			flexWrap="wrap"
 			justifyContent="center"
+			gap={1}
 		>
 			{skills.map((skill) => {
 				return (
@@ -87,7 +88,6 @@ export default function SocialIconButton() {
 						color="inherit"
 						href={skill.link}
 						key={skill.icon}
-						sx={{ mx: 0.5 }}
 					>
 						<Icon icon={skill.icon} />
 					</IconButton>

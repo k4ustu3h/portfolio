@@ -15,7 +15,7 @@ export default function LockScreen() {
 			height={xs ? "60vh" : "80vh"}
 			sx={{
 				aspectRatio: 9 / 20,
-				backgroundImage: `url(${bhaktapurDurbarSquare})`,
+				backgroundImage: `url(${bhaktapurDurbarSquare.src})`,
 				backgroundPosition: "center",
 				backgroundSize: "cover",
 			}}

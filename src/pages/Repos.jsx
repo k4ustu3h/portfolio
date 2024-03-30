@@ -67,7 +67,7 @@ export default function Repos() {
 							<RepoCardSkeleton />
 						) : (
 							repos.sourceRepos.map((repo) => (
-								<RepoCard repo={repo} />
+								<RepoCard key={repo.id} repo={repo} />
 							))
 						)}
 					</Masonry>
@@ -82,7 +82,7 @@ export default function Repos() {
 							<RepoCardSkeleton />
 						) : (
 							repos.forkedRepos.map((repo) => (
-								<RepoCard repo={repo} />
+								<RepoCard key={repo.id} repo={repo} />
 							))
 						)}
 					</Masonry>

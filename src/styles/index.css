@@ -4,7 +4,7 @@
 }
 
 body {
-	font-family: "Outfit", sans-serif;
+	font-family: var(--font-outfit);
 	margin: 0;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
@@ -35,7 +35,7 @@ body {
 }
 
 .Hero {
-	font-variation-settings: "wght" 700;
+	font-weight: 700;
 	user-select: none;
 }
 
@@ -51,12 +51,13 @@ body {
 }
 
 .weight-change {
+	font-weight: 700;
 	text-decoration: underline;
-	transition-property: font-variation-settings, letter-spacing;
+	transition-property: font-weight, letter-spacing;
 	transition: 150ms linear;
 }
 
 .weight-change:hover {
-	font-variation-settings: "wght" 900;
+	font-weight: 900;
 	letter-spacing: 1px;
 }

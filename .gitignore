@@ -1,6 +1,5 @@
 # Editor directories and files
 !.vscode/extensions.json
-.DS_Store
 .idea
 .vscode/*
 *.njsproj
@@ -14,14 +13,12 @@
 *.local
 dist
 dist-ssr
-next-env.d.ts
 node_modules
 
 # Logs
 *.log
-lerna-debug.log*
 logs
 npm-debug.log*
-pnpm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+
+# vercel
+.vercel

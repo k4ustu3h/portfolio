@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import { Experimental_CssVarsProvider } from "@mui/material";
 import Container from "@mui/material/Container";
@@ -10,7 +12,7 @@ import { cssVars } from "../styles/cssVars.js";
 import breakpoints from "../styles/breakpoints.json";
 import Footer from "../components/sections/Footer.jsx";
 import NavBar from "../components/surfaces/NavBar.jsx";
-import RepoCard from "../components/cards/RepoCard";
+import RepoCard from "../components/cards/RepoCard.jsx";
 import RepoCardSkeleton from "../components/feedback/RepoCardSkeleton.jsx";
 
 export default function Repos() {

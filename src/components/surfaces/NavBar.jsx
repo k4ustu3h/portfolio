@@ -1,5 +1,6 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
 import Toolbar from "@mui/material/Toolbar";
@@ -11,7 +12,7 @@ import ScrollToTop from "../buttons/ScrollToTop";
 export default function NavBar() {
 	const xs = useMediaQuery(breakpoints.width.xs);
 
-	const location = useLocation();
+	const pathName = usePathname();
 
 	const pages = [
 		{ label: "Home", link: "/" },
@@ -37,12 +38,10 @@ export default function NavBar() {
 					return (
 						<Button
 							color={
-								location.pathname === page.link
-									? "inherit"
-									: "secondary"
+								pathName === page.link ? "inherit" : "secondary"
 							}
 							component={aboutAndProjects ? Button : Link}
-							href={aboutAndProjects ? page.link : ""}
+							href={page.link}
 							key={page.label}
 							size="large"
 							sx={{
@@ -53,7 +52,6 @@ export default function NavBar() {
 									: "",
 								mx: 1,
 							}}
-							to={aboutAndProjects ? "" : page.link}
 						>
 							{page.label}
 						</Button>

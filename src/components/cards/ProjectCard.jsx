@@ -23,7 +23,7 @@ function ForkIcons() {
 }
 
 export default function ProjectCard() {
-	const md = useMediaQuery(breakpoints.width.md);
+	const sm = useMediaQuery(breakpoints.width.sm);
 	const xs = useMediaQuery(breakpoints.width.xs);
 
 	const projects = [
@@ -94,7 +94,7 @@ export default function ProjectCard() {
 										</Typography>
 									</Box>
 									<Box
-										display={md || xs ? "inherit" : "none"}
+										display={sm || xs ? "inherit" : "none"}
 										fontSize={48}
 										p={1}
 									>
@@ -115,7 +115,7 @@ export default function ProjectCard() {
 									href={project.secondaryAction.link}
 									sx={{
 										mt:
-											md || xs
+											sm || xs
 												? 5
 												: index === 0 || index === 2
 												? 4
@@ -129,7 +129,7 @@ export default function ProjectCard() {
 									href={project.primaryAction.link}
 									sx={{
 										mt:
-											md || xs
+											sm || xs
 												? 5
 												: index === 0 || index === 2
 												? 4
@@ -142,7 +142,7 @@ export default function ProjectCard() {
 							</CardActions>
 						</Card>
 						<Box
-							display={md || xs ? "none" : "inherit"}
+							display={sm || xs ? "none" : "inherit"}
 							height={256}
 							width={256}
 						>

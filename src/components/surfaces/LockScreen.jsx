@@ -17,7 +17,12 @@ export default function LockScreen() {
 				aspectRatio: 9 / 20,
 				backgroundImage: `url(${bhaktapurDurbarSquare.src})`,
 				backgroundPosition: "center",
-				backgroundSize: "cover",
+				backgroundSize: "180%",
+				transition: "150ms linear",
+				transitionProperty: "background-size",
+				":hover": {
+					backgroundSize: "167%",
+				},
 			}}
 		>
 			<LockScreenOverlay />

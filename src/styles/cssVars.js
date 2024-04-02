@@ -1,4 +1,4 @@
-import experimental_extendTheme from "@mui/material/styles/experimental_extendTheme";
+import { experimental_extendTheme } from "@mui/material";
 import pallette from "./pallette.json";
 import { customComponents } from "./customComponents";
 

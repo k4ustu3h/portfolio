@@ -49,15 +49,3 @@ body {
 		opacity: 0;
 	}
 }
-
-.weight-change {
-	font-weight: 700;
-	text-decoration: underline;
-	transition-property: font-weight, letter-spacing;
-	transition: 150ms linear;
-}
-
-.weight-change:hover {
-	font-weight: 900;
-	letter-spacing: 1px;
-}

@@ -245,6 +245,16 @@ export const cssVars = experimental_extendTheme({
 		h3: {
 			fontWeight: "bold",
 		},
+		heroPrimaryHeading: {
+			fontWeight: 700,
+			textDecoration: "underline",
+			transitionProperty: "font-weight, letter-spacing",
+			transition: "150ms linear",
+			":hover": {
+				fontWeight: 900,
+				letterSpacing: 1,
+			},
+		},
 		logo: {
 			fontFamily: "Afacad",
 			fontSize: 48,

@@ -33,9 +33,10 @@ export default function Hero() {
 				fontSize={xs ? "8vw" : "4.5vw"}
 				width={xs ? "100%" : "50%"}
 			>
-				<Typography className="weight-change" fontSize="1em">
+				<Typography variant="heroPrimaryHeading">
 					Just another
 				</Typography>
+				<br />
 				<Typewriter />
 			</Box>
 		</Stack>

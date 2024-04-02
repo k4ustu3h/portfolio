@@ -51,9 +51,9 @@ export default function About() {
 					About
 				</Typography>
 				<Typography>
-					Hello there, I’m Kaustubh Ladiya. I’m a developer from
-					Jabalpur, India. I have a passion for creating innovative
-					apps and designing intuitive components and layouts.
+					Hello there, I’m Kaustubh Ladiya. A quick learner and
+					dedicated student with proficiency in Web development,
+					Android development, and Linux fundamentals.
 				</Typography>
 			</Grid>
 			<Grid item md={8} mt={6}>

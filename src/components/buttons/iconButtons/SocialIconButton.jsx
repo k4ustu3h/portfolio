@@ -6,20 +6,12 @@ import IconButton from "@mui/material/IconButton";
 export default function SocialIconButton() {
 	const skills = [
 		{
-			icon: "simple-icons:codepen",
-			link: "https://codepen.io/k4ustu3h",
-		},
-		{
 			icon: "simple-icons:devdotto",
 			link: "https://dev.to/k4ustu3h",
 		},
 		{
 			icon: "simple-icons:discord",
 			link: "https://discordapp.com/users/391680565759180811",
-		},
-		{
-			icon: "simple-icons:facebook",
-			link: "https://fb.me/k4ustu3h",
 		},
 		{
 			icon: "simple-icons:github",
@@ -32,10 +24,6 @@ export default function SocialIconButton() {
 		{
 			icon: "simple-icons:linkedin",
 			link: "https://www.linkedin.com/in/k4ustu3h/",
-		},
-		{
-			icon: "simple-icons:paypal",
-			link: "https://paypal.me/k4ustu3h",
 		},
 		{
 			icon: "simple-icons:pinterest",
@@ -68,10 +56,6 @@ export default function SocialIconButton() {
 		{
 			icon: "simple-icons:xdadevelopers",
 			link: "https://forum.xda-developers.com/member.php?u=9461231",
-		},
-		{
-			icon: "simple-icons:youtube",
-			link: "https://www.youtube.com/@k4ustu3h",
 		},
 	];
 	return (

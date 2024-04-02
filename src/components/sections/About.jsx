@@ -4,16 +4,19 @@ import Grid from "@mui/material/Grid";
 import SvgIcon from "@mui/material/SvgIcon";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import AboutButton from "../buttons/iconButtons/AboutButton";
 import breakpoints from "../../styles/breakpoints.json";
 import MonochromeIcon from "../icons/MonochromeIcon";
 import SkillButton from "../buttons/SkillButton";
 
 function SkillIcon() {
-	<SvgIcon sx={{ fontSize: "4.5em" }}>
-		<svg fill="currentColor">
-			<path d="M9.5 0v5.96L5.28 1.75 1.75 5.28 5.96 9.5H0v5h5.96l-4.21 4.22 3.53 3.53 4.22-4.21V24h5v-5.96l4.22 4.21 3.53-3.53-4.21-4.22H24v-5h-5.96l4.21-4.22-3.53-3.53-4.22 4.21V0h-5z" />
-		</svg>
-	</SvgIcon>;
+	return (
+		<SvgIcon sx={{ fontSize: "4.5em" }}>
+			<svg fill="currentColor">
+				<path d="M9.5 0v5.96L5.28 1.75 1.75 5.28 5.96 9.5H0v5h5.96l-4.21 4.22 3.53 3.53 4.22-4.21V24h5v-5.96l4.22 4.21 3.53-3.53-4.21-4.22H24v-5h-5.96l4.21-4.22-3.53-3.53-4.22 4.21V0h-5z" />
+			</svg>
+		</SvgIcon>
+	);
 }
 
 export default function About() {
@@ -47,14 +50,13 @@ export default function About() {
 				</Box>
 			</Grid>
 			<Grid item md={6} mt={4}>
-				<Typography align="left" my={2} variant="h3">
-					About
-				</Typography>
-				<Typography>
+				<Typography variant="h3">About</Typography>
+				<Typography my={2}>
 					Hello there, I’m Kaustubh Ladiya. A quick learner and
 					dedicated student with proficiency in Web development,
 					Android development, and Linux fundamentals.
 				</Typography>
+				<AboutButton />
 			</Grid>
 			<Grid item md={8} mt={6}>
 				<SkillIcon />

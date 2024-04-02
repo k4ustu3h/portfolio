@@ -238,6 +238,20 @@ export const cssVars = experimental_extendTheme({
 				},
 			],
 		},
+		MuiIconButton: {
+			variants: [
+				{
+					props: { variant: "tonal" },
+					style: ({ theme }) => ({
+						backgroundColor: theme.palette.secondary.container,
+						color: theme.palette.secondary.on.container,
+						":hover": {
+							backgroundColor: theme.palette.secondary.hover,
+						},
+					}),
+				},
+			],
+		},
 	},
 	typography: {
 		clock: customComponents.typography.clock,

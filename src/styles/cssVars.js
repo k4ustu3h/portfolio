@@ -1,5 +1,6 @@
 import { experimental_extendTheme } from "@mui/material";
 import pallette from "./pallette.json";
+import { afacad, outfit } from "../app/fonts";
 import { customComponents } from "./customComponents";
 
 const darkPalette = pallette.schemes.dark;
@@ -255,7 +256,7 @@ export const cssVars = experimental_extendTheme({
 	},
 	typography: {
 		clock: customComponents.typography.clock,
-		fontFamily: "Outfit",
+		fontFamily: outfit.style.fontFamily,
 		h3: {
 			fontWeight: "bold",
 		},
@@ -270,7 +271,7 @@ export const cssVars = experimental_extendTheme({
 			},
 		},
 		logo: {
-			fontFamily: "Afacad",
+			fontFamily: afacad.style.fontFamily,
 			fontSize: 48,
 			fontStyle: "italic",
 			fontWeight: "bold",

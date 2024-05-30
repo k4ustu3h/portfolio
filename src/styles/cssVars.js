@@ -1,3 +1,5 @@
+"use client";
+
 import { experimental_extendTheme } from "@mui/material";
 import pallette from "./pallette.json";
 import { afacad, outfit } from "../app/fonts";

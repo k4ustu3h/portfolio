@@ -1,3 +1,4 @@
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { outfit } from "./fonts";
 
@@ -10,7 +11,7 @@ export default function RootLayout({ children }) {
 		<html lang="en" className={outfit.variable}>
 			<body>
 				<div id="root">
-					{children}
+					<AppRouterCacheProvider>{children}</AppRouterCacheProvider>
 					<SpeedInsights />
 				</div>
 			</body>

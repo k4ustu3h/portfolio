@@ -1,10 +1,8 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import breakpoints from "../../styles/breakpoints.json";
-import DarkMode from "../buttons/iconButtons/DarkModeSwitch";
 import SocialIconButton from "../buttons/iconButtons/SocialIconButton";
 
 export default function Footer() {
@@ -30,12 +28,6 @@ export default function Footer() {
 				gap={1}
 			>
 				<SocialIconButton />
-				<Divider
-					flexItem
-					orientation={sm || xs ? "horizontal" : "vertical"}
-					variant="middle"
-				/>
-				<DarkMode />
 			</Box>
 			<Typography>© 2024 Kaustubh Ladiya</Typography>
 		</Box>

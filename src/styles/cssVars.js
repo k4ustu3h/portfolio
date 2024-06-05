@@ -10,12 +10,15 @@ const lightPalette = pallette.schemes.light;
 const primaryTones = pallette.palettes.primary;
 const secondaryTones = pallette.palettes.secondary;
 
+const logoTypeface = afacad.style.fontFamily;
+
 export const cssVars = experimental_extendTheme({
 	colorSchemes: {
 		dark: {
 			palette: {
 				background: {
 					default: darkPalette.surface,
+					inverse: darkPalette.inverseSurface,
 				},
 				error: {
 					main: darkPalette.error,
@@ -69,6 +72,7 @@ export const cssVars = experimental_extendTheme({
 			palette: {
 				background: {
 					default: lightPalette.surface,
+					inverse: lightPalette.inverseSurface,
 				},
 				error: {
 					main: lightPalette.error,
@@ -273,7 +277,21 @@ export const cssVars = experimental_extendTheme({
 			},
 		},
 		logo: {
-			fontFamily: afacad.style.fontFamily,
+			animation: "gradient 8s ease-in-out infinite",
+			background: "linear-gradient(90deg, #d50000, #a0f, #2962ff)",
+			backgroundClip: "text",
+			backgroundSize: "200% 200%",
+			fontFamily: logoTypeface,
+			fontSize: 48,
+			fontStyle: "italic",
+			fontWeight: "bold",
+			transition: "background 0.5s ease",
+			userSelect: "none",
+			WebkitBackgroundClip: "text",
+			WebkitTextFillColor: "transparent",
+		},
+		logoMonochrome: {
+			fontFamily: logoTypeface,
 			fontSize: 48,
 			fontStyle: "italic",
 			fontWeight: "bold",

@@ -43,7 +43,7 @@ export default function About() {
 						color="primary.main"
 						size={fontSize}
 					>
-						<Typography fontSize="inherit" variant="logo">
+						<Typography fontSize="inherit" variant="logoMonochrome">
 							kl.
 						</Typography>
 					</MonochromeIcon>
@@ -54,7 +54,7 @@ export default function About() {
 				<Typography my={2}>
 					Hello there, I’m Kaustubh Ladiya. A quick learner and
 					dedicated student with proficiency in Web development,
-					Android development, and Linux fundamentals.
+					Android development, Graphic Design, and Linux fundamentals.
 				</Typography>
 				<AboutButton />
 			</Grid>

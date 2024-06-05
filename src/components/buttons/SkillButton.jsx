@@ -6,6 +6,16 @@ import Grid from "@mui/material/Grid";
 export default function SkillButton() {
 	const skills = [
 		{
+			icon: "simple-icons:adobeillustrator",
+			label: "Adobe Illustrator",
+			link: "https://www.adobe.com/products/illustrator.html",
+		},
+		{
+			icon: "simple-icons:adobephotoshop",
+			label: "Adobe Photoshop",
+			link: "https://www.adobe.com/products/photoshop.html",
+		},
+		{
 			icon: "simple-icons:androidstudio",
 			label: "Android Studio",
 			link: "https://developer.android.com/studio",

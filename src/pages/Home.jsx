@@ -2,10 +2,7 @@
 
 import React from "react";
 import dynamic from "next/dynamic";
-import {
-	Experimental_CssVarsProvider,
-	getInitColorSchemeScript,
-} from "@mui/material";
+import { Experimental_CssVarsProvider } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import { cssVars } from "../styles/cssVars.js";
 const About = dynamic(() => import("../components/sections/About.jsx"), {
@@ -21,7 +18,6 @@ import NavBar from "../components/surfaces/NavBar.jsx";
 export default function Home() {
 	return (
 		<Experimental_CssVarsProvider defaultMode="system" theme={cssVars}>
-			{getInitColorSchemeScript()}
 			<CssBaseline />
 			<NavBar />
 			<Hero />

@@ -5,19 +5,21 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import breakpoints from "../../styles/breakpoints.json";
-import Tardis from "../../assets/svgs/Tardis";
+import TARDIS from "../../assets/svgs/TARDIS";
 
 export default function Hero() {
 	const xs = useMediaQuery(breakpoints.width.xs);
+	const alignment = xs ? "center" : "end";
 
 	const quotes = [
+		"Did you just try to access a forbidden dimension? Because that's how you get lost in a labyrinth.",
+		"Exterminate! Exterminate this nonexistent page!",
+		"Oh, brilliant! Just what I always wanted, a blank page. Now where did I put my invisible paint?",
 		"Seems we've landed in a bit of a paradox. This page? It doesn't exist.",
 		"The TARDIS seems lost in the time vortex. This page may be hidden somewhere in time, or perhaps never existed at all.",
-		"Exterminate! Exterminate this nonexistent page!",
-		"Did you just try to access a forbidden dimension? Because that's how you get lost in a labyrinth.",
-		"This path is clearly malfunctioning. Reverse the course!",
-		"Oh, brilliant! Just what I always wanted, a blank page. Now where did I put my invisible paint?",
+		"The Web of Time stretches far and wide, companion. Perhaps this page has simply fallen through the cracks.",
 		"This anomaly is most curious. Perhaps a rogue Cyberman is manipulating the information flow.",
+		"This path is clearly malfunctioning. Reverse the course!",
 	];
 
 	const [randomQuotes, setRandomQuotes] = useState([]);
@@ -34,26 +36,33 @@ export default function Hero() {
 			color="on.surface"
 			direction={xs ? "column" : "row-reverse"}
 			height="89vh"
-			px={xs ? 4 : 8}
-			pt={xs ? 10 : 0}
 			pb={xs ? 0 : 6}
-			spacing={xs ? 10 : 0}
+			px={xs ? 4 : 8}
 		>
 			<Box
+				alignItems={alignment}
+				color="primary.main"
 				display="flex"
 				fontSize={xs ? "100vw" : "40vw"}
-				justifyContent={xs ? "center" : "end"}
+				height={xs ? "60%" : "100%"}
+				justifyContent={alignment}
 				width={xs ? "100%" : "50%"}
 			>
-				<Tardis />
+				<TARDIS />
 			</Box>
-			<Stack spacing={xs ? 2 : 5} width={xs ? "100%" : "50%"}>
+			<Stack
+				display="flex"
+				height={xs ? "40%" : "100%"}
+				justifyContent={alignment}
+				spacing={xs ? 2 : 5}
+				width={xs ? "100%" : "50%"}
+			>
 				<Typography fontSize={xs ? "6vw" : "4vw"}>
 					{randomQuotes}
 				</Typography>
 				<Box>
 					<Button variant="filled" href="/">
-						Go back to Home
+						Use the TARDIS
 					</Button>
 				</Box>
 			</Stack>

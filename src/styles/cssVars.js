@@ -142,6 +142,38 @@ export const cssVars = experimental_extendTheme({
 					}),
 				},
 				{
+					props: { variant: "filledMedium" },
+					style: ({ theme }) => ({
+						backgroundColor: theme.palette.primary.main,
+						borderRadius: 30,
+						color: theme.palette.on.primary,
+						fontSize: 21,
+						height: 60,
+						paddingLeft: 36,
+						paddingRight: 36,
+						textTransform: "none",
+						":hover": {
+							backgroundColor: theme.palette.primary.hover,
+						},
+					}),
+				},
+				{
+					props: { variant: "filledLarge" },
+					style: ({ theme }) => ({
+						backgroundColor: theme.palette.primary.main,
+						borderRadius: 40,
+						color: theme.palette.on.primary,
+						fontSize: 28,
+						height: 80,
+						paddingLeft: 48,
+						paddingRight: 48,
+						textTransform: "none",
+						":hover": {
+							backgroundColor: theme.palette.primary.hover,
+						},
+					}),
+				},
+				{
 					props: { variant: "outlined" },
 					style: {
 						borderRadius: 20,

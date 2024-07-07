@@ -8,6 +8,7 @@ import breakpoints from "../../styles/breakpoints.json";
 import TARDIS from "../../assets/svgs/TARDIS";
 
 export default function Hero() {
+	const sm = useMediaQuery(breakpoints.width.sm);
 	const xs = useMediaQuery(breakpoints.width.xs);
 	const alignment = xs ? "center" : "end";
 
@@ -61,7 +62,12 @@ export default function Hero() {
 					{randomQuotes}
 				</Typography>
 				<Box>
-					<Button variant="filled" href="/">
+					<Button
+						variant={
+							xs ? "filled" : sm ? "filledMedium" : "filledLarge"
+						}
+						href="/"
+					>
 						Use the TARDIS
 					</Button>
 				</Box>

@@ -1,9 +1,9 @@
 "use client";
 
 import { experimental_extendTheme } from "@mui/material";
-import pallette from "./pallette.json";
 import { afacad, outfit } from "../app/fonts";
 import { customComponents } from "./customComponents";
+import { pallette } from "../utils/monet";
 
 const darkPalette = pallette.schemes.dark;
 const lightPalette = pallette.schemes.light;

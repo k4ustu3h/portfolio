@@ -1,7 +1,7 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import bhaktapurDurbarSquare from "../../assets/images/bhaktapur_durbar_square.jpg";
+import { wallpaper } from "../../utils/monet";
 import breakpoints from "../../styles/breakpoints.json";
 import LockScreenOverlay from "./lockscreen/LockScreenOverlay";
 
@@ -15,7 +15,7 @@ export default function LockScreen() {
 			height={xs ? "60vh" : "80vh"}
 			sx={{
 				aspectRatio: 9 / 20,
-				backgroundImage: `url(${bhaktapurDurbarSquare.src})`,
+				backgroundImage: `url(${wallpaper.src})`,
 				backgroundPosition: "center",
 				backgroundSize: "180%",
 				transition: "150ms linear",

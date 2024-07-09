@@ -9,6 +9,7 @@ const darkPalette = pallette.schemes.dark;
 const lightPalette = pallette.schemes.light;
 const primaryTones = pallette.palettes.primary;
 const secondaryTones = pallette.palettes.secondary;
+const tertiaryTones = pallette.palettes.tertiary;
 
 const logoTypeface = afacad.style.fontFamily;
 
@@ -46,7 +47,7 @@ export const cssVars = experimental_extendTheme({
 				},
 				section: {
 					about: {
-						background: pallette.coreColors.primary,
+						background: primaryTones[50],
 						text: darkPalette.onPrimaryFixed,
 					},
 					projects: darkPalette.secondaryFixed,
@@ -100,7 +101,7 @@ export const cssVars = experimental_extendTheme({
 				},
 				section: {
 					about: {
-						background: pallette.coreColors.primary,
+						background: primaryTones[60],
 						text: lightPalette.onPrimaryFixed,
 					},
 					projects: lightPalette.secondaryFixed,

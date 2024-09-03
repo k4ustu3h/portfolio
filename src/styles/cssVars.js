@@ -1,6 +1,6 @@
 "use client";
 
-import { experimental_extendTheme } from "@mui/material";
+import { extendTheme } from "@mui/material";
 import { afacad, outfit } from "../app/fonts";
 import { customComponents } from "./customComponents";
 import { pallette } from "../utils/monet";
@@ -9,11 +9,10 @@ const darkPalette = pallette.schemes.dark;
 const lightPalette = pallette.schemes.light;
 const primaryTones = pallette.palettes.primary;
 const secondaryTones = pallette.palettes.secondary;
-const tertiaryTones = pallette.palettes.tertiary;
 
 const logoTypeface = afacad.style.fontFamily;
 
-export const cssVars = experimental_extendTheme({
+export const cssVars = extendTheme({
 	colorSchemes: {
 		dark: {
 			palette: {

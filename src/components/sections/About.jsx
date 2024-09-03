@@ -1,6 +1,6 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 import SvgIcon from "@mui/material/SvgIcon";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -36,7 +36,7 @@ export default function About() {
 				height: md || xs ? "inherit" : "100vh",
 			}}
 		>
-			<Grid item md={6}>
+			<Grid size={{ md: 6 }}>
 				<Box height={iconSize} width={iconSize}>
 					<MonochromeIcon
 						backgroundColor="background.default"
@@ -49,7 +49,7 @@ export default function About() {
 					</MonochromeIcon>
 				</Box>
 			</Grid>
-			<Grid item md={6} mt={4}>
+			<Grid size={{ md: 6 }} mt={4}>
 				<Typography variant="h3">About</Typography>
 				<Typography my={2}>
 					Hello there, I’m Kaustubh Ladiya. A quick learner and
@@ -58,7 +58,7 @@ export default function About() {
 				</Typography>
 				<AboutButton />
 			</Grid>
-			<Grid item md={8} mt={6}>
+			<Grid size={{ md: 8 }} mt={6}>
 				<SkillIcon />
 				<Typography variant="h3" align="left" my={2}>
 					Skills & Tools

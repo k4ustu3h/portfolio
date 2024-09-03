@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Experimental_CssVarsProvider } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
 import Container from "@mui/material/Container";
 import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
@@ -54,7 +54,7 @@ export default function Repos() {
 	}, []);
 
 	return (
-		<Experimental_CssVarsProvider defaultMode="system" theme={cssVars}>
+		<ThemeProvider defaultMode="system" theme={cssVars}>
 			<CssBaseline />
 			<NavBar />
 			<Container sx={{ color: "on.surface", py: 2 }}>
@@ -89,6 +89,6 @@ export default function Repos() {
 				</Container>
 			</Container>
 			<Footer />
-		</Experimental_CssVarsProvider>
+		</ThemeProvider>
 	);
 }

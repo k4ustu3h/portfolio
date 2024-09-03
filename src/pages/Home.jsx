@@ -2,7 +2,7 @@
 
 import React from "react";
 import dynamic from "next/dynamic";
-import { Experimental_CssVarsProvider } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import { cssVars } from "../styles/cssVars.js";
 const About = dynamic(() => import("../components/sections/About.jsx"), {
@@ -17,13 +17,13 @@ import NavBar from "../components/surfaces/NavBar.jsx";
 
 export default function Home() {
 	return (
-		<Experimental_CssVarsProvider defaultMode="system" theme={cssVars}>
+		<ThemeProvider defaultMode="system" theme={cssVars}>
 			<CssBaseline />
 			<NavBar />
 			<Hero />
 			<About />
 			<Projects />
 			<Footer />
-		</Experimental_CssVarsProvider>
+		</ThemeProvider>
 	);
 }

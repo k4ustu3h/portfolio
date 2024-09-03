@@ -1,7 +1,7 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import Button from "@mui/material/Button";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 
 export default function SkillButton() {
 	const skills = [
@@ -80,7 +80,7 @@ export default function SkillButton() {
 		<Grid mt={1} container spacing={1}>
 			{skills.map((skill) => {
 				return (
-					<Grid item key={skill.label}>
+					<Grid key={skill.label}>
 						<Button
 							href={skill.link}
 							startIcon={<Icon icon={skill.icon} width={18} />}

@@ -8,9 +8,29 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Chip from "@mui/material/Chip";
 import Typography from "@mui/material/Typography";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import breakpoints from "../../styles/breakpoints.json";
 
 export default function RepoCard({ repo }) {
+	const screenSize = { xs: useMediaQuery(breakpoints.width.xs) };
+
 	const archiveStatus = repo.archived ? "" : "none";
+	const archivedInBox = repo.archived
+		? screenSize.xs
+			? repo.name < 10
+				? ""
+				: "none"
+			: ""
+		: "none";
+
+	const archivedNotInBox = repo.archived
+		? screenSize.xs
+			? repo.name > 10
+				? "none"
+				: ""
+			: "none"
+		: "";
+
 	const forkedOrNot = repo.forks_count
 		? "icon-park-solid:fork"
 		: "icon-park-outline:fork";
@@ -32,9 +52,10 @@ export default function RepoCard({ repo }) {
 						</Typography>
 						<Chip
 							label="Archived"
-							sx={{ display: archiveStatus }}
+							sx={{ display: archivedInBox }}
 						/>
 					</Box>
+					<Chip label="Archived" sx={{ display: archivedNotInBox }} />
 					<Typography variant="body2" color="text.secondary">
 						{repo.description}
 					</Typography>

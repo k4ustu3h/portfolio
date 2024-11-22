@@ -24,7 +24,7 @@ export default function ProjectCard() {
 			icon: "ic:twotone-delivery-dining",
 			primaryAction: {
 				label: "Visit website",
-				link: "https://foodtogo.tech/",
+				link: "https://foodtogo.vercel.app/",
 			},
 			secondaryAction: {
 				label: "Source Code",

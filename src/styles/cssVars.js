@@ -3,12 +3,12 @@
 import { extendTheme } from "@mui/material";
 import { afacad, outfit } from "../app/fonts";
 import { customComponents } from "./customComponents";
-import { pallette } from "../utils/monet";
+import { palette } from "../utils/monet";
 
-const darkPalette = pallette.schemes.dark;
-const lightPalette = pallette.schemes.light;
-const primaryTones = pallette.palettes.primary;
-const secondaryTones = pallette.palettes.secondary;
+const darkPalette = palette.schemes.dark;
+const lightPalette = palette.schemes.light;
+const primaryTones = palette.palettes.primary;
+const secondaryTones = palette.palettes.secondary;
 
 const logoTypeface = afacad.style.fontFamily;
 

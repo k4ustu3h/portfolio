@@ -5,6 +5,7 @@ import { outfit } from "./fonts";
 
 export const metadata = {
 	title: "Kaustubh Ladiya",
+	description: "Just another copy-paster...",
 };
 
 export default function RootLayout({ children }) {

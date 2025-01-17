@@ -9,6 +9,8 @@ export default function Footer() {
 	const sm = useMediaQuery(breakpoints.width.sm);
 	const xs = useMediaQuery(breakpoints.width.xs);
 
+	var currentYear = new Date().getFullYear();
+
 	return (
 		<Box
 			alignItems="center"
@@ -29,7 +31,7 @@ export default function Footer() {
 			>
 				<SocialIconButton />
 			</Box>
-			<Typography>© 2024 Kaustubh Ladiya</Typography>
+			<Typography>© {currentYear} Kaustubh Ladiya</Typography>
 		</Box>
 	);
 }

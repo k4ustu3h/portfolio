@@ -112,6 +112,7 @@ export default function ProjectCard() {
 												: "",
 									}}
 									variant="outlined"
+									target="_blank"
 								>
 									{project.secondaryAction.label}
 								</Button>
@@ -126,6 +127,7 @@ export default function ProjectCard() {
 												: "",
 									}}
 									variant="filled"
+									target="_blank"
 								>
 									{project.primaryAction.label}
 								</Button>

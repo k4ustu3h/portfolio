@@ -2,16 +2,16 @@ import { monetStore } from "../store/monetStore";
 
 const wallpapersArray = Object.values(monetStore);
 
-function getRandomWallpaperAndpallette(arr) {
+function getRandomWallpaperAndpalette(arr) {
 	const randomIndex = Math.floor(Math.random() * arr.length);
 	const randomWallpaper = arr[randomIndex];
 
 	return {
 		wallpaper: randomWallpaper.wallpaper,
-		pallette: randomWallpaper.pallette,
+		palette: randomWallpaper.palette,
 	};
 }
 
-const { wallpaper, pallette } = getRandomWallpaperAndpallette(wallpapersArray);
+const { wallpaper, palette } = getRandomWallpaperAndpalette(wallpapersArray);
 
-export { wallpaper, pallette };
+export { wallpaper, palette };

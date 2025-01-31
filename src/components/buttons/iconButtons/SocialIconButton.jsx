@@ -6,11 +6,6 @@ import IconButton from "@mui/material/IconButton";
 export default function SocialIconButton() {
 	const skills = [
 		{
-			icon: "simple-icons:devdotto",
-			label: "DEV",
-			link: "https://dev.to/k4ustu3h",
-		},
-		{
 			icon: "simple-icons:discord",
 			label: "Discord",
 			link: "https://discordapp.com/users/391680565759180811",
@@ -29,16 +24,6 @@ export default function SocialIconButton() {
 			icon: "simple-icons:linkedin",
 			label: "LinkedIn",
 			link: "https://www.linkedin.com/in/k4ustu3h/",
-		},
-		{
-			icon: "simple-icons:pinterest",
-			label: "Pinterest",
-			link: "https://pinterest.com/k4ustu3h",
-		},
-		{
-			icon: "simple-icons:reddit",
-			label: "Reddit",
-			link: "https://www.reddit.com/u/kaustubhladiya",
 		},
 		{
 			icon: "simple-icons:snapchat",

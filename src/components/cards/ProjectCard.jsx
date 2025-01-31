@@ -27,7 +27,6 @@ export default function ProjectCard() {
 				link: "https://foodtogo.vercel.app/",
 			},
 			secondaryAction: {
-				label: "Source Code",
 				link: "https://github.com/k4ustu3h/foodtogo",
 			},
 		},
@@ -37,10 +36,9 @@ export default function ProjectCard() {
 				"Forkicons is a fork of Lawnicons, an icon pack developed by the Lawnchair team. Forkicons restores the original themed icons of apps and adds icons for apps that doesn't have one, instead of the outlined icons in the original Lawnicons.",
 			primaryAction: {
 				label: "Download",
-				link: "https://nightly.link/k4ustu3h/forkicons/workflows/build_debug_apk/develop/Debug%20APK",
+				link: "https://github.com/k4ustu3h/forkicons/releases/latest",
 			},
 			secondaryAction: {
-				label: "Source Code",
 				link: "https://github.com/k4ustu3h/forkicons",
 			},
 		},
@@ -55,7 +53,6 @@ export default function ProjectCard() {
 				link: "https://marketplace.visualstudio.com/items?itemName=k4ustu3h.theme-jamt",
 			},
 			secondaryAction: {
-				label: "Source Code",
 				link: "https://github.com/k4ustu3h/jamt-vscode",
 			},
 		},
@@ -108,13 +105,13 @@ export default function ProjectCard() {
 											sm || xs
 												? 5
 												: index === 0 || index === 2
-												? 4
-												: "",
+													? 4
+													: "",
 									}}
 									variant="outlined"
 									target="_blank"
 								>
-									{project.secondaryAction.label}
+									Source Code
 								</Button>
 								<Button
 									href={project.primaryAction.link}
@@ -123,8 +120,8 @@ export default function ProjectCard() {
 											sm || xs
 												? 5
 												: index === 0 || index === 2
-												? 4
-												: "",
+													? 4
+													: "",
 									}}
 									variant="filled"
 									target="_blank"

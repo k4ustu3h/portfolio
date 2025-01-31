@@ -11,6 +11,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en" className={outfit.variable}>
+			<head>
+				<link rel="me" href="https://mastodon.social/@k4ustu3h" />
+			</head>
 			<body>
 				<div id="root">
 					<InitColorSchemeScript />

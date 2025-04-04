@@ -9,7 +9,7 @@ export default function Footer() {
 	const sm = useMediaQuery(breakpoints.width.sm);
 	const xs = useMediaQuery(breakpoints.width.xs);
 
-	var currentYear = new Date().getFullYear();
+	const currentYear = new Date().getFullYear();
 
 	return (
 		<Box

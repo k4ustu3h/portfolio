@@ -18,6 +18,19 @@ export default function ProjectCard() {
 
 	const projects = [
 		{
+			heading: "DeDupe",
+			description: "File deduplication Android app.",
+			icon: "material-symbols:file-copy-off-outline",
+
+			primaryAction: {
+				label: "Download",
+				link: "https://github.com/k4ustu3h/DeDupe/releases/latest",
+			},
+			secondaryAction: {
+				link: "https://github.com/k4ustu3h/DeDupe",
+			},
+		},
+		{
 			heading: "Food To Go",
 			description:
 				"A food delivery website created with ReactJS, with backend created with MongoDB, Express and NodeJS.",
@@ -85,7 +98,9 @@ export default function ProjectCard() {
 										fontSize={48}
 										p={1}
 									>
-										{index === 0 || index === 2 ? (
+										{index === 0 ||
+										index === 1 ||
+										index === 3 ? (
 											<Icon icon={project.icon} />
 										) : (
 											<ForkIcons />
@@ -104,7 +119,9 @@ export default function ProjectCard() {
 										mt:
 											sm || xs
 												? 5
-												: index === 0 || index === 2
+												: index === 0 ||
+													  index === 1 ||
+													  index === 3
 													? 4
 													: "",
 									}}
@@ -119,7 +136,9 @@ export default function ProjectCard() {
 										mt:
 											sm || xs
 												? 5
-												: index === 0 || index === 2
+												: index === 0 ||
+													  index === 1 ||
+													  index === 3
 													? 4
 													: "",
 									}}
@@ -140,7 +159,7 @@ export default function ProjectCard() {
 								color="primary.main"
 								size={128}
 							>
-								{index === 0 || index === 2 ? (
+								{index === 0 || index === 1 || index === 3 ? (
 									<Icon icon={project.icon} />
 								) : (
 									<ForkIcons />

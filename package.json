@@ -1,7 +1,7 @@
 {
 	"name": "portfolio",
 	"private": true,
-	"version": "2.1.0",
+	"version": "2.1.1",
 	"type": "module",
 	"scripts": {
 		"dev": "next dev",
@@ -11,20 +11,20 @@
 	"dependencies": {
 		"@emotion/cache": "11.14.0",
 		"@emotion/react": "11.14.0",
-		"@emotion/styled": "11.14.0",
-		"@mui/lab": "7.0.0-beta.13",
-		"@mui/material": "7.1.1",
-		"@mui/material-nextjs": "7.1.1",
+		"@emotion/styled": "11.14.1",
+		"@mui/lab": "7.0.0-beta.14",
+		"@mui/material": "7.2.0",
+		"@mui/material-nextjs": "7.2.0",
 		"@vercel/speed-insights": "1.2.0",
-		"next": "15.3.3",
+		"next": "15.4.4",
 		"react": "19.1.0",
 		"react-dom": "19.1.0",
 		"react-type-animation": "3.2.0",
-		"sharp": "0.34.2"
+		"sharp": "0.34.3"
 	},
 	"devDependencies": {
 		"@iconify/react": "6.0.0",
-		"eslint": "9.29.0",
-		"eslint-config-next": "15.3.3"
+		"eslint": "9.32.0",
+		"eslint-config-next": "15.4.4"
 	}
 }

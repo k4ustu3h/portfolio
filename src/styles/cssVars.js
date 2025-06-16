@@ -5,6 +5,8 @@ import { afacad, outfit } from "../app/fonts";
 import { customComponents } from "./customComponents";
 import { palette } from "../utils/monet";
 
+const cc = customComponents;
+
 const darkPalette = palette.schemes.dark;
 const lightPalette = palette.schemes.light;
 const primaryTones = palette.palettes.primary;
@@ -126,17 +128,25 @@ export const cssVars = createTheme({
 	},
 	components: {
 		MuiButton: {
+			styleOverrides: {
+				root: {
+					transition: "border-radius 0.1s ease",
+				},
+			},
 			variants: [
 				{
-					props: { variant: "filled" },
+					props: { variant: "filledSmall" },
 					style: ({ theme }) => ({
 						backgroundColor: theme.vars.palette.primary.main,
-						borderRadius: 20,
+						borderRadius: cc.button.small.borderRadius.default,
 						color: theme.vars.palette.on.primary,
-						height: 40,
-						paddingLeft: 24,
-						paddingRight: 24,
+						height: cc.button.small.height,
+						paddingLeft: cc.button.small.padding,
+						paddingRight: cc.button.small.padding,
 						textTransform: "none",
+						":active": {
+							borderRadius: cc.button.small.borderRadius.active,
+						},
 						":hover": {
 							backgroundColor: theme.vars.palette.primary.hover,
 						},
@@ -146,13 +156,16 @@ export const cssVars = createTheme({
 					props: { variant: "filledMedium" },
 					style: ({ theme }) => ({
 						backgroundColor: theme.vars.palette.primary.main,
-						borderRadius: 30,
+						borderRadius: cc.button.medium.borderRadius.default,
 						color: theme.vars.palette.on.primary,
 						fontSize: 21,
-						height: 60,
-						paddingLeft: 36,
-						paddingRight: 36,
+						height: cc.button.medium.height,
+						paddingLeft: cc.button.medium.padding,
+						paddingRight: cc.button.medium.padding,
 						textTransform: "none",
+						":active": {
+							borderRadius: cc.button.medium.borderRadius.active,
+						},
 						":hover": {
 							backgroundColor: theme.vars.palette.primary.hover,
 						},
@@ -162,13 +175,16 @@ export const cssVars = createTheme({
 					props: { variant: "filledLarge" },
 					style: ({ theme }) => ({
 						backgroundColor: theme.vars.palette.primary.main,
-						borderRadius: 40,
+						borderRadius: cc.button.large.borderRadius.default,
 						color: theme.vars.palette.on.primary,
 						fontSize: 28,
-						height: 80,
-						paddingLeft: 48,
-						paddingRight: 48,
+						height: cc.button.large.height,
+						paddingLeft: cc.button.large.padding,
+						paddingRight: cc.button.large.padding,
 						textTransform: "none",
+						":active": {
+							borderRadius: cc.button.large.borderRadius.active,
+						},
 						":hover": {
 							backgroundColor: theme.vars.palette.primary.hover,
 						},
@@ -177,33 +193,42 @@ export const cssVars = createTheme({
 				{
 					props: { variant: "outlined" },
 					style: {
-						borderRadius: 20,
-						height: 40,
-						paddingLeft: 24,
-						paddingRight: 24,
+						borderRadius: cc.button.small.borderRadius.default,
+						height: cc.button.small.height,
+						paddingLeft: cc.button.small.padding,
+						paddingRight: cc.button.small.padding,
 						textTransform: "none",
+						":active": {
+							borderRadius: cc.button.small.borderRadius.active,
+						},
 					},
 				},
 				{
 					props: { variant: "text" },
 					style: {
-						borderRadius: 20,
-						height: 40,
-						paddingLeft: 12,
-						paddingRight: 12,
+						borderRadius: cc.button.small.borderRadius.default,
+						height: cc.button.small.height,
+						paddingLeft: cc.button.small.padding,
+						paddingRight: cc.button.small.padding,
 						textTransform: "none",
+						":active": {
+							borderRadius: cc.button.small.borderRadius.active,
+						},
 					},
 				},
 				{
 					props: { variant: "tonal" },
 					style: ({ theme }) => ({
 						backgroundColor: theme.vars.palette.secondary.container,
-						borderRadius: 20,
+						borderRadius: cc.button.small.borderRadius.default,
 						color: theme.vars.palette.secondary.on.container,
-						height: 40,
-						paddingLeft: 24,
-						paddingRight: 24,
+						height: cc.button.small.height,
+						paddingLeft: cc.button.small.padding,
+						paddingRight: cc.button.small.padding,
 						textTransform: "none",
+						":active": {
+							borderRadius: cc.button.small.borderRadius.active,
+						},
 						":hover": {
 							backgroundColor: theme.vars.palette.secondary.hover,
 						},
@@ -256,7 +281,7 @@ export const cssVars = createTheme({
 			},
 			variants: [
 				{
-					props: { variant: "filled" },
+					props: { variant: "filledSmall" },
 					style: ({ theme }) => ({
 						backgroundColor:
 							theme.vars.palette.surface.container.high,
@@ -281,6 +306,14 @@ export const cssVars = createTheme({
 			],
 		},
 		MuiIconButton: {
+			styleOverrides: {
+				root: {
+					transition: "border-radius 0.1s ease",
+					":active": {
+						borderRadius: cc.button.small.borderRadius.active,
+					},
+				},
+			},
 			variants: [
 				{
 					props: { variant: "tonal" },
@@ -296,7 +329,7 @@ export const cssVars = createTheme({
 		},
 	},
 	typography: {
-		clock: customComponents.typography.clock,
+		clock: cc.typography.clock,
 		fontFamily: outfit.style.fontFamily,
 		h3: {
 			fontWeight: "bold",

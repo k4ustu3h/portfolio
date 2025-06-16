@@ -141,7 +141,7 @@ export default function ProjectCard() {
 												? 4
 												: "",
 									}}
-									variant="filled"
+									variant="filledSmall"
 									target="_blank"
 								>
 									{project.primaryAction.label}

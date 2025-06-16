@@ -64,7 +64,11 @@ export default function Hero() {
 				<Box>
 					<Button
 						variant={
-							xs ? "filled" : sm ? "filledMedium" : "filledLarge"
+							xs
+								? "filledSmall"
+								: sm
+								? "filledMedium"
+								: "filledLarge"
 						}
 						href="/"
 					>

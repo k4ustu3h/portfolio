@@ -1,14 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { ThemeProvider } from "@mui/material";
+import { useState, useEffect } from "react";
 import Container from "@mui/material/Container";
 import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Masonry from "@mui/lab/Masonry";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { cssVars } from "../styles/cssVars.js";
 import breakpoints from "../styles/breakpoints.json";
 import Footer from "../components/sections/Footer.jsx";
 import NavBar from "../components/surfaces/NavBar.jsx";
@@ -54,7 +52,7 @@ export default function Repos() {
 	}, []);
 
 	return (
-		<ThemeProvider defaultMode="system" theme={cssVars}>
+		<>
 			<CssBaseline />
 			<NavBar />
 			<Container sx={{ color: "on.surface", py: 2 }}>
@@ -89,6 +87,6 @@ export default function Repos() {
 				</Container>
 			</Container>
 			<Footer />
-		</ThemeProvider>
+		</>
 	);
 }

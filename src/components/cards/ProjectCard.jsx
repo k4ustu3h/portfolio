@@ -1,4 +1,3 @@
-import React from "react";
 import { Icon } from "@iconify/react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -120,10 +119,10 @@ export default function ProjectCard() {
 											sm || xs
 												? 5
 												: index === 0 ||
-													  index === 1 ||
-													  index === 3
-													? 4
-													: "",
+												  index === 1 ||
+												  index === 3
+												? 4
+												: "",
 									}}
 									variant="outlined"
 									target="_blank"
@@ -137,10 +136,10 @@ export default function ProjectCard() {
 											sm || xs
 												? 5
 												: index === 0 ||
-													  index === 1 ||
-													  index === 3
-													? 4
-													: "",
+												  index === 1 ||
+												  index === 3
+												? 4
+												: "",
 									}}
 									variant="filled"
 									target="_blank"

@@ -1,6 +1,6 @@
 "use client";
 
-import { extendTheme } from "@mui/material";
+import { createTheme } from "@mui/material";
 import { afacad, outfit } from "../app/fonts";
 import { customComponents } from "./customComponents";
 import { palette } from "../utils/monet";
@@ -12,7 +12,8 @@ const secondaryTones = palette.palettes.secondary;
 
 const logoTypeface = afacad.style.fontFamily;
 
-export const cssVars = extendTheme({
+export const cssVars = createTheme({
+	cssVariables: true,
 	colorSchemes: {
 		dark: {
 			palette: {
@@ -129,47 +130,47 @@ export const cssVars = extendTheme({
 				{
 					props: { variant: "filled" },
 					style: ({ theme }) => ({
-						backgroundColor: theme.palette.primary.main,
+						backgroundColor: theme.vars.palette.primary.main,
 						borderRadius: 20,
-						color: theme.palette.on.primary,
+						color: theme.vars.palette.on.primary,
 						height: 40,
 						paddingLeft: 24,
 						paddingRight: 24,
 						textTransform: "none",
 						":hover": {
-							backgroundColor: theme.palette.primary.hover,
+							backgroundColor: theme.vars.palette.primary.hover,
 						},
 					}),
 				},
 				{
 					props: { variant: "filledMedium" },
 					style: ({ theme }) => ({
-						backgroundColor: theme.palette.primary.main,
+						backgroundColor: theme.vars.palette.primary.main,
 						borderRadius: 30,
-						color: theme.palette.on.primary,
+						color: theme.vars.palette.on.primary,
 						fontSize: 21,
 						height: 60,
 						paddingLeft: 36,
 						paddingRight: 36,
 						textTransform: "none",
 						":hover": {
-							backgroundColor: theme.palette.primary.hover,
+							backgroundColor: theme.vars.palette.primary.hover,
 						},
 					}),
 				},
 				{
 					props: { variant: "filledLarge" },
 					style: ({ theme }) => ({
-						backgroundColor: theme.palette.primary.main,
+						backgroundColor: theme.vars.palette.primary.main,
 						borderRadius: 40,
-						color: theme.palette.on.primary,
+						color: theme.vars.palette.on.primary,
 						fontSize: 28,
 						height: 80,
 						paddingLeft: 48,
 						paddingRight: 48,
 						textTransform: "none",
 						":hover": {
-							backgroundColor: theme.palette.primary.hover,
+							backgroundColor: theme.vars.palette.primary.hover,
 						},
 					}),
 				},
@@ -196,15 +197,15 @@ export const cssVars = extendTheme({
 				{
 					props: { variant: "tonal" },
 					style: ({ theme }) => ({
-						backgroundColor: theme.palette.secondary.container,
+						backgroundColor: theme.vars.palette.secondary.container,
 						borderRadius: 20,
-						color: theme.palette.secondary.on.container,
+						color: theme.vars.palette.secondary.on.container,
 						height: 40,
 						paddingLeft: 24,
 						paddingRight: 24,
 						textTransform: "none",
 						":hover": {
-							backgroundColor: theme.palette.secondary.hover,
+							backgroundColor: theme.vars.palette.secondary.hover,
 						},
 					}),
 				},
@@ -220,8 +221,9 @@ export const cssVars = extendTheme({
 				{
 					props: { variant: "elevated" },
 					style: ({ theme }) => ({
-						backgroundColor: theme.palette.surface.container.low,
-						color: theme.palette.on.surface.main,
+						backgroundColor:
+							theme.vars.palette.surface.container.low,
+						color: theme.vars.palette.on.surface.main,
 					}),
 				},
 			],
@@ -256,8 +258,9 @@ export const cssVars = extendTheme({
 				{
 					props: { variant: "filled" },
 					style: ({ theme }) => ({
-						backgroundColor: theme.palette.surface.container.high,
-						color: theme.palette.on.surfaceVariant,
+						backgroundColor:
+							theme.vars.palette.surface.container.high,
+						color: theme.vars.palette.on.surfaceVariant,
 					}),
 				},
 			],
@@ -267,11 +270,11 @@ export const cssVars = extendTheme({
 				{
 					props: { variant: "scroll-to-top" },
 					style: ({ theme }) => ({
-						backgroundColor: theme.palette.secondary.container,
+						backgroundColor: theme.vars.palette.secondary.container,
 						borderRadius: 16,
-						color: theme.palette.secondary.on.container,
+						color: theme.vars.palette.secondary.on.container,
 						":hover": {
-							backgroundColor: theme.palette.secondary.hover,
+							backgroundColor: theme.vars.palette.secondary.hover,
 						},
 					}),
 				},
@@ -282,10 +285,10 @@ export const cssVars = extendTheme({
 				{
 					props: { variant: "tonal" },
 					style: ({ theme }) => ({
-						backgroundColor: theme.palette.secondary.container,
-						color: theme.palette.secondary.on.container,
+						backgroundColor: theme.vars.palette.secondary.container,
+						color: theme.vars.palette.secondary.on.container,
 						":hover": {
-							backgroundColor: theme.palette.secondary.hover,
+							backgroundColor: theme.vars.palette.secondary.hover,
 						},
 					}),
 				},

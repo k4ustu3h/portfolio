@@ -6,16 +6,6 @@ import Grid from "@mui/material/Grid";
 export default function SkillButton() {
 	const skills = [
 		{
-			icon: "simple-icons:adobeillustrator",
-			label: "Adobe Illustrator",
-			link: "https://www.adobe.com/products/illustrator.html",
-		},
-		{
-			icon: "simple-icons:adobephotoshop",
-			label: "Adobe Photoshop",
-			link: "https://www.adobe.com/products/photoshop.html",
-		},
-		{
 			icon: "simple-icons:androidstudio",
 			label: "Android Studio",
 			link: "https://developer.android.com/studio",
@@ -26,6 +16,11 @@ export default function SkillButton() {
 			link: "https://www.figma.com/",
 		},
 		{
+			icon: "simple-icons:flutter",
+			label: "Flutter",
+			link: "https://flutter.dev/",
+		},
+		{
 			icon: "simple-icons:inkscape",
 			label: "Inkscape",
 			link: "https://inkscape.org/",
@@ -34,11 +29,6 @@ export default function SkillButton() {
 			icon: "simple-icons:javascript",
 			label: "JavaScript",
 			link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-		},
-		{
-			icon: "simple-icons:jetpackcompose",
-			label: "Jetpack Compose",
-			link: "https://developer.android.com/jetpack/compose",
 		},
 		{
 			icon: "simple-icons:kotlin",
@@ -54,6 +44,11 @@ export default function SkillButton() {
 			icon: "simple-icons:materialdesign",
 			label: "Material Design",
 			link: "https://material.io/",
+		},
+		{
+			icon: "simple-icons:android",
+			label: "Material Design Components",
+			link: "https://github.com/material-components/material-components-android",
 		},
 		{
 			icon: "simple-icons:mui",

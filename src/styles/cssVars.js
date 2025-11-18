@@ -1,7 +1,7 @@
 "use client";
 
 import { createTheme } from "@mui/material";
-import { afacad, outfit } from "../app/fonts";
+import { afacad, googleSansFlex } from "../app/fonts";
 import { customComponents } from "./customComponents";
 import { palette } from "../utils/monet";
 
@@ -330,7 +330,7 @@ export const cssVars = createTheme({
 	},
 	typography: {
 		clock: cc.typography.clock,
-		fontFamily: outfit.style.fontFamily,
+		fontFamily: googleSansFlex.style.fontFamily,
 		h3: {
 			fontWeight: "bold",
 		},

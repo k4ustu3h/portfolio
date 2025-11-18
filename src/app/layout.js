@@ -1,7 +1,7 @@
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { outfit } from "./fonts";
+import { googleSansFlex } from "./fonts";
 import { ThemeProvider } from "@mui/material";
 import { cssVars } from "../styles/cssVars";
 
@@ -12,7 +12,11 @@ export const metadata = {
 
 export default function RootLayout(props) {
 	return (
-		<html className={outfit.variable} lang="en" suppressHydrationWarning>
+		<html
+			className={googleSansFlex.variable}
+			lang="en"
+			suppressHydrationWarning
+		>
 			<head>
 				<link rel="me" href="https://mastodon.social/@k4ustu3h" />
 			</head>

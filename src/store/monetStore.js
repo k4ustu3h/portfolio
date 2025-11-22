@@ -16,7 +16,7 @@ import chitwanBoatsPT from "../styles/palettes/chitwan_boats.json";
 
 //Kathmandu Street
 import kathmanduStreetWP from "../assets/images/kathmandu_street.jpg";
-import kathmanduStreetPT from "../styles/palettes/bhaktapur_durbar_square.json";
+import kathmanduStreetPT from "../styles/palettes/kathmandu_street.json";
 
 //Lunar Eclipse Phases
 import lunarEclipsePhasesWP from "../assets/images/lunar_eclipse_phases.jpg";

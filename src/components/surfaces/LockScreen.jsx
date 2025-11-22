@@ -1,12 +1,15 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { wallpaper } from "../../utils/monet";
+import { useWallpaper } from "../../contexts/WallpaperContext";
 import breakpoints from "../../styles/breakpoints.json";
 import LockScreenOverlay from "./lockscreen/LockScreenOverlay";
 
 export default function LockScreen() {
 	const xs = useMediaQuery(breakpoints.width.xs);
+	const wallpaper = useWallpaper();
+
+	if (!wallpaper) return null;
 
 	return (
 		<Box
@@ -15,7 +18,7 @@ export default function LockScreen() {
 			height={xs ? "60vh" : "80vh"}
 			sx={{
 				aspectRatio: 9 / 20,
-				backgroundImage: `url(${wallpaper.src})`,
+				backgroundImage: `url(${wallpaper.wallpaper.src || wallpaper.wallpaper})`,
 				backgroundPosition: "center",
 				backgroundSize: "180%",
 				transition: "150ms linear",

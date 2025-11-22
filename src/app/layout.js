@@ -1,9 +1,7 @@
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { googleSansFlex } from "./fonts";
-import { ThemeProvider } from "@mui/material";
-import { cssVars } from "../styles/cssVars";
+import ThemeRegistry from "../components/ThemeRegistry";
 
 export const metadata = {
 	title: "Kaustubh Ladiya",
@@ -23,11 +21,7 @@ export default function RootLayout(props) {
 			<body>
 				<div id="root">
 					<InitColorSchemeScript attribute="class" />
-					<AppRouterCacheProvider>
-						<ThemeProvider theme={cssVars}>
-							{props.children}
-						</ThemeProvider>
-					</AppRouterCacheProvider>
+					<ThemeRegistry>{props.children}</ThemeRegistry>
 					<SpeedInsights />
 				</div>
 			</body>

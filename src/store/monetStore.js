@@ -1,50 +1,27 @@
-// Bhaktapur Durbar Square
-import bhaktapurDurbarSquareWP from "../assets/images/bhaktapur_durbar_square.jpg";
-import bhaktapurDurbarSquarePT from "../styles/palettes/bhaktapur_durbar_square.json";
-
-//Bhaktapur Street
-import bhaktapurStreetWP from "../assets/images/bhaktapur_street.jpg";
-import bhaktapurStreetPT from "../styles/palettes/bhaktapur_street.json";
-
-//Bindhyabasini Temple
-import bindhyabasiniTempleWP from "../assets/images/bindhyabasini_temple.jpg";
-import bindhyabasiniTemplePT from "../styles/palettes/bindhyabasini_temple.json";
-
-//Chitwan Boats
-import chitwanBoatsWP from "../assets/images/chitwan_boats.jpg";
-import chitwanBoatsPT from "../styles/palettes/chitwan_boats.json";
-
-//Kathmandu Street
-import kathmanduStreetWP from "../assets/images/kathmandu_street.jpg";
-import kathmanduStreetPT from "../styles/palettes/bhaktapur_durbar_square.json";
-
-//Lunar Eclipse Phases
-import lunarEclipsePhasesWP from "../assets/images/lunar_eclipse_phases.jpg";
-import lunarEclipsePhasesPT from "../styles/palettes/lunar_eclipse_phases.json";
+import bhaktapurDurbarSquare from "../assets/images/bhaktapur_durbar_square.jpg";
+import bhaktapurStreet from "../assets/images/bhaktapur_street.jpg";
+import bindhyabasiniTemple from "../assets/images/bindhyabasini_temple.jpg";
+import chitwanBoats from "../assets/images/chitwan_boats.jpg";
+import kathmanduStreet from "../assets/images/kathmandu_street.jpg";
+import lunarEclipsePhases from "../assets/images/lunar_eclipse_phases.jpg";
 
 export const monetStore = {
 	bhaktapurDurbarSquare: {
-		wallpaper: bhaktapurDurbarSquareWP,
-		palette: bhaktapurDurbarSquarePT,
+		wallpaper: bhaktapurDurbarSquare,
 	},
 	bhaktapurStreet: {
-		wallpaper: bhaktapurStreetWP,
-		palette: bhaktapurStreetPT,
+		wallpaper: bhaktapurStreet,
 	},
 	bindhyabasiniTemple: {
-		wallpaper: bindhyabasiniTempleWP,
-		palette: bindhyabasiniTemplePT,
+		wallpaper: bindhyabasiniTemple,
 	},
 	chitwanBoats: {
-		wallpaper: chitwanBoatsWP,
-		palette: chitwanBoatsPT,
+		wallpaper: chitwanBoats,
 	},
 	kathmanduStreet: {
-		wallpaper: kathmanduStreetWP,
-		palette: kathmanduStreetPT,
+		wallpaper: kathmanduStreet,
 	},
 	lunarEclipsePhases: {
-		wallpaper: lunarEclipsePhasesWP,
-		palette: lunarEclipsePhasesPT,
+		wallpaper: lunarEclipsePhases,
 	},
 };

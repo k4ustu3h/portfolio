@@ -9,6 +9,7 @@ import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import breakpoints from "@/styles/breakpoints.json";
 import ForkIcons from "@/assets/svgs/ForkIcons";
+import IntelliHire from "@/assets/svgs/IntelliHire";
 import MonochromeIcon from "@/components/icons/MonochromeIcon";
 
 export default function ProjectCard() {
@@ -52,6 +53,17 @@ export default function ProjectCard() {
 			},
 			secondaryAction: {
 				link: "https://github.com/k4ustu3h/forkicons",
+			},
+		},
+		{
+			heading: "IntelliHire",
+			description: "Intelligent Recruitment & Skill Assessment System",
+			primaryAction: {
+				label: "Download",
+				link: "https://github.com/k4ustu3h/intellihire-flutter/releases/latest",
+			},
+			secondaryAction: {
+				link: "https://github.com/k4ustu3h/intellihire-flutter",
 			},
 		},
 		{
@@ -99,8 +111,10 @@ export default function ProjectCard() {
 									>
 										{index === 0 ||
 										index === 1 ||
-										index === 3 ? (
+										index === 4 ? (
 											<Icon icon={project.icon} />
+										) : index === 3 ? (
+											<IntelliHire />
 										) : (
 											<ForkIcons />
 										)}
@@ -120,7 +134,7 @@ export default function ProjectCard() {
 												? 5
 												: index === 0 ||
 												  index === 1 ||
-												  index === 3
+												  index === 4
 												? 4
 												: "",
 									}}
@@ -137,7 +151,7 @@ export default function ProjectCard() {
 												? 5
 												: index === 0 ||
 												  index === 1 ||
-												  index === 3
+												  index === 4
 												? 4
 												: "",
 									}}
@@ -158,8 +172,10 @@ export default function ProjectCard() {
 								color="primary.main"
 								size={128}
 							>
-								{index === 0 || index === 1 || index === 3 ? (
+								{index === 0 || index === 1 || index === 4 ? (
 									<Icon icon={project.icon} />
+								) : index === 3 ? (
+									<IntelliHire />
 								) : (
 									<ForkIcons />
 								)}

@@ -1,17 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ThemeProvider } from "@mui/material";
 import Container from "@mui/material/Container";
 import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Masonry from "@mui/lab/Masonry";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { cssVars } from "../styles/cssVars";
 import breakpoints from "../styles/breakpoints.json";
 import Footer from "../components/sections/Footer.jsx";
-import LoadingScreen from "../components/feedback/LoadingScreen.jsx";
 import NavBar from "../components/surfaces/NavBar.jsx";
 import RepoCard from "../components/cards/RepoCard.jsx";
 import RepoCardSkeleton from "../components/feedback/RepoCardSkeleton.jsx";
@@ -54,16 +51,8 @@ export default function Repos() {
 		fetchData();
 	}, []);
 
-	const [theme, setTheme] = useState(null);
-
-	useEffect(() => {
-		setTheme(cssVars);
-	}, []);
-
-	if (!theme) return <LoadingScreen />;
-
 	return (
-		<ThemeProvider theme={theme}>
+		<>
 			<CssBaseline />
 			<NavBar />
 			<Container sx={{ color: "on.surface", py: 2 }}>
@@ -98,6 +87,6 @@ export default function Repos() {
 				</Container>
 			</Container>
 			<Footer />
-		</ThemeProvider>
+		</>
 	);
 }

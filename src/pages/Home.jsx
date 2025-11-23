@@ -15,6 +15,7 @@ const Projects = dynamic(() => import("../components/sections/Projects.jsx"), {
 });
 import Footer from "../components/sections/Footer.jsx";
 import Hero from "../components/sections/Hero.jsx";
+import LoadingScreen from "../components/feedback/LoadingScreen.jsx";
 import NavBar from "../components/surfaces/NavBar.jsx";
 
 export default function Home() {
@@ -26,7 +27,7 @@ export default function Home() {
 		setTheme(cssVars);
 	}, []);
 
-	if (!theme) return null;
+	if (!theme) return <LoadingScreen />;
 
 	return (
 		<WallpaperProvider value={activeWallpaper}>

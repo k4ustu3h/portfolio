@@ -11,6 +11,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { cssVars } from "../styles/cssVars";
 import breakpoints from "../styles/breakpoints.json";
 import Footer from "../components/sections/Footer.jsx";
+import LoadingScreen from "../components/feedback/LoadingScreen.jsx";
 import NavBar from "../components/surfaces/NavBar.jsx";
 import RepoCard from "../components/cards/RepoCard.jsx";
 import RepoCardSkeleton from "../components/feedback/RepoCardSkeleton.jsx";
@@ -59,7 +60,7 @@ export default function Repos() {
 		setTheme(cssVars);
 	}, []);
 
-	if (!theme) return null;
+	if (!theme) return <LoadingScreen />;
 
 	return (
 		<ThemeProvider theme={theme}>

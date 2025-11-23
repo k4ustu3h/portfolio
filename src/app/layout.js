@@ -1,8 +1,8 @@
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { googleSansFlex } from "./fonts";
-import ThemeWrapper from "../components/ThemeWrapper";
+import { googleSansFlex } from "@/app/fonts";
+import ThemeWrapper from "@/components/ThemeWrapper";
 
 export const metadata = {
 	title: "Kaustubh Ladiya",

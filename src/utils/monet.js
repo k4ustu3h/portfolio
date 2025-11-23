@@ -1,4 +1,4 @@
-import { monetStore } from "../store/monetStore";
+import { monetStore } from "@/store/monetStore";
 
 const wallpapersArray = Object.values(monetStore);
 

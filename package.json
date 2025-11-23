@@ -25,7 +25,6 @@
 	"devDependencies": {
 		"@iconify/react": "6.0.2",
 		"eslint": "9.39.1",
-		"eslint-config-next": "16.0.3",
-		"sharp": "0.34.5"
+		"eslint-config-next": "16.0.3"
 	}
 }

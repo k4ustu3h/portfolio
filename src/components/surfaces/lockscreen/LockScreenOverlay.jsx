@@ -1,9 +1,12 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import Box from "@mui/material/Box";
-const BasicClock = dynamic(() => import("./clocks/digital/BasicClock"), {
-	ssr: false,
-});
+const BasicClock = dynamic(
+	() => import("@/components/surfaces/lockscreen/clocks/digital/BasicClock"),
+	{
+		ssr: false,
+	}
+);
 
 export default function LockScreenOverlay() {
 	return (

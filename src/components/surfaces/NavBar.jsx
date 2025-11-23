@@ -6,8 +6,8 @@ import Button from "@mui/material/Button";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import breakpoints from "../../styles/breakpoints.json";
-import ScrollToTop from "../buttons/ScrollToTop";
+import breakpoints from "@/styles/breakpoints.json";
+import ScrollToTop from "@/components/buttons/ScrollToTop";
 
 export default function NavBar() {
 	const xs = useMediaQuery(breakpoints.width.xs);

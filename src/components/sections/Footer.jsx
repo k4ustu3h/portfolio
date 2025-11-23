@@ -2,8 +2,8 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import breakpoints from "../../styles/breakpoints.json";
-import SocialIconButton from "../buttons/iconButtons/SocialIconButton";
+import breakpoints from "@/styles/breakpoints.json";
+import SocialIconButton from "@/components/buttons/iconButtons/SocialIconButton";
 
 export default function Footer() {
 	const sm = useMediaQuery(breakpoints.width.sm);

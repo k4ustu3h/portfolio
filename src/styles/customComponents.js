@@ -1,4 +1,4 @@
-import breakpoints from "./breakpoints.json";
+import breakpoints from "@/styles/breakpoints.json";
 
 const md = `@media ${breakpoints.height.md}`;
 const sm = `@media ${breakpoints.height.sm}`;

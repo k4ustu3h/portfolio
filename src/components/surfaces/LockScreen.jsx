@@ -1,9 +1,9 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { wallpaper } from "../../utils/monet";
-import breakpoints from "../../styles/breakpoints.json";
-import LockScreenOverlay from "./lockscreen/LockScreenOverlay";
+import { wallpaper } from "@/utils/monet";
+import breakpoints from "@/styles/breakpoints.json";
+import LockScreenOverlay from "@/components/surfaces/lockscreen/LockScreenOverlay";
 
 export default function LockScreen() {
 	const xs = useMediaQuery(breakpoints.width.xs);

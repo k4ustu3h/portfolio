@@ -7,9 +7,9 @@ import CardContent from "@mui/material/CardContent";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import breakpoints from "../../styles/breakpoints.json";
-import ForkIcons from "../../assets/svgs/ForkIcons";
-import MonochromeIcon from "../icons/MonochromeIcon";
+import breakpoints from "@/styles/breakpoints.json";
+import ForkIcons from "@/assets/svgs/ForkIcons";
+import MonochromeIcon from "@/components/icons/MonochromeIcon";
 
 export default function ProjectCard() {
 	const sm = useMediaQuery(breakpoints.width.sm);

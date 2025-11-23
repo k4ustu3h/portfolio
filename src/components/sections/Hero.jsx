@@ -3,9 +3,9 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import breakpoints from "../../styles/breakpoints.json";
-import LockScreen from "../surfaces/LockScreen";
-import Typewriter from "../typography/Typewriter";
+import breakpoints from "@/styles/breakpoints.json";
+import LockScreen from "@/components/surfaces/LockScreen";
+import Typewriter from "@/components/typography/Typewriter";
 
 export default function Hero() {
 	const xs = useMediaQuery(breakpoints.width.xs);

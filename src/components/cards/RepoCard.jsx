@@ -9,7 +9,7 @@ import CardContent from "@mui/material/CardContent";
 import Chip from "@mui/material/Chip";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import breakpoints from "../../styles/breakpoints.json";
+import breakpoints from "@/styles/breakpoints.json";
 
 export default function RepoCard({ repo }) {
 	const screenSize = { xs: useMediaQuery(breakpoints.width.xs) };

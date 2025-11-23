@@ -1,9 +1,9 @@
 "use client";
 
 import { createTheme } from "@mui/material";
-import { afacad, googleSansFlex } from "../app/fonts";
-import { customComponents } from "./customComponents";
-import { palette } from "../utils/monet";
+import { afacad, googleSansFlex } from "@/app/fonts";
+import { customComponents } from "@/styles/customComponents";
+import { palette } from "@/utils/monet";
 
 const cc = customComponents;
 

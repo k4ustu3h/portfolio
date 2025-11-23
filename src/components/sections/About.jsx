@@ -4,10 +4,10 @@ import Grid from "@mui/material/Grid";
 import SvgIcon from "@mui/material/SvgIcon";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import AboutButton from "../buttons/iconButtons/AboutButton";
-import breakpoints from "../../styles/breakpoints.json";
-import MonochromeIcon from "../icons/MonochromeIcon";
-import SkillButton from "../buttons/SkillButton";
+import AboutButton from "@/components/buttons/iconButtons/AboutButton";
+import breakpoints from "@/styles/breakpoints.json";
+import MonochromeIcon from "@/components/icons/MonochromeIcon";
+import SkillButton from "@/components/buttons/SkillButton";
 
 function SkillIcon() {
 	return (

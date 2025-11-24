@@ -2,25 +2,34 @@
 
 import { useState, useEffect } from "react";
 import { ThemeProvider } from "@mui/material";
-import { cssVars } from "@/styles/cssVars";
-import { wallpaper } from "@/utils/monet";
+import { getCSSVars } from "@/styles/cssVars";
+import { wallpaper, generateThemeFromImage } from "@/utils/monet";
 import LoadingScreen from "@/components/feedback/LoadingScreen";
 import WallpaperProvider from "@/contexts/WallpaperContext";
 
 export default function ThemeWrapper({ children }) {
-	const [mounted, setMounted] = useState(false);
+	const [theme, setTheme] = useState(null);
 
 	useEffect(() => {
-		setMounted(true);
+		const initTheme = async () => {
+			try {
+				const palette = await generateThemeFromImage(wallpaper.src);
+				setTheme(getCSSVars(palette));
+			} catch (error) {
+				console.error("Failed to generate theme:", error);
+			}
+		};
+
+		initTheme();
 	}, []);
 
-	if (!mounted) {
+	if (!theme) {
 		return <LoadingScreen />;
 	}
 
 	return (
 		<WallpaperProvider value={wallpaper}>
-			<ThemeProvider theme={cssVars}>{children}</ThemeProvider>
+			<ThemeProvider theme={theme}>{children}</ThemeProvider>
 		</WallpaperProvider>
 	);
 }

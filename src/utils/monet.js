@@ -1,17 +1,60 @@
 import {
 	argbFromHex,
+	Hct,
 	hexFromArgb,
-	themeFromSourceColor,
+	MaterialDynamicColors,
+	SchemeExpressive,
 	sourceColorFromImage,
 } from "@ktibow/material-color-utilities-nightly";
 import { monetStore } from "@/store/monetStore";
 
 const wallpapersArray = Object.values(monetStore);
 
+const mdc = new MaterialDynamicColors();
+
 function schemeToHex(scheme) {
+	const colors = {
+		primary: mdc.primary(),
+		onPrimary: mdc.onPrimary(),
+		primaryContainer: mdc.primaryContainer(),
+		onPrimaryContainer: mdc.onPrimaryContainer(),
+		secondary: mdc.secondary(),
+		onSecondary: mdc.onSecondary(),
+		secondaryContainer: mdc.secondaryContainer(),
+		onSecondaryContainer: mdc.onSecondaryContainer(),
+		tertiary: mdc.tertiary(),
+		onTertiary: mdc.onTertiary(),
+		tertiaryContainer: mdc.tertiaryContainer(),
+		onTertiaryContainer: mdc.onTertiaryContainer(),
+		error: mdc.error(),
+		onError: mdc.onError(),
+		errorContainer: mdc.errorContainer(),
+		onErrorContainer: mdc.onErrorContainer(),
+		background: mdc.background(),
+		onBackground: mdc.onBackground(),
+		surface: mdc.surface(),
+		onSurface: mdc.onSurface(),
+		surfaceVariant: mdc.surfaceVariant(),
+		onSurfaceVariant: mdc.onSurfaceVariant(),
+		outline: mdc.outline(),
+		outlineVariant: mdc.outlineVariant(),
+		shadow: mdc.shadow(),
+		scrim: mdc.scrim(),
+		inverseSurface: mdc.inverseSurface(),
+		inverseOnSurface: mdc.inverseOnSurface(),
+		inversePrimary: mdc.inversePrimary(),
+		surfaceDim: mdc.surfaceDim(),
+		surfaceBright: mdc.surfaceBright(),
+		surfaceContainerLowest: mdc.surfaceContainerLowest(),
+		surfaceContainerLow: mdc.surfaceContainerLow(),
+		surfaceContainer: mdc.surfaceContainer(),
+		surfaceContainerHigh: mdc.surfaceContainerHigh(),
+		surfaceContainerHighest: mdc.surfaceContainerHighest(),
+	};
+
 	const json = {};
-	for (const [key, value] of Object.entries(scheme.toJSON())) {
-		json[key] = hexFromArgb(value);
+	for (const [key, value] of Object.entries(colors)) {
+		json[key] = hexFromArgb(value.getArgb(scheme));
 	}
 	return json;
 }
@@ -50,19 +93,22 @@ export async function generateThemeFromImage(imageSource) {
 		sourceColor = argbFromHex("#2962ff");
 	}
 
-	const theme = themeFromSourceColor(sourceColor);
+	const hct = Hct.fromInt(sourceColor);
+	const lightScheme = new SchemeExpressive(hct, false, 0.0);
+	lightScheme.specVersion = 2025;
+
+	const darkScheme = new SchemeExpressive(hct, true, 0.0);
+	darkScheme.specVersion = 2025;
 
 	return {
 		schemes: {
-			light: schemeToHex(theme.schemes.light),
-			dark: schemeToHex(theme.schemes.dark),
+			light: schemeToHex(lightScheme),
+			dark: schemeToHex(darkScheme),
 		},
 		palettes: {
-			primary: paletteToHex(theme.palettes.primary),
-			secondary: paletteToHex(theme.palettes.secondary),
-			tertiary: paletteToHex(theme.palettes.tertiary),
-			neutral: paletteToHex(theme.palettes.neutral),
-			neutralVariant: paletteToHex(theme.palettes.neutralVariant),
+			primary: paletteToHex(lightScheme.primaryPalette),
+			secondary: paletteToHex(lightScheme.secondaryPalette),
+			tertiary: paletteToHex(lightScheme.tertiaryPalette),
 		},
 	};
 }

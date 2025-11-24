@@ -11,8 +11,10 @@ const logoTypeface = afacad.style.fontFamily;
 export const getCSSVars = (palette) => {
 	const darkPalette = palette.schemes.dark;
 	const lightPalette = palette.schemes.light;
-	const primaryTones = palette.palettes.primary;
-	const secondaryTones = palette.palettes.secondary;
+	const primaryTonesLight = palette.palettes.light.primary;
+	const secondaryTonesLight = palette.palettes.light.secondary;
+	const primaryTonesDark = palette.palettes.dark.primary;
+	const secondaryTonesDark = palette.palettes.dark.secondary;
 
 	return createTheme({
 		cssVariables: true,
@@ -35,13 +37,13 @@ export const getCSSVars = (palette) => {
 					},
 					primary: {
 						container: darkPalette.primaryContainer,
-						hover: primaryTones[70],
+						hover: primaryTonesDark[70],
 						inverse: darkPalette.inversePrimary,
 						main: darkPalette.primary,
 					},
 					secondary: {
 						container: darkPalette.secondaryContainer,
-						hover: secondaryTones[25],
+						hover: secondaryTonesDark[25],
 						main: darkPalette.secondary,
 						on: {
 							container: darkPalette.onSecondaryContainer,
@@ -49,7 +51,7 @@ export const getCSSVars = (palette) => {
 					},
 					section: {
 						about: {
-							background: primaryTones[50],
+							background: primaryTonesDark[50],
 							text: darkPalette.onPrimaryFixed,
 						},
 						projects: darkPalette.secondaryFixed,
@@ -89,13 +91,13 @@ export const getCSSVars = (palette) => {
 					},
 					primary: {
 						container: lightPalette.primaryContainer,
-						hover: primaryTones[50],
+						hover: primaryTonesLight[50],
 						inverse: lightPalette.inversePrimary,
 						main: lightPalette.primary,
 					},
 					secondary: {
 						container: lightPalette.secondaryContainer,
-						hover: secondaryTones[95],
+						hover: secondaryTonesLight[95],
 						main: lightPalette.secondary,
 						on: {
 							container: lightPalette.onSecondaryContainer,
@@ -103,7 +105,7 @@ export const getCSSVars = (palette) => {
 					},
 					section: {
 						about: {
-							background: primaryTones[60],
+							background: primaryTonesLight[60],
 							text: lightPalette.onPrimaryFixed,
 						},
 						projects: lightPalette.secondaryFixed,

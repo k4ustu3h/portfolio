@@ -6,9 +6,9 @@ import {
 	SchemeExpressive,
 	sourceColorFromImage,
 } from "@ktibow/material-color-utilities-nightly";
-import { monetStore } from "@/store/monetStore";
+import wallpapers from "@/data/wallpapers.json";
 
-const wallpapersArray = Object.values(monetStore);
+const wallpapersArray = Object.values(wallpapers).map((src) => ({ src }));
 
 const mdc = new MaterialDynamicColors();
 

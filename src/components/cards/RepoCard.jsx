@@ -6,7 +6,6 @@ import Card from "@mui/material/Card";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import Chip from "@mui/material/Chip";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import breakpoints from "@/styles/breakpoints.json";
@@ -14,22 +13,24 @@ import breakpoints from "@/styles/breakpoints.json";
 export default function RepoCard({ repo }) {
 	const screenSize = { xs: useMediaQuery(breakpoints.width.xs) };
 
-	const archiveStatus = repo.archived ? "" : "none";
-	const archivedInBox = repo.archived
+	const isArchived = repo.archived;
+	const nameShort = repo.name.length < 16;
+
+	const archivedInBox = isArchived
 		? screenSize.xs
-			? repo.name < 10
+			? nameShort
 				? ""
 				: "none"
 			: ""
 		: "none";
 
-	const archivedNotInBox = repo.archived
+	const archivedNotInBox = isArchived
 		? screenSize.xs
-			? repo.name > 10
+			? nameShort
 				? "none"
 				: ""
 			: "none"
-		: "";
+		: "none";
 
 	const forkedOrNot = repo.forks_count
 		? "icon-park-solid:fork"
@@ -46,16 +47,25 @@ export default function RepoCard({ repo }) {
 		<Card variant="elevated">
 			<CardActionArea href={repo.html_url}>
 				<CardContent>
-					<Box display="flex" justifyContent="space-between">
+					<Box
+						alignItems="center"
+						display="flex"
+						justifyContent="space-between"
+					>
 						<Typography gutterBottom variant="h5">
 							{repo.name}
 						</Typography>
-						<Chip
-							label="Archived"
-							sx={{ display: archivedInBox }}
+						<Icon
+							fontSize={24}
+							icon={"material-symbols:archive-outline-rounded"}
+							style={{ display: archivedInBox, marginBottom: 8 }}
 						/>
 					</Box>
-					<Chip label="Archived" sx={{ display: archivedNotInBox }} />
+					<Icon
+						fontSize={24}
+						icon={"material-symbols:archive-outline-rounded"}
+						style={{ display: archivedNotInBox }}
+					/>
 					<Typography variant="body2" color="text.secondary">
 						{repo.description}
 					</Typography>

@@ -1,32 +1,32 @@
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import { getThemeForWallpaper } from "@/utils/theme-server";
 import { googleSansFlex } from "@/app/fonts";
 import ThemeWrapper from "@/components/ThemeWrapper";
+import wallpapers from "@/data/wallpapers.json";
+export const dynamic = "force-dynamic";
 
-export const metadata = {
-	title: "Kaustubh Ladiya",
-	description: "Just another copy-paster...",
-};
+const wallpapersArray = Object.values(wallpapers).map((src) => ({ src }));
 
-export default function RootLayout(props) {
+function getRandomWallpaper(arr) {
+	const randomIndex = Math.floor(Math.random() * arr.length);
+	const randomWallpaper = arr[randomIndex];
+
+	return {
+		wallpaper: randomWallpaper,
+	};
+}
+
+export default async function RootLayout(props) {
+	const { wallpaper } = getRandomWallpaper(wallpapersArray);
+	const theme = await getThemeForWallpaper(wallpaper.src);
+
 	return (
-		<html
-			className={googleSansFlex.variable}
-			lang="en"
-			suppressHydrationWarning
-		>
-			<head>
-				<link rel="me" href="https://mastodon.social/@k4ustu3h" />
-			</head>
+		<html className={googleSansFlex.variable} lang="en">
 			<body>
-				<div id="root">
-					<InitColorSchemeScript attribute="class" />
-					<AppRouterCacheProvider>
-						<ThemeWrapper>{props.children}</ThemeWrapper>
-					</AppRouterCacheProvider>
-					<SpeedInsights />
-				</div>
+				<InitColorSchemeScript attribute="class" />
+				<ThemeWrapper theme={theme} wallpaper={wallpaper}>
+					{props.children}
+				</ThemeWrapper>
 			</body>
 		</html>
 	);

@@ -6,13 +6,10 @@ import {
 	SchemeExpressive,
 	sourceColorFromImage,
 } from "@ktibow/material-color-utilities-nightly";
-import wallpapers from "@/data/wallpapers.json";
-
-const wallpapersArray = Object.values(wallpapers).map((src) => ({ src }));
 
 const mdc = new MaterialDynamicColors();
 
-function schemeToHex(scheme) {
+export function schemeToHex(scheme) {
 	const colors = {
 		primary: mdc.primary(),
 		onPrimary: mdc.onPrimary(),
@@ -42,7 +39,7 @@ function schemeToHex(scheme) {
 	return json;
 }
 
-function paletteToHex(tonalPalette) {
+export function paletteToHex(tonalPalette) {
 	const tones = [
 		0, 5, 10, 15, 20, 25, 30, 35, 40, 50, 60, 70, 80, 90, 95, 98, 99, 100,
 	];
@@ -53,29 +50,7 @@ function paletteToHex(tonalPalette) {
 	return json;
 }
 
-export async function generateThemeFromImage(imageSource) {
-	let sourceColor;
-	try {
-		if (typeof imageSource === "string") {
-			const img = new Image();
-			img.src = imageSource;
-			img.crossOrigin = "Anonymous";
-			await new Promise((resolve, reject) => {
-				img.onload = resolve;
-				img.onerror = reject;
-			});
-			sourceColor = await sourceColorFromImage(img);
-		} else {
-			sourceColor = await sourceColorFromImage(imageSource);
-		}
-	} catch (error) {
-		console.error(
-			"Failed to extract color from image, using fallback.",
-			error
-		);
-		sourceColor = argbFromHex("#2962ff");
-	}
-
+export function generateThemeFromSourceColor(sourceColor) {
 	const hct = Hct.fromInt(sourceColor);
 	const lightScheme = new SchemeExpressive(hct, false, 0.0);
 	lightScheme.specVersion = 2025;
@@ -109,15 +84,28 @@ export async function generateThemeFromImage(imageSource) {
 	};
 }
 
-function getRandomWallpaper(arr) {
-	const randomIndex = Math.floor(Math.random() * arr.length);
-	const randomWallpaper = arr[randomIndex];
+export async function generateThemeFromImage(imageSource) {
+	let sourceColor;
+	try {
+		if (typeof imageSource === "string") {
+			const img = new Image();
+			img.src = imageSource;
+			img.crossOrigin = "Anonymous";
+			await new Promise((resolve, reject) => {
+				img.onload = resolve;
+				img.onerror = reject;
+			});
+			sourceColor = await sourceColorFromImage(img);
+		} else {
+			sourceColor = await sourceColorFromImage(imageSource);
+		}
+	} catch (error) {
+		console.error(
+			"Failed to extract color from image, using fallback.",
+			error
+		);
+		sourceColor = argbFromHex("#2962ff");
+	}
 
-	return {
-		wallpaper: randomWallpaper,
-	};
+	return generateThemeFromSourceColor(sourceColor);
 }
-
-const { wallpaper } = getRandomWallpaper(wallpapersArray);
-
-export { wallpaper };

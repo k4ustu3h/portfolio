@@ -12,21 +12,21 @@
 		"@emotion/cache": "11.14.0",
 		"@emotion/react": "11.14.0",
 		"@emotion/styled": "11.14.1",
-		"@ktibow/material-color-utilities-nightly": "^0.3.11763580498000",
+		"@ktibow/material-color-utilities-nightly": "0.3.11763580498000",
 		"@mui/lab": "7.0.1-beta.19",
 		"@mui/material": "7.3.5",
 		"@mui/material-nextjs": "7.3.5",
 		"@vercel/speed-insights": "1.2.0",
-		"next": "16.0.3",
+		"next": "16.0.4",
 		"react": "19.2.0",
 		"react-dom": "19.2.0",
-		"react-material": "^0.0.1-alpha4",
+		"react-material": "0.0.1-alpha4",
 		"react-type-animation": "3.2.0",
-		"sharp": "^0.34.5"
+		"sharp": "0.34.5"
 	},
 	"devDependencies": {
 		"@iconify/react": "6.0.2",
 		"eslint": "9.39.1",
-		"eslint-config-next": "16.0.3"
+		"eslint-config-next": "16.0.4"
 	}
 }

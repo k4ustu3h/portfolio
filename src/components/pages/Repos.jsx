@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Container from "@mui/material/Container";
-import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Masonry from "@mui/lab/Masonry";
 import Typography from "@mui/material/Typography";
@@ -53,7 +52,6 @@ export default function Repos() {
 
 	return (
 		<>
-			<CssBaseline />
 			<NavBar />
 			<Container sx={{ color: "on.surface", py: 2 }}>
 				<Container>

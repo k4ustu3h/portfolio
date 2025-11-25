@@ -1,3 +1,4 @@
+import "@/styles/index.css";
 import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 import { getThemeForWallpaper } from "@/utils/theme-server";
 import { googleSansFlex } from "@/app/fonts";
@@ -21,7 +22,11 @@ export default async function RootLayout(props) {
 	const theme = await getThemeForWallpaper(wallpaper.src);
 
 	return (
-		<html className={googleSansFlex.variable} lang="en">
+		<html
+			className={googleSansFlex.variable}
+			lang="en"
+			suppressHydrationWarning
+		>
 			<body>
 				<InitColorSchemeScript attribute="class" />
 				<ThemeWrapper theme={theme} wallpaper={wallpaper}>

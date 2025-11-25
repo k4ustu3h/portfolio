@@ -1,8 +1,6 @@
-import "@/styles/index.css";
-import React from "react";
 import dynamic from "next/dynamic";
 
-const Home = dynamic(() => import("@/pages/Home"));
+const Home = dynamic(() => import("@/components/pages/Home"));
 
 export default function Page() {
 	return <Home />;

@@ -18,14 +18,19 @@ export default function LockScreenOverlay() {
 			justifyContent="center"
 			sx={{
 				aspectRatio: 9 / 20,
-				fontWeight: 700,
+				fontVariationSettings: `"ROND" 100`,
+				fontWeight: 450,
 				transition: "250ms linear",
 				transitionProperty: "background-color, font-weight",
 				userSelect: "none",
+				":active": {
+					fontWeight: 700,
+				},
 				":hover": {
 					backgroundColor: "rgba(0, 0, 0, 1)",
 					color: "white",
-					fontWeight: 300,
+					fontVariationSettings: `"ROND" 100, "wdth" 85`,
+					fontWeight: 200,
 				},
 			}}
 		>

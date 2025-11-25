@@ -26,7 +26,7 @@ export default function NavBar() {
 			elevation={0}
 			id="back-to-top-anchor"
 			position="static"
-			sx={{ px: 4, py: 2 }}
+			sx={{ fontVariationSettings: `"ROND" 100`, px: 4, py: 2 }}
 		>
 			<Toolbar>
 				<Typography className="Logo" variant="logo">

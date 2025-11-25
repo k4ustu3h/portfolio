@@ -1,6 +1,5 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import breakpoints from "@/styles/breakpoints.json";
 import SocialIconButton from "@/components/buttons/iconButtons/SocialIconButton";
@@ -8,8 +7,6 @@ import SocialIconButton from "@/components/buttons/iconButtons/SocialIconButton"
 export default function Footer() {
 	const sm = useMediaQuery(breakpoints.width.sm);
 	const xs = useMediaQuery(breakpoints.width.xs);
-
-	const currentYear = new Date().getFullYear();
 
 	return (
 		<Box
@@ -31,7 +28,6 @@ export default function Footer() {
 			>
 				<SocialIconButton />
 			</Box>
-			<Typography>© {currentYear} Kaustubh Ladiya</Typography>
 		</Box>
 	);
 }

@@ -94,10 +94,7 @@ export default function ProjectCard() {
 							<CardContent>
 								<Box display="flex">
 									<Box>
-										<Typography
-											fontWeight="bold"
-											variant="h5"
-										>
+										<Typography variant="h5">
 											{project.heading}
 										</Typography>
 										<Typography mt={2} variant="body2">

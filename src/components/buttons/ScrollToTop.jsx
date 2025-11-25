@@ -24,7 +24,10 @@ export default function ScrollToTop() {
 				sx={{ position: "fixed", zIndex: 20, right: 16, bottom: 16 }}
 			>
 				<Fab variant="scroll-to-top">
-					<Icon icon="mdi:chevron-up" width="24" />
+					<Icon
+						icon="material-symbols:keyboard-arrow-up-rounded"
+						width="24"
+					/>
 				</Fab>
 			</Box>
 		</Slide>

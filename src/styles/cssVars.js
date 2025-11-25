@@ -349,14 +349,21 @@ export const getCSSVars = (palette) => {
 			clock: cc.typography.clock,
 			fontFamily: googleSansFlex.style.fontFamily,
 			h3: {
+				fontVariationSettings: `"ROND" 100`,
+				fontWeight: "bold",
+			},
+			h5: {
+				fontVariationSettings: `"ROND" 100`,
 				fontWeight: "bold",
 			},
 			heroPrimaryHeading: {
+				fontVariationSettings: `"ROND" 100, "wdth" 110`,
 				fontWeight: 700,
 				textDecoration: "underline",
 				transitionProperty: "font-weight, letter-spacing",
 				transition: "150ms linear",
 				":hover": {
+					fontVariationSettings: `"ROND" 100, "wdth" 120`,
 					fontWeight: 900,
 					letterSpacing: 1,
 				},

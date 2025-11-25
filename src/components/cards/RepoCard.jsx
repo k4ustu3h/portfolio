@@ -37,8 +37,8 @@ export default function RepoCard({ repo }) {
 		: "icon-park-outline:fork";
 	const languageOrNot = repo.language ? "" : "none";
 	const starredOrNot = repo.stargazers_count
-		? "ic:round-star"
-		: "ic:round-star-border";
+		? "material-symbols:star-rounded"
+		: "material-symbols:star-outline-rounded";
 
 	const forksUrl = `${repo.html_url}/forks`;
 	const stargazersUrl = `${repo.html_url}/stargazers`;
@@ -91,7 +91,7 @@ export default function RepoCard({ repo }) {
 				<Button sx={{ display: languageOrNot }}>
 					<Icon
 						fontSize={18}
-						icon="ic:round-code"
+						icon="material-symbols:code-rounded"
 						style={{ marginRight: 8 }}
 					/>
 					{repo.language}

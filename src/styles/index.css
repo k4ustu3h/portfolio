@@ -25,6 +25,7 @@ body {
 }
 
 .Hero {
+	font-variation-settings: "ROND" 100, "wdth" 110;
 	font-weight: 700;
 	user-select: none;
 }

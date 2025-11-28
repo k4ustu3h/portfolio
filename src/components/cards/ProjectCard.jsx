@@ -8,82 +8,32 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import breakpoints from "@/styles/breakpoints.json";
-import ForkIcons from "@/assets/svgs/ForkIcons";
 import IntelliHire from "@/assets/svgs/IntelliHire";
 import MonochromeIcon from "@/components/icons/MonochromeIcon";
+import projects from "@/data/projects.json";
 
 export default function ProjectCard() {
 	const sm = useMediaQuery(breakpoints.width.sm);
 	const xs = useMediaQuery(breakpoints.width.xs);
+	const isSmall = sm || xs;
 
-	const projects = [
-		{
-			heading: "DeDupe",
-			description: "File deduplication Android app.",
-			icon: "material-symbols:file-copy-off-outline",
-
-			primaryAction: {
-				label: "Download",
-				link: "https://github.com/k4ustu3h/DeDupe/releases/latest",
-			},
-			secondaryAction: {
-				link: "https://github.com/k4ustu3h/DeDupe",
-			},
-		},
-		{
-			heading: "Food To Go",
-			description:
-				"A food delivery website created with ReactJS, with backend created with MongoDB, Express and NodeJS.",
-			icon: "ic:twotone-delivery-dining",
-			primaryAction: {
-				label: "Visit website",
-				link: "https://foodtogo.vercel.app/",
-			},
-			secondaryAction: {
-				link: "https://github.com/k4ustu3h/foodtogo",
-			},
-		},
-		{
-			heading: "Forkicons",
-			description:
-				"Forkicons is a fork of Lawnicons, an icon pack developed by the Lawnchair team. Forkicons restores the original themed icons of apps and adds icons for apps that doesn't have one, instead of the outlined icons in the original Lawnicons.",
-			primaryAction: {
-				label: "Download",
-				link: "https://github.com/k4ustu3h/forkicons/releases/latest",
-			},
-			secondaryAction: {
-				link: "https://github.com/k4ustu3h/forkicons",
-			},
-		},
-		{
-			heading: "IntelliHire",
-			description: "Intelligent Recruitment & Skill Assessment System",
-			primaryAction: {
-				label: "Download",
-				link: "https://github.com/k4ustu3h/intellihire-flutter/releases/latest",
-			},
-			secondaryAction: {
-				link: "https://github.com/k4ustu3h/intellihire-flutter",
-			},
-		},
-		{
-			heading: "Just Another Material Theme",
-			description:
-				"A dark(er) theme inspired by Dracula but with Material colors for Visual Studio Code.",
-			icon: "mdi:microsoft-visual-studio-code",
-
-			primaryAction: {
-				label: "Install",
-				link: "https://marketplace.visualstudio.com/items?itemName=k4ustu3h.theme-jamt",
-			},
-			secondaryAction: {
-				link: "https://github.com/k4ustu3h/jamt-vscode",
-			},
-		},
-	];
 	return (
 		<>
 			{projects.map((project, index) => {
+				const icon =
+					index === 3 ? (
+						<IntelliHire />
+					) : (
+						<Icon icon={project.icon} />
+					);
+				const mt = isSmall
+					? 5
+					: index === 1 || index === 4
+					? 4
+					: index === 0 || index === 3
+					? 6.5
+					: "";
+
 				return (
 					<Stack
 						direction="row"
@@ -102,39 +52,18 @@ export default function ProjectCard() {
 										</Typography>
 									</Box>
 									<Box
-										display={sm || xs ? "inherit" : "none"}
+										display={isSmall ? "inherit" : "none"}
 										fontSize={48}
 										p={1}
 									>
-										{index === 0 ||
-										index === 1 ||
-										index === 4 ? (
-											<Icon icon={project.icon} />
-										) : index === 3 ? (
-											<IntelliHire />
-										) : (
-											<ForkIcons />
-										)}
+										{icon}
 									</Box>
 								</Box>
 							</CardContent>
-							<CardActions
-								sx={{
-									m: 2,
-								}}
-							>
+							<CardActions sx={{ m: 2 }}>
 								<Button
 									href={project.secondaryAction.link}
-									sx={{
-										mt:
-											sm || xs
-												? 5
-												: index === 0 ||
-												  index === 1 ||
-												  index === 4
-												? 4
-												: "",
-									}}
+									sx={{ mt: mt }}
 									variant="outlined"
 									target="_blank"
 								>
@@ -142,16 +71,7 @@ export default function ProjectCard() {
 								</Button>
 								<Button
 									href={project.primaryAction.link}
-									sx={{
-										mt:
-											sm || xs
-												? 5
-												: index === 0 ||
-												  index === 1 ||
-												  index === 4
-												? 4
-												: "",
-									}}
+									sx={{ mt: mt }}
 									variant="filledSmall"
 									target="_blank"
 								>
@@ -160,7 +80,7 @@ export default function ProjectCard() {
 							</CardActions>
 						</Card>
 						<Box
-							display={sm || xs ? "none" : "inherit"}
+							display={isSmall ? "none" : "inherit"}
 							height={256}
 							width={256}
 						>
@@ -169,13 +89,7 @@ export default function ProjectCard() {
 								color="primary.main"
 								size={128}
 							>
-								{index === 0 || index === 1 || index === 4 ? (
-									<Icon icon={project.icon} />
-								) : index === 3 ? (
-									<IntelliHire />
-								) : (
-									<ForkIcons />
-								)}
+								{icon}
 							</MonochromeIcon>
 						</Box>
 					</Stack>

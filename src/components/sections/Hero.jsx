@@ -30,7 +30,7 @@ export default function Hero() {
 			</Box>
 			<Box
 				className="Hero"
-				fontSize={xs ? "8vw" : "4.5vw"}
+				fontSize={xs ? "8vw" : "4vw"}
 				width={xs ? "100%" : "50%"}
 			>
 				<Typography variant="heroPrimaryHeading">

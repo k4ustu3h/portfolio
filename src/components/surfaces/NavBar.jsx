@@ -3,6 +3,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
+import ButtonGroup from "@mui/material/ButtonGroup";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -33,30 +34,33 @@ export default function NavBar() {
 					kl.
 				</Typography>
 				<div style={{ flexGrow: 1 }}></div>
-				{pages.map((page, index) => {
-					const aboutAndProjects = index === 1 || index === 2;
-					return (
-						<Button
-							color={
-								pathName === page.link ? "inherit" : "secondary"
-							}
-							component={aboutAndProjects ? Button : Link}
-							href={page.link}
-							key={page.label}
-							size="large"
-							sx={{
-								display: aboutAndProjects
-									? xs
-										? "none"
-										: "inherit"
-									: "",
-								mx: 1,
-							}}
-						>
-							{page.label}
-						</Button>
-					);
-				})}
+				<ButtonGroup>
+					{pages.map((page, index) => {
+						const aboutAndProjects = index === 1 || index === 2;
+						return (
+							<Button
+								color={
+									pathName === page.link
+										? "inherit"
+										: "secondary"
+								}
+								component={aboutAndProjects ? Button : Link}
+								href={page.link}
+								key={page.label}
+								size="large"
+								sx={{
+									display: aboutAndProjects
+										? xs
+											? "none"
+											: "inherit"
+										: "",
+								}}
+							>
+								{page.label}
+							</Button>
+						);
+					})}
+				</ButtonGroup>
 			</Toolbar>
 			<ScrollToTop />
 		</AppBar>

@@ -249,6 +249,42 @@ export const getCSSVars = (palette) => {
 					},
 				],
 			},
+			MuiButtonGroup: {
+				styleOverrides: {
+					firstButton: {
+						borderBottomLeftRadius: 24,
+						borderTopLeftRadius: 24,
+						":active": {
+							borderBottomLeftRadius: 12,
+							borderTopLeftRadius: 12,
+						},
+					},
+					grouped: {
+						border: "none !important",
+						borderRadius: 16,
+						":active": {
+							borderRadius: 12,
+						},
+					},
+					lastButton: {
+						borderBottomRightRadius: 24,
+						borderTopRightRadius: 24,
+						":active": {
+							borderBottomRightRadius: 12,
+							borderTopRightRadius: 12,
+						},
+					},
+					root: {
+						border: "none",
+						borderRadius: 16,
+						gap: 2,
+						overflow: "hidden",
+						":active": {
+							borderRadius: 12,
+						},
+					},
+				},
+			},
 			MuiCard: {
 				styleOverrides: {
 					root: {

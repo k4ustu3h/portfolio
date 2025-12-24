@@ -1,5 +1,4 @@
-import { Afacad } from "next/font/google";
-import localFont from "next/font/local";
+import { Afacad, Google_Sans_Flex } from "next/font/google";
 
 export const afacad = Afacad({
 	adjustFontFallback: false,
@@ -8,8 +7,12 @@ export const afacad = Afacad({
 	subsets: ["latin"],
 });
 
-export const googleSansFlex = localFont({
-	src: "fonts/google_sans_flex.ttf",
+export const googleSansFlex = Google_Sans_Flex({
+	adjustFontFallback: false,
+	axes: ["ROND", "slnt", "wght", "wdth"],
 	display: "swap",
+	fallback: ["system-ui"],
+	style: "normal",
+	subsets: ["latin"],
 	variable: "--font-google-sans-flex",
 });

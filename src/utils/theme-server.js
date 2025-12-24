@@ -4,7 +4,7 @@ import {
 	QuantizerCelebi,
 	Score,
 	argbFromRgb,
-} from "@ktibow/material-color-utilities-nightly";
+} from "@evowizz/material-color-utilities-canary";
 import { generateThemeFromSourceColor } from "@/utils/monet";
 
 export async function getThemeForWallpaper(wallpaperSrc) {

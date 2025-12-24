@@ -5,7 +5,7 @@ import {
 	MaterialDynamicColors,
 	SchemeExpressive,
 	sourceColorFromImage,
-} from "@ktibow/material-color-utilities-nightly";
+} from "@evowizz/material-color-utilities-canary";
 
 const mdc = new MaterialDynamicColors();
 

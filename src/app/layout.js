@@ -1,4 +1,5 @@
 import "@/styles/index.css";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 import { getThemeForWallpaper } from "@/utils/theme-server";
 import { googleSansFlex } from "@/app/fonts";
@@ -40,6 +41,7 @@ export default async function RootLayout(props) {
 					{props.children}
 				</ThemeWrapper>
 			</body>
+			<GoogleAnalytics gaId="G-YZQVKNX5H6" />
 		</html>
 	);
 }

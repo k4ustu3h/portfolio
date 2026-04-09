@@ -22,7 +22,13 @@ export default function BasicClock() {
 		String(value).includes("1") ? 2 : "normal";
 
 	return (
-		<Box alignItems="center" display="flex" flexDirection="column">
+		<Box
+			sx={{
+				alignItems: "center",
+				display: "flex",
+				flexDirection: "column",
+			}}
+		>
 			<Typography
 				variant="clock"
 				sx={{ letterSpacing: getLetterSpacing(hours) }}
@@ -30,9 +36,11 @@ export default function BasicClock() {
 				{hours}
 			</Typography>
 			<Typography
-				mt={-8}
 				variant="clock"
-				sx={{ letterSpacing: getLetterSpacing(minutes) }}
+				sx={{
+					mt: -8,
+					letterSpacing: getLetterSpacing(minutes),
+				}}
 			>
 				{minutes}
 			</Typography>

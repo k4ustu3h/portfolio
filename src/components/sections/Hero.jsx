@@ -12,26 +12,32 @@ export default function Hero() {
 
 	return (
 		<Stack
-			alignItems={xs ? "" : "end"}
-			color="on.surface"
 			direction={xs ? "column" : "row-reverse"}
-			height="89vh"
-			px={xs ? 4 : 8}
-			pb={xs ? 10 : 6}
 			spacing={xs ? 6 : 0}
+			sx={{
+				alignItems: xs ? "" : "end",
+				color: "on.surface",
+				height: "89vh",
+				pb: xs ? 10 : 6,
+				px: xs ? 4 : 8,
+			}}
 		>
 			<Box
-				display="flex"
-				justifyContent="center"
-				pb={xs ? 0 : 2}
-				width={xs ? "100%" : "50%"}
+				sx={{
+					display: "flex",
+					justifyContent: "center",
+					pb: xs ? 0 : 2,
+					width: xs ? "100%" : "50%",
+				}}
 			>
 				<LockScreen />
 			</Box>
 			<Box
 				className="Hero"
-				fontSize={xs ? "8vw" : "4vw"}
-				width={xs ? "100%" : "50%"}
+				sx={{
+					fontSize: xs ? "8vw" : "4vw",
+					width: xs ? "100%" : "50%",
+				}}
 			>
 				<Typography variant="heroPrimaryHeading">
 					Just another

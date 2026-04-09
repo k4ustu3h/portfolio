@@ -48,9 +48,11 @@ export default function RepoCard({ repo }) {
 			<CardActionArea href={repo.html_url}>
 				<CardContent>
 					<Box
-						alignItems="center"
-						display="flex"
-						justifyContent="space-between"
+						sx={{
+							alignItems: "center",
+							display: "flex",
+							justifyContent: "space-between",
+						}}
 					>
 						<Typography gutterBottom variant="h5">
 							{repo.name}
@@ -66,7 +68,12 @@ export default function RepoCard({ repo }) {
 						icon={"material-symbols:archive-outline-rounded"}
 						style={{ display: archivedNotInBox }}
 					/>
-					<Typography variant="body2" color="text.secondary">
+					<Typography
+						variant="body2"
+						sx={{
+							color: "text.secondary",
+						}}
+					>
 						{repo.description}
 					</Typography>
 				</CardContent>

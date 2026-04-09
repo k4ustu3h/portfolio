@@ -5,7 +5,13 @@ import skills from "@/data/skills.json";
 
 export default function SkillButton() {
 	return (
-		<Grid mt={1} container spacing={1}>
+		<Grid
+			container
+			spacing={1}
+			sx={{
+				mt: 1,
+			}}
+		>
 			{skills.map((skill) => {
 				return (
 					<Grid key={skill.label}>

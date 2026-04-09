@@ -9,18 +9,18 @@ export default function MonochromeIcon({
 }) {
 	return (
 		<Box
-			alignSelf="center"
 			sx={{
-				display: "flex",
-				justifyContent: "center",
 				alignItems: "center",
-				width: "100%",
-				height: "100%",
-				borderRadius: "50%",
+				alignSelf: "center",
 				backgroundColor: backgroundColor,
+				borderRadius: "50%",
+				color: color,
+				display: "flex",
+				fontSize: size,
+				height: "100%",
+				justifyContent: "center",
+				width: "100%",
 			}}
-			fontSize={size}
-			color={color}
 		>
 			{children}
 		</Box>

@@ -133,6 +133,7 @@ export const getCSSVars = (palette) => {
 				styleOverrides: {
 					root: {
 						transition: "border-radius 0.1s ease",
+						textTransform: "none",
 					},
 				},
 				variants: [
@@ -145,7 +146,6 @@ export const getCSSVars = (palette) => {
 							height: cc.button.small.height,
 							paddingLeft: cc.button.small.padding,
 							paddingRight: cc.button.small.padding,
-							textTransform: "none",
 							":active": {
 								borderRadius:
 									cc.button.small.borderRadius.active,
@@ -166,7 +166,6 @@ export const getCSSVars = (palette) => {
 							height: cc.button.medium.height,
 							paddingLeft: cc.button.medium.padding,
 							paddingRight: cc.button.medium.padding,
-							textTransform: "none",
 							":active": {
 								borderRadius:
 									cc.button.medium.borderRadius.active,
@@ -187,7 +186,6 @@ export const getCSSVars = (palette) => {
 							height: cc.button.large.height,
 							paddingLeft: cc.button.large.padding,
 							paddingRight: cc.button.large.padding,
-							textTransform: "none",
 							":active": {
 								borderRadius:
 									cc.button.large.borderRadius.active,
@@ -205,7 +203,6 @@ export const getCSSVars = (palette) => {
 							height: cc.button.small.height,
 							paddingLeft: cc.button.small.padding,
 							paddingRight: cc.button.small.padding,
-							textTransform: "none",
 							":active": {
 								borderRadius:
 									cc.button.small.borderRadius.active,
@@ -219,7 +216,6 @@ export const getCSSVars = (palette) => {
 							height: cc.button.small.height,
 							paddingLeft: cc.button.small.padding,
 							paddingRight: cc.button.small.padding,
-							textTransform: "none",
 							":active": {
 								borderRadius:
 									cc.button.small.borderRadius.active,
@@ -236,7 +232,6 @@ export const getCSSVars = (palette) => {
 							height: cc.button.small.height,
 							paddingLeft: cc.button.small.padding,
 							paddingRight: cc.button.small.padding,
-							textTransform: "none",
 							":active": {
 								borderRadius:
 									cc.button.small.borderRadius.active,

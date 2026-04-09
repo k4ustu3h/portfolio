@@ -13,7 +13,7 @@ export default function Projects() {
 				borderColor: "background.default",
 			}}
 		>
-			<Stack p={4} spacing={6}>
+			<Stack spacing={6} sx={{ p: 4 }}>
 				<ProjectCard />
 			</Stack>
 		</Box>

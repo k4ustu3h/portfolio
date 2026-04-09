@@ -10,21 +10,25 @@ export default function Footer() {
 
 	return (
 		<Box
-			alignItems="center"
-			bgcolor="section.footer.background"
-			borderColor="background.default"
-			borderTop={4}
-			color="section.footer.text"
-			display="flex"
-			flexDirection="column"
-			gap={2}
-			p={8}
+			sx={{
+				alignItems: "center",
+				bgcolor: "section.footer.background",
+				borderColor: "background.default",
+				borderTop: 4,
+				color: "section.footer.text",
+				display: "flex",
+				flexDirection: "column",
+				gap: 2,
+				p: 8,
+			}}
 		>
 			<Box
-				alignItems="center"
-				display="flex"
-				flexDirection={sm || xs ? "column" : ""}
-				gap={1}
+				sx={{
+					alignItems: "center",
+					display: "flex",
+					flexDirection: sm || xs ? "column" : "",
+					gap: 1,
+				}}
 			>
 				<SocialIconButton />
 			</Box>

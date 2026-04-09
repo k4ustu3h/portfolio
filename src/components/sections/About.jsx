@@ -27,40 +27,43 @@ export default function About() {
 
 	return (
 		<Grid
-			color="section.about.text"
 			container
 			id="about"
-			p={md || xs ? 4 : 8}
 			sx={{
 				bgcolor: "section.about.background",
+				color: "section.about.text",
 				height: md || xs ? "inherit" : "100vh",
+				p: md || xs ? 4 : 8,
 			}}
 		>
 			<Grid size={{ md: 6 }}>
-				<Box height={iconSize} width={iconSize}>
+				<Box sx={{ height: iconSize, width: iconSize }}>
 					<MonochromeIcon
 						backgroundColor="background.default"
 						color="primary.main"
 						size={fontSize}
 					>
-						<Typography fontSize="inherit" variant="logoMonochrome">
+						<Typography
+							variant="logoMonochrome"
+							sx={{ fontSize: "inherit" }}
+						>
 							kl.
 						</Typography>
 					</MonochromeIcon>
 				</Box>
 			</Grid>
-			<Grid size={{ md: 6 }} mt={4}>
+			<Grid size={{ md: 6 }} sx={{ mt: 4 }}>
 				<Typography variant="h3">About</Typography>
-				<Typography my={2}>
+				<Typography sx={{ my: 2 }}>
 					Hello there, I’m Kaustubh Ladiya. A quick learner and
 					dedicated student with proficiency in Web development,
 					Android development, Graphic Design, and Linux fundamentals.
 				</Typography>
 				<AboutButton />
 			</Grid>
-			<Grid size={{ md: 8 }} mt={6}>
+			<Grid size={{ md: 8 }} sx={{ mt: 6 }}>
 				<SkillIcon />
-				<Typography variant="h3" align="left" my={2}>
+				<Typography align="left" sx={{ my: 2 }} variant="h3">
 					Skills & Tools
 				</Typography>
 				<SkillButton />

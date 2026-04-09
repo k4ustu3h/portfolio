@@ -37,7 +37,7 @@ export default function Repos() {
 	useEffect(() => {
 		const fetchData = async () => {
 			const response = await fetch(
-				`https://api.github.com/users/k4ustu3h/repos`
+				`https://api.github.com/users/k4ustu3h/repos`,
 			);
 			const data = await response.json();
 
@@ -55,7 +55,7 @@ export default function Repos() {
 			<NavBar />
 			<Container sx={{ color: "on.surface", py: 2 }}>
 				<Container>
-					<Typography py={4} variant="h4">
+					<Typography variant="h4" sx={{ py: 4 }}>
 						Source Repositories
 					</Typography>
 					<Masonry columns={columnSize} spacing={4} sx={{ m: 0 }}>
@@ -70,7 +70,7 @@ export default function Repos() {
 				</Container>
 				<Divider sx={{ py: 4 }} variant="middle" />
 				<Container sx={{ py: 4 }}>
-					<Typography py={4} variant="h4">
+					<Typography variant="h4" sx={{ py: 4 }}>
 						Forked Repositories
 					</Typography>
 					<Masonry columns={columnSize} spacing={4} sx={{ m: 0 }}>

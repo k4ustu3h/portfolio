@@ -29,32 +29,39 @@ export default function ProjectCard() {
 				const mt = isSmall
 					? 5
 					: index === 1 || index === 4
-					? 4
-					: index === 0 || index === 3
-					? 6.5
-					: "";
+						? 4
+						: index === 0 || index === 3
+							? 6.5
+							: "";
 
 				return (
 					<Stack
 						direction="row"
-						justifyContent="space-around"
 						key={project.heading}
+						sx={{ justifyContent: "space-around" }}
 					>
 						<Card sx={{ width: 512 }} variant="elevated">
 							<CardContent>
-								<Box display="flex">
+								<Box sx={{ display: "flex" }}>
 									<Box>
 										<Typography variant="h5">
 											{project.heading}
 										</Typography>
-										<Typography mt={2} variant="body2">
+										<Typography
+											sx={{ mt: 2 }}
+											variant="body2"
+										>
 											{project.description}
 										</Typography>
 									</Box>
 									<Box
-										display={isSmall ? "inherit" : "none"}
-										fontSize={48}
-										p={1}
+										sx={{
+											display: isSmall
+												? "inherit"
+												: "none",
+											fontSize: 48,
+											p: 1,
+										}}
 									>
 										{icon}
 									</Box>
@@ -80,9 +87,11 @@ export default function ProjectCard() {
 							</CardActions>
 						</Card>
 						<Box
-							display={isSmall ? "none" : "inherit"}
-							height={256}
-							width={256}
+							sx={{
+								display: isSmall ? "none" : "inherit",
+								height: 256,
+								width: 256,
+							}}
 						>
 							<MonochromeIcon
 								backgroundColor="background.default"

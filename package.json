@@ -1,7 +1,7 @@
 {
 	"name": "portfolio",
 	"private": true,
-	"version": "2.2.0",
+	"version": "2.2.1",
 	"type": "module",
 	"scripts": {
 		"dev": "next dev",
@@ -13,21 +13,21 @@
 		"@emotion/react": "11.14.0",
 		"@emotion/styled": "11.14.1",
 		"@evowizz/material-color-utilities-canary": "0.3.1-canary.2",
-		"@mui/lab": "7.0.1-beta.23",
-		"@mui/material": "7.3.9",
-		"@mui/material-nextjs": "7.3.9",
-		"@next/third-parties": "16.1.7",
+		"@mui/lab": "9.0.0-beta.2",
+		"@mui/material": "9.0.0",
+		"@mui/material-nextjs": "9.0.0",
+		"@next/third-parties": "16.2.3",
 		"@vercel/speed-insights": "2.0.0",
-		"next": "16.1.7",
-		"react": "19.2.4",
-		"react-dom": "19.2.4",
+		"next": "16.2.3",
+		"react": "19.2.5",
+		"react-dom": "19.2.5",
 		"react-material": "0.0.1-alpha4",
 		"react-type-animation": "3.2.0",
 		"sharp": "0.34.5"
 	},
 	"devDependencies": {
 		"@iconify/react": "6.0.2",
-		"eslint": "10.0.3",
-		"eslint-config-next": "16.1.7"
+		"eslint": "10.2.0",
+		"eslint-config-next": "16.2.3"
 	}
 }

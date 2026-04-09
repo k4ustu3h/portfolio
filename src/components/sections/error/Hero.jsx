@@ -33,32 +33,38 @@ export default function Hero() {
 
 	return (
 		<Stack
-			alignItems={xs ? "" : "end"}
-			color="on.surface"
 			direction={xs ? "column" : "row-reverse"}
-			height="89vh"
-			pb={xs ? 0 : 6}
-			px={xs ? 4 : 8}
+			sx={{
+				alignItems: xs ? "" : "end",
+				color: "on.surface",
+				height: "89vh",
+				pb: xs ? 0 : 6,
+				px: xs ? 4 : 8,
+			}}
 		>
 			<Box
-				alignItems={alignment}
-				color="primary.main"
-				display="flex"
-				fontSize={xs ? "100vw" : "40vw"}
-				height={xs ? "60%" : "100%"}
-				justifyContent={alignment}
-				width={xs ? "100%" : "50%"}
+				sx={{
+					alignItems: alignment,
+					color: "primary.main",
+					display: "flex",
+					fontSize: xs ? "100vw" : "40vw",
+					height: xs ? "60%" : "100%",
+					justifyContent: alignment,
+					width: xs ? "100%" : "50%",
+				}}
 			>
 				<TARDIS />
 			</Box>
 			<Stack
-				display="flex"
-				height={xs ? "40%" : "100%"}
-				justifyContent={alignment}
 				spacing={xs ? 2 : 5}
-				width={xs ? "100%" : "50%"}
+				sx={{
+					display: "flex",
+					height: xs ? "40%" : "100%",
+					justifyContent: alignment,
+					width: xs ? "100%" : "50%",
+				}}
 			>
-				<Typography fontSize={xs ? "6vw" : "4vw"}>
+				<Typography sx={{ fontSize: xs ? "6vw" : "4vw" }}>
 					{randomQuotes}
 				</Typography>
 				<Box>
@@ -67,8 +73,8 @@ export default function Hero() {
 							xs
 								? "filledSmall"
 								: sm
-								? "filledMedium"
-								: "filledLarge"
+									? "filledMedium"
+									: "filledLarge"
 						}
 						href="/"
 					>

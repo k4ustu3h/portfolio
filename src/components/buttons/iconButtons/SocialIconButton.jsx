@@ -6,11 +6,13 @@ import socials from "@/data/socials.json";
 export default function SocialIconButton() {
 	return (
 		<Box
-			color="section.footer.text"
-			display="flex"
-			flexWrap="wrap"
-			justifyContent="center"
-			gap={1}
+			sx={{
+				color: "section.footer.text",
+				display: "flex",
+				flexWrap: "wrap",
+				gap: 1,
+				justifyContent: "center",
+			}}
 		>
 			{socials.map((social) => {
 				return (

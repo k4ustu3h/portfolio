@@ -10,14 +10,14 @@ export default function LockScreen() {
 
 	return (
 		<Box
-			borderRadius={8}
-			color="primary.main"
-			height={xs ? "60vh" : "80vh"}
 			sx={{
 				aspectRatio: 9 / 20,
 				backgroundImage: `url(${wallpaper.src})`,
 				backgroundPosition: "center",
 				backgroundSize: "180%",
+				borderRadius: 8,
+				color: "primary.main",
+				height: xs ? "60vh" : "80vh",
 				transition: "150ms linear",
 				transitionProperty: "background-size",
 				":hover": {

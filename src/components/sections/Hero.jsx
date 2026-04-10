@@ -1,8 +1,9 @@
-import React from "react";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
+
+import AnimatedShapes from "@/components/shapes/AnimatedShapes";
 import breakpoints from "@/styles/breakpoints.json";
 import LockScreen from "@/components/surfaces/LockScreen";
 import Typewriter from "@/components/typography/Typewriter";
@@ -39,6 +40,7 @@ export default function Hero() {
 					width: xs ? "100%" : "50%",
 				}}
 			>
+				<AnimatedShapes xs={xs} />
 				<Typography variant="heroPrimaryHeading">
 					Just another
 				</Typography>

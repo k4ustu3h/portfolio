@@ -13,6 +13,7 @@
 		"@emotion/react": "11.14.0",
 		"@emotion/styled": "11.14.1",
 		"@evowizz/material-color-utilities-canary": "0.3.1-canary.2",
+		"@m3e/react": "2.2.0",
 		"@mui/lab": "9.0.0-beta.2",
 		"@mui/material": "9.0.0",
 		"@mui/material-nextjs": "9.0.0",

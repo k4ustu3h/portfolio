@@ -30,6 +30,7 @@ export const getCSSVars = (palette) => {
 					},
 					on: {
 						primary: darkPalette.onPrimary,
+						tertiary: darkPalette.onTertiary,
 						surface: {
 							main: darkPalette.onSurface,
 							variant: darkPalette.onSurfaceVariant,
@@ -70,6 +71,9 @@ export const getCSSVars = (palette) => {
 					tertiary: {
 						container: darkPalette.tertiaryContainer,
 						main: darkPalette.tertiary,
+						on: {
+							container: darkPalette.onTertiaryContainer,
+						},
 					},
 				},
 			},
@@ -84,6 +88,7 @@ export const getCSSVars = (palette) => {
 					},
 					on: {
 						primary: lightPalette.onPrimary,
+						tertiary: lightPalette.onTertiary,
 						surface: {
 							main: lightPalette.onSurface,
 							variant: lightPalette.onSurfaceVariant,
@@ -124,6 +129,7 @@ export const getCSSVars = (palette) => {
 					tertiary: {
 						container: lightPalette.tertiaryContainer,
 						main: lightPalette.tertiary,
+						onContainer: lightPalette.onTertiaryContainer,
 					},
 				},
 			},
@@ -374,6 +380,57 @@ export const getCSSVars = (palette) => {
 						}),
 					},
 				],
+			},
+			MuiList: {
+				styleOverrides: {
+					root: {
+						paddingBlock: 2,
+					},
+				},
+			},
+			MuiMenu: {
+				styleOverrides: {
+					paper: ({ theme }) => ({
+						color: theme.vars.palette.tertiary.on.container,
+						backgroundColor: theme.vars.palette.tertiary.container,
+						borderRadius: 16,
+						marginTop: 4,
+					}),
+				},
+			},
+			MuiMenuItem: {
+				styleOverrides: {
+					root: ({ theme }) => ({
+						borderRadius: 4,
+						marginBlock: 2,
+						marginInline: 4,
+						"&:first-of-type": {
+							borderBottomLeftRadius: 4,
+							borderBottomRightRadius: 4,
+							borderTopLeftRadius: 16,
+							borderTopRightRadius: 16,
+						},
+						"&:last-of-type": {
+							borderBottomLeftRadius: 16,
+							borderBottomRightRadius: 16,
+							borderTopLeftRadius: 4,
+							borderTopRightRadius: 4,
+						},
+						"&:first-of-type:last-of-type": {
+							borderRadius: 8,
+						},
+						"&.Mui-selected": {
+							backgroundColor: theme.vars.palette.tertiary.main,
+							borderRadius: 12,
+							color: theme.vars.palette.tertiary.onContainer,
+							"&:hover": {
+								backgroundColor:
+									theme.vars.palette.tertiary.main,
+								filter: "brightness(0.95)",
+							},
+						},
+					}),
+				},
 			},
 		},
 		typography: {

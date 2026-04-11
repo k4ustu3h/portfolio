@@ -1,23 +1,13 @@
-import React from "react";
+import { M3eShape } from "@m3e/react/shape";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import SvgIcon from "@mui/material/SvgIcon";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
+
 import AboutButton from "@/components/buttons/iconButtons/AboutButton";
 import breakpoints from "@/styles/breakpoints.json";
 import MonochromeIcon from "@/components/icons/MonochromeIcon";
 import SkillButton from "@/components/buttons/SkillButton";
-
-function SkillIcon() {
-	return (
-		<SvgIcon sx={{ fontSize: "4.5em" }}>
-			<svg fill="currentColor">
-				<path d="M9.5 0v5.96L5.28 1.75 1.75 5.28 5.96 9.5H0v5h5.96l-4.21 4.22 3.53 3.53 4.22-4.21V24h5v-5.96l4.22 4.21 3.53-3.53-4.21-4.22H24v-5h-5.96l4.21-4.22-3.53-3.53-4.22 4.21V0h-5z" />
-			</svg>
-		</SvgIcon>
-	);
-}
 
 export default function About() {
 	const md = useMediaQuery(breakpoints.width.md);
@@ -34,6 +24,8 @@ export default function About() {
 				color: "section.about.text",
 				height: md || xs ? "inherit" : "100vh",
 				p: md || xs ? 4 : 8,
+				"--m3e-shape-container-color": (theme) =>
+					theme.vars.palette.section.about.text,
 			}}
 		>
 			<Grid size={{ md: 6 }}>
@@ -62,7 +54,7 @@ export default function About() {
 				<AboutButton />
 			</Grid>
 			<Grid size={{ md: 8 }} sx={{ mt: 6 }}>
-				<SkillIcon />
+				<M3eShape name="boom" style={{ "--m3e-shape-size": "4.5em" }} />
 				<Typography align="left" sx={{ my: 2 }} variant="h3">
 					Skills & Tools
 				</Typography>

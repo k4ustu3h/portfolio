@@ -17,8 +17,11 @@ import SortMenu from "@/components/menus/SortMenu.jsx";
 
 export default function Repos() {
 	const [repos, setRepos] = useState({ forkedRepos: [], sourceRepos: [] });
-	const [sortBy, setSortBy] = useState("updated");
 	const [isLoading, setIsLoading] = useState(true);
+
+	const [sortSourceBy, setSortSourceBy] = useState("updated");
+	const [sortForkedBy, setSortForkedBy] = useState("updated");
+
 	const responsiveColumns = { xs: 1, md: 2, lg: 3 };
 
 	useEffect(() => {
@@ -56,23 +59,35 @@ export default function Repos() {
 	};
 
 	const sortedSourceRepos = useMemo(
-		() => sortRepos(repos.sourceRepos, sortBy),
-		[repos.sourceRepos, sortBy],
+		() => sortRepos(repos.sourceRepos, sortSourceBy),
+		[repos.sourceRepos, sortSourceBy],
 	);
 	const sortedForkedRepos = useMemo(
-		() => sortRepos(repos.forkedRepos, sortBy),
-		[repos.forkedRepos, sortBy],
+		() => sortRepos(repos.forkedRepos, sortForkedBy),
+		[repos.forkedRepos, sortForkedBy],
 	);
 
 	return (
 		<>
 			<NavBar />
 			<Container sx={{ color: "on.surface", py: 2 }}>
-				<SortMenu sortBy={sortBy} onSortChange={setSortBy} />
 				<Container>
-					<Typography variant="h4" sx={{ py: 4 }}>
-						Source Repositories
-					</Typography>
+					<Box
+						sx={{
+							alignItems: "center",
+							display: "flex",
+							justifyContent: "space-between",
+							py: 4,
+						}}
+					>
+						<Typography variant="h4">
+							Source Repositories
+						</Typography>
+						<SortMenu
+							sortBy={sortSourceBy}
+							onSortChange={setSortSourceBy}
+						/>
+					</Box>
 					{isLoading ? (
 						<Box
 							sx={{
@@ -114,9 +129,23 @@ export default function Repos() {
 				</Container>
 				<Divider sx={{ py: 4 }} variant="middle" />
 				<Container sx={{ py: 4 }}>
-					<Typography variant="h4" sx={{ py: 4 }}>
-						Forked Repositories
-					</Typography>
+					<Box
+						sx={{
+							alignItems: "center",
+							display: "flex",
+							justifyContent: "space-between",
+							py: 4,
+						}}
+					>
+						<Typography variant="h4">
+							Forked Repositories
+						</Typography>
+						<SortMenu
+							onSortChange={setSortForkedBy}
+							sortBy={sortForkedBy}
+						/>
+					</Box>
+
 					{isLoading ? (
 						<Box
 							sx={{

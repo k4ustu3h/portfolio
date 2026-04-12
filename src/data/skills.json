@@ -1,66 +1,66 @@
 [
 	{
-		"icon": "simple-icons:androidstudio",
+		"icon": "androidstudio",
 		"label": "Android Studio",
 		"link": "https://developer.android.com/studio"
 	},
 	{
-		"icon": "simple-icons:figma",
+		"icon": "figma",
 		"label": "Figma",
 		"link": "https://www.figma.com/"
 	},
 	{
-		"icon": "simple-icons:flutter",
+		"icon": "flutter",
 		"label": "Flutter",
 		"link": "https://flutter.dev/"
 	},
 	{
-		"icon": "simple-icons:inkscape",
+		"icon": "inkscape",
 		"label": "Inkscape",
 		"link": "https://inkscape.org/"
 	},
 	{
-		"icon": "simple-icons:javascript",
+		"icon": "javascript",
 		"label": "JavaScript",
 		"link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
 	},
 	{
-		"icon": "simple-icons:kotlin",
+		"icon": "kotlin",
 		"label": "Kotlin",
 		"link": "https://kotlinlang.org/"
 	},
 	{
-		"icon": "simple-icons:manjaro",
+		"icon": "manjaro",
 		"label": "Manjaro",
 		"link": "https://manjaro.org/"
 	},
 	{
-		"icon": "simple-icons:materialdesign",
+		"icon": "materialdesign",
 		"label": "Material Design",
 		"link": "https://material.io/"
 	},
 	{
-		"icon": "simple-icons:android",
+		"icon": "android",
 		"label": "Material Design Components",
 		"link": "https://github.com/material-components/material-components-android"
 	},
 	{
-		"icon": "simple-icons:mui",
+		"icon": "mui",
 		"label": "MUI",
 		"link": "https://mui.com/"
 	},
 	{
-		"icon": "simple-icons:nodedotjs",
+		"icon": "nodedotjs",
 		"label": "NodeJS",
 		"link": "https://nodejs.org/"
 	},
 	{
-		"icon": "simple-icons:react",
+		"icon": "react",
 		"label": "ReactJS",
 		"link": "https://react.dev/"
 	},
 	{
-		"icon": "simple-icons:visualstudiocode",
+		"icon": "visualstudiocode",
 		"label": "Visual Studio Code",
 		"link": "https://code.visualstudio.com/"
 	}

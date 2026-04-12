@@ -13,6 +13,7 @@
 		"@emotion/react": "11.14.0",
 		"@emotion/styled": "11.14.1",
 		"@evowizz/material-color-utilities-canary": "0.3.1-canary.2",
+		"@icons-pack/react-simple-icons": "13.13.0",
 		"@m3e/react": "2.2.0",
 		"@mui/lab": "9.0.0-beta.2",
 		"@mui/material": "9.0.0",
@@ -29,7 +30,6 @@
 		"sharp": "0.34.5"
 	},
 	"devDependencies": {
-		"@iconify/react": "6.0.2",
 		"eslint": "10.2.0",
 		"eslint-config-next": "16.2.3"
 	}

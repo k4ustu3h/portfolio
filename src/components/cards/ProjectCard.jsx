@@ -1,5 +1,4 @@
 import { FileCopyOff } from "@nine-thirty-five/material-symbols-react/outlined";
-import { Icon } from "@iconify/react";
 import { Interests } from "@nine-thirty-five/material-symbols-react/outlined/filled";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -11,13 +10,18 @@ import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 import breakpoints from "@/styles/breakpoints.json";
+import FoodToGo from "@/assets/svgs/FoodToGo";
 import IntelliHire from "@/assets/svgs/IntelliHire";
 import MonochromeIcon from "@/components/icons/MonochromeIcon";
 import projects from "@/data/projects.json";
+import VSCode from "@/assets/svgs/VSCode";
 
 const iconMap = {
 	dedupe: FileCopyOff,
+	foodtogo: FoodToGo,
 	forkicons: Interests,
+	intellihire: IntelliHire,
+	vscode: VSCode,
 };
 
 export default function ProjectCard() {
@@ -28,16 +32,7 @@ export default function ProjectCard() {
 	return (
 		<>
 			{projects.map((project, index) => {
-				let icon;
-
-				if (index === 3) {
-					icon = <IntelliHire />;
-				} else if (project.icon && iconMap[project.icon]) {
-					const MaterialSymbolIcon = iconMap[project.icon];
-					icon = <MaterialSymbolIcon height="1em" width="1em" />;
-				} else {
-					icon = <Icon icon={project.icon} />;
-				}
+				const Icon = iconMap[project.icon];
 
 				const mt = isSmall
 					? 5
@@ -76,7 +71,7 @@ export default function ProjectCard() {
 											p: 1,
 										}}
 									>
-										{icon}
+										<Icon height="1em" width="1em" />
 									</Box>
 								</Box>
 							</CardContent>
@@ -111,7 +106,7 @@ export default function ProjectCard() {
 								color="primary.main"
 								size={128}
 							>
-								{icon}
+								<Icon height="1em" width="1em" />
 							</MonochromeIcon>
 						</Box>
 					</Stack>

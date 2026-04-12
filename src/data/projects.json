@@ -14,7 +14,7 @@
 	{
 		"heading": "Food To Go",
 		"description": "A food delivery website created with ReactJS, with backend created with MongoDB, Express and NodeJS.",
-		"icon": "ic:twotone-delivery-dining",
+		"icon": "foodtogo",
 		"primaryAction": {
 			"label": "Visit website",
 			"link": "https://foodtogo.vercel.app/"
@@ -38,6 +38,7 @@
 	{
 		"heading": "IntelliHire",
 		"description": "Intelligent Recruitment & Skill Assessment System",
+		"icon": "intellihire",
 		"primaryAction": {
 			"label": "Download",
 			"link": "https://github.com/k4ustu3h/intellihire-flutter/releases/latest"
@@ -49,7 +50,7 @@
 	{
 		"heading": "Just Another Material Theme",
 		"description": "A dark(er) theme inspired by Dracula but with Material colors for Visual Studio Code.",
-		"icon": "mdi:microsoft-visual-studio-code",
+		"icon": "vscode",
 		"primaryAction": {
 			"label": "Install",
 			"link": "https://marketplace.visualstudio.com/items?itemName=k4ustu3h.theme-jamt"

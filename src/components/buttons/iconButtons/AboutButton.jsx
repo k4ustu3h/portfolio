@@ -1,21 +1,28 @@
-import React from "react";
-import { Icon } from "@iconify/react";
+import {
+	LocationOn,
+	Mail,
+} from "@nine-thirty-five/material-symbols-react/rounded";
 import IconButton from "@mui/material/IconButton";
 
 export default function AboutButton() {
 	const buttons = [
 		{
-			icon: "material-symbols:location-on-outline-rounded",
+			icon: LocationOn,
+			id: "location",
 			label: "Location",
 			link: "https://www.google.com/maps/place/Jabalpur",
 		},
 		{
-			icon: "material-symbols:mail-outline-rounded",
+			icon: Mail,
+			id: "mail",
 			label: "E-mail",
 			link: "mailto:k4ustu3h@gmail.com",
 		},
 	];
+
 	return buttons.map((button) => {
+		const Icon = button.icon;
+
 		return (
 			<IconButton
 				aria-label={button.label}
@@ -25,7 +32,7 @@ export default function AboutButton() {
 				sx={{ mr: 2 }}
 				variant="tonal"
 			>
-				<Icon icon={button.icon} />
+				<Icon />
 			</IconButton>
 		);
 	});

@@ -1,5 +1,10 @@
-import React from "react";
-import { Icon } from "@iconify/react";
+import {
+	Archive,
+	Code,
+	ForkRight,
+	Star,
+} from "@nine-thirty-five/material-symbols-react/rounded";
+import { Star as StarFilled } from "@nine-thirty-five/material-symbols-react/rounded/filled";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
@@ -8,6 +13,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
+
 import breakpoints from "@/styles/breakpoints.json";
 
 export default function RepoCard({ repo }) {
@@ -32,13 +38,8 @@ export default function RepoCard({ repo }) {
 			: "none"
 		: "none";
 
-	const forkedOrNot = repo.forks_count
-		? "icon-park-solid:fork"
-		: "icon-park-outline:fork";
+	const StarIcon = repo.stargazers_count > 0 ? StarFilled : Star;
 	const languageOrNot = repo.language ? "" : "none";
-	const starredOrNot = repo.stargazers_count
-		? "material-symbols:star-rounded"
-		: "material-symbols:star-outline-rounded";
 
 	const forksUrl = `${repo.html_url}/forks`;
 	const stargazersUrl = `${repo.html_url}/stargazers`;
@@ -57,16 +58,16 @@ export default function RepoCard({ repo }) {
 						<Typography gutterBottom variant="h5">
 							{repo.name}
 						</Typography>
-						<Icon
-							fontSize={24}
-							icon={"material-symbols:archive-outline-rounded"}
-							style={{ display: archivedInBox, marginBottom: 8 }}
+						<Archive
+							style={{
+								display: archivedInBox,
+								marginBottom: 8,
+								fontSize: 24,
+							}}
 						/>
 					</Box>
-					<Icon
-						fontSize={24}
-						icon={"material-symbols:archive-outline-rounded"}
-						style={{ display: archivedNotInBox }}
+					<Archive
+						style={{ display: archivedNotInBox, fontSize: 24 }}
 					/>
 					<Typography
 						variant="body2"
@@ -80,27 +81,15 @@ export default function RepoCard({ repo }) {
 			</CardActionArea>
 			<CardActions>
 				<Button href={stargazersUrl}>
-					<Icon
-						fontSize={18}
-						icon={starredOrNot}
-						style={{ marginRight: 8 }}
-					/>
+					<StarIcon style={{ marginRight: 8, fontSize: 18 }} />
 					{repo.stargazers_count}
 				</Button>
 				<Button href={forksUrl}>
-					<Icon
-						fontSize={18}
-						icon={forkedOrNot}
-						style={{ marginRight: 8 }}
-					/>
+					<ForkRight style={{ marginRight: 8, fontSize: 18 }} />
 					{repo.forks_count}
 				</Button>
 				<Button sx={{ display: languageOrNot }}>
-					<Icon
-						fontSize={18}
-						icon="material-symbols:code-rounded"
-						style={{ marginRight: 8 }}
-					/>
+					<Code style={{ marginRight: 8, fontSize: 18 }} />
 					{repo.language}
 				</Button>
 			</CardActions>

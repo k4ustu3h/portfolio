@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Icon } from "@iconify/react";
+import { Sort } from "@nine-thirty-five/material-symbols-react/rounded";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
@@ -25,7 +25,7 @@ export default function SortMenu({ sortBy, onSortChange }) {
 	};
 
 	return (
-		<Box sx={{ display: "flex", justifyContent: "flex-end", px: 3, mt: 2 }}>
+		<Box>
 			<Tooltip title="Sort repositories">
 				<IconButton
 					aria-controls={menuOpen ? "sort-menu" : undefined}
@@ -34,7 +34,7 @@ export default function SortMenu({ sortBy, onSortChange }) {
 					color="inherit"
 					onClick={handleMenuOpen}
 				>
-					<Icon icon="material-symbols:sort-rounded" fontSize={28} />
+					<Sort />
 				</IconButton>
 			</Tooltip>
 			<Menu

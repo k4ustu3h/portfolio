@@ -1,4 +1,6 @@
+import { FileCopyOff } from "@nine-thirty-five/material-symbols-react/outlined";
 import { Icon } from "@iconify/react";
+import { Interests } from "@nine-thirty-five/material-symbols-react/outlined/filled";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
@@ -7,10 +9,16 @@ import CardContent from "@mui/material/CardContent";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
+
 import breakpoints from "@/styles/breakpoints.json";
 import IntelliHire from "@/assets/svgs/IntelliHire";
 import MonochromeIcon from "@/components/icons/MonochromeIcon";
 import projects from "@/data/projects.json";
+
+const iconMap = {
+	dedupe: FileCopyOff,
+	forkicons: Interests,
+};
 
 export default function ProjectCard() {
 	const sm = useMediaQuery(breakpoints.width.sm);
@@ -20,12 +28,17 @@ export default function ProjectCard() {
 	return (
 		<>
 			{projects.map((project, index) => {
-				const icon =
-					index === 3 ? (
-						<IntelliHire />
-					) : (
-						<Icon icon={project.icon} />
-					);
+				let icon;
+
+				if (index === 3) {
+					icon = <IntelliHire />;
+				} else if (project.icon && iconMap[project.icon]) {
+					const MaterialSymbolIcon = iconMap[project.icon];
+					icon = <MaterialSymbolIcon height="1em" width="1em" />;
+				} else {
+					icon = <Icon icon={project.icon} />;
+				}
+
 				const mt = isSmall
 					? 5
 					: index === 1 || index === 4

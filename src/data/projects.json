@@ -2,7 +2,7 @@
 	{
 		"heading": "DeDupe",
 		"description": "File deduplication Android app.",
-		"icon": "material-symbols:file-copy-off-outline",
+		"icon": "dedupe",
 		"primaryAction": {
 			"label": "Download",
 			"link": "https://github.com/k4ustu3h/DeDupe/releases/latest"
@@ -26,7 +26,7 @@
 	{
 		"heading": "Forkicons",
 		"description": "Forkicons is a fork of Lawnicons, an icon pack developed by the Lawnchair team. Forkicons restores the original themed icons of apps and adds icons for apps that doesn't have one, instead of the outlined icons in the original Lawnicons.",
-		"icon": "material-symbols:interests",
+		"icon": "forkicons",
 		"primaryAction": {
 			"label": "Download",
 			"link": "https://github.com/k4ustu3h/forkicons/releases/latest"

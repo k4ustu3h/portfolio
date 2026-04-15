@@ -15,6 +15,7 @@ export function schemeToHex(scheme) {
 		onPrimary: mdc.onPrimary(),
 		primaryContainer: mdc.primaryContainer(),
 		secondary: mdc.secondary(),
+		onSecondary: mdc.onSecondary(),
 		secondaryContainer: mdc.secondaryContainer(),
 		onSecondaryContainer: mdc.onSecondaryContainer(),
 		tertiary: mdc.tertiary(),

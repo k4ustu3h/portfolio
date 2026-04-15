@@ -2,9 +2,9 @@ import { useState } from "react";
 
 import { Sort } from "@nine-thirty-five/material-symbols-react/rounded";
 import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import ToggleButton from "@mui/material/ToggleButton";
 import Tooltip from "@mui/material/Tooltip";
 
 export default function SortMenu({ sortBy, onSortChange }) {
@@ -27,15 +27,18 @@ export default function SortMenu({ sortBy, onSortChange }) {
 	return (
 		<Box>
 			<Tooltip title="Sort repositories">
-				<IconButton
+				<ToggleButton
 					aria-controls={menuOpen ? "sort-menu" : undefined}
 					aria-expanded={menuOpen ? "true" : undefined}
 					aria-haspopup="true"
-					color="inherit"
 					onClick={handleMenuOpen}
+					selected={menuOpen}
+					size="medium"
+					value="sort"
+					variant="tonal"
 				>
 					<Sort />
-				</IconButton>
+				</ToggleButton>
 			</Tooltip>
 			<Menu
 				anchorEl={anchorEl}

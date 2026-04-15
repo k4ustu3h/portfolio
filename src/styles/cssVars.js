@@ -31,6 +31,7 @@ export const getCSSVars = (palette) => {
 					on: {
 						primary: darkPalette.onPrimary,
 						tertiary: darkPalette.onTertiary,
+						secondary: darkPalette.onSecondary,
 						surface: {
 							main: darkPalette.onSurface,
 							variant: darkPalette.onSurfaceVariant,
@@ -89,6 +90,7 @@ export const getCSSVars = (palette) => {
 					on: {
 						primary: lightPalette.onPrimary,
 						tertiary: lightPalette.onTertiary,
+						secondary: lightPalette.onSecondary,
 						surface: {
 							main: lightPalette.onSurface,
 							variant: lightPalette.onSurfaceVariant,
@@ -431,6 +433,30 @@ export const getCSSVars = (palette) => {
 						},
 					}),
 				},
+			},
+			MuiToggleButton: {
+				variants: [
+					{
+						props: { size: "medium", variant: "tonal" },
+						style: ({ theme }) => ({
+							backgroundColor:
+								theme.vars.palette.secondary.container,
+							border: "none",
+							borderRadius: cc.button.medium.borderRadius.default,
+							color: theme.vars.palette.secondary.on.container,
+							":hover": {
+								backgroundColor:
+									theme.vars.palette.secondary.hover,
+							},
+							"&.Mui-selected": {
+								backgroundColor:
+									theme.vars.palette.secondary.main,
+								borderRadius: 16,
+								color: theme.vars.palette.on.secondary,
+							},
+						}),
+					},
+				],
 			},
 		},
 		typography: {

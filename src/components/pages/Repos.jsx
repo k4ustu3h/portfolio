@@ -14,6 +14,7 @@ import NavBar from "@/components/surfaces/NavBar.jsx";
 import RepoCard from "@/components/cards/RepoCard.jsx";
 import RepoCardSkeleton from "@/components/feedback/RepoCardSkeleton.jsx";
 import SortMenu from "@/components/menus/SortMenu.jsx";
+import SquigglyLine from "@/components/shapes/SquigglyLine";
 
 export default function Repos() {
 	const [repos, setRepos] = useState({ forkedRepos: [], sourceRepos: [] });
@@ -69,123 +70,147 @@ export default function Repos() {
 
 	return (
 		<>
-			<NavBar />
-			<Container sx={{ color: "on.surface", py: 2 }}>
-				<Container>
-					<Box
-						sx={{
-							alignItems: "center",
-							display: "flex",
-							justifyContent: "space-between",
-							py: 4,
-						}}
-					>
-						<Typography variant="h4">
-							Source Repositories
-						</Typography>
-						<SortMenu
-							sortBy={sortSourceBy}
-							onSortChange={setSortSourceBy}
-						/>
-					</Box>
-					{isLoading ? (
+			<Box
+				sx={{
+					bgcolor: "background.default",
+					position: "relative",
+					zIndex: 1,
+					pb: 8,
+				}}
+			>
+				<NavBar />
+				<Container
+					sx={{
+						color: "on.surface",
+						py: 2,
+					}}
+				>
+					<Container>
 						<Box
 							sx={{
-								display: "grid",
-								gap: 4,
-								gridTemplateColumns: {
-									xs: "1fr",
-									md: "repeat(2, 1fr)",
-									lg: "repeat(3, 1fr)",
-								},
+								alignItems: "center",
+								display: "flex",
+								justifyContent: "space-between",
+								py: 4,
 							}}
 						>
-							{Array.from(new Array(6)).map((_, index) => (
-								<RepoCardSkeleton
-									key={`skeleton-source-${index}`}
-								/>
-							))}
+							<Typography variant="h4">
+								Source Repositories
+							</Typography>
+							<SortMenu
+								sortBy={sortSourceBy}
+								onSortChange={setSortSourceBy}
+							/>
 						</Box>
-					) : (
-						<Masonry
-							columns={responsiveColumns}
-							spacing={4}
-							sx={{ m: 0 }}
+						{isLoading ? (
+							<Box
+								sx={{
+									display: "grid",
+									gap: 4,
+									gridTemplateColumns: {
+										xs: "1fr",
+										md: "repeat(2, 1fr)",
+										lg: "repeat(3, 1fr)",
+									},
+								}}
+							>
+								{Array.from(new Array(6)).map((_, index) => (
+									<RepoCardSkeleton
+										key={`skeleton-source-${index}`}
+									/>
+								))}
+							</Box>
+						) : (
+							<Masonry
+								columns={responsiveColumns}
+								spacing={4}
+								sx={{ m: 0 }}
+							>
+								{sortedSourceRepos.map((repo) => (
+									<motion.div
+										key={repo.id}
+										layout
+										transition={{
+											duration: 0.5,
+											ease: [0.38, 1.21, 0.22, 1],
+										}}
+									>
+										<RepoCard repo={repo} />
+									</motion.div>
+								))}
+							</Masonry>
+						)}
+					</Container>
+					<Divider sx={{ py: 4 }} variant="middle" />
+					<Container sx={{ py: 4 }}>
+						<Box
+							sx={{
+								alignItems: "center",
+								display: "flex",
+								justifyContent: "space-between",
+								py: 4,
+							}}
 						>
-							{sortedSourceRepos.map((repo) => (
-								<motion.div
-									key={repo.id}
-									layout
-									transition={{
-										duration: 0.5,
-										ease: [0.38, 1.21, 0.22, 1],
-									}}
-								>
-									<RepoCard repo={repo} />
-								</motion.div>
-							))}
-						</Masonry>
-					)}
-				</Container>
-				<Divider sx={{ py: 4 }} variant="middle" />
-				<Container sx={{ py: 4 }}>
-					<Box
-						sx={{
-							alignItems: "center",
-							display: "flex",
-							justifyContent: "space-between",
-							py: 4,
-						}}
-					>
-						<Typography variant="h4">
-							Forked Repositories
-						</Typography>
-						<SortMenu
-							onSortChange={setSortForkedBy}
-							sortBy={sortForkedBy}
-						/>
-					</Box>
+							<Typography variant="h4">
+								Forked Repositories
+							</Typography>
+							<SortMenu
+								onSortChange={setSortForkedBy}
+								sortBy={sortForkedBy}
+							/>
+						</Box>
 
-					{isLoading ? (
-						<Box
-							sx={{
-								display: "grid",
-								gap: 4,
-								gridTemplateColumns: {
-									xs: "1fr",
-									md: "repeat(2, 1fr)",
-									lg: "repeat(3, 1fr)",
-								},
-							}}
-						>
-							{Array.from(new Array(3)).map((_, index) => (
-								<RepoCardSkeleton
-									key={`skeleton-forked-${index}`}
-								/>
-							))}
-						</Box>
-					) : (
-						<Masonry
-							columns={responsiveColumns}
-							spacing={4}
-							sx={{ m: 0 }}
-						>
-							{sortedForkedRepos.map((repo) => (
-								<motion.div
-									key={repo.id}
-									layout
-									transition={{
-										duration: 0.5,
-										ease: [0.38, 1.21, 0.22, 1],
-									}}
-								>
-									<RepoCard repo={repo} />
-								</motion.div>
-							))}
-						</Masonry>
-					)}
+						{isLoading ? (
+							<Box
+								sx={{
+									display: "grid",
+									gap: 4,
+									gridTemplateColumns: {
+										xs: "1fr",
+										md: "repeat(2, 1fr)",
+										lg: "repeat(3, 1fr)",
+									},
+								}}
+							>
+								{Array.from(new Array(3)).map((_, index) => (
+									<RepoCardSkeleton
+										key={`skeleton-forked-${index}`}
+									/>
+								))}
+							</Box>
+						) : (
+							<Masonry
+								columns={responsiveColumns}
+								spacing={4}
+								sx={{ m: 0 }}
+							>
+								{sortedForkedRepos.map((repo) => (
+									<motion.div
+										key={repo.id}
+										layout
+										transition={{
+											duration: 0.5,
+											ease: [0.38, 1.21, 0.22, 1],
+										}}
+									>
+										<RepoCard repo={repo} />
+									</motion.div>
+								))}
+							</Masonry>
+						)}
+					</Container>
 				</Container>
-			</Container>
+				<Box
+					sx={{
+						position: "absolute",
+						bottom: "-14px",
+						left: 0,
+						width: "100%",
+					}}
+				>
+					<SquigglyLine />
+				</Box>
+			</Box>
 			<Footer />
 		</>
 	);

@@ -17,6 +17,7 @@ export default function Hero() {
 			spacing={xs ? 6 : 0}
 			sx={{
 				alignItems: xs ? "" : "end",
+				bgcolor: "background.default",
 				color: "on.surface",
 				height: "89vh",
 				pb: xs ? 10 : 6,

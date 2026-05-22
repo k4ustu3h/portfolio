@@ -21,7 +21,7 @@ export default function Footer() {
 				gap: 2,
 				p: 8,
 				position: "sticky",
-				zIndex: -1,
+				zIndex: 0,
 			}}
 		>
 			<Box

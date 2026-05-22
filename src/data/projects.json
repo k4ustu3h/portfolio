@@ -24,15 +24,15 @@
 		}
 	},
 	{
-		"heading": "Forkicons",
-		"description": "Forkicons is a fork of Lawnicons, an icon pack developed by the Lawnchair team. Forkicons restores the original themed icons of apps and adds icons for apps that doesn't have one, instead of the outlined icons in the original Lawnicons.",
-		"icon": "forkicons",
+		"heading": "Monocons",
+		"description": "Monochrome brand icons for Android launchers.",
+		"icon": "monocons",
 		"primaryAction": {
 			"label": "Download",
-			"link": "https://github.com/k4ustu3h/forkicons/releases/latest"
+			"link": "https://github.com/k4ustu3h/monocons/releases/latest"
 		},
 		"secondaryAction": {
-			"link": "https://github.com/k4ustu3h/forkicons"
+			"link": "https://github.com/k4ustu3h/monocons"
 		}
 	},
 	{

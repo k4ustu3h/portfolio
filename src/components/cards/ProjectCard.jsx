@@ -1,5 +1,5 @@
 import { FileCopyOff } from "@nine-thirty-five/material-symbols-react/outlined";
-import { Interests } from "@nine-thirty-five/material-symbols-react/outlined/filled";
+import { Interests } from "@nine-thirty-five/material-symbols-react/rounded";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
@@ -19,7 +19,7 @@ import VSCode from "@/assets/svgs/VSCode";
 const iconMap = {
 	dedupe: FileCopyOff,
 	foodtogo: FoodToGo,
-	forkicons: Interests,
+	monocons: Interests,
 	intellihire: IntelliHire,
 	vscode: VSCode,
 };
@@ -31,16 +31,8 @@ export default function ProjectCard() {
 
 	return (
 		<>
-			{projects.map((project, index) => {
+			{projects.map((project) => {
 				const Icon = iconMap[project.icon];
-
-				const mt = isSmall
-					? 5
-					: index === 1 || index === 4
-						? 4
-						: index === 0 || index === 3
-							? 6.5
-							: "";
 
 				return (
 					<Stack
@@ -48,7 +40,15 @@ export default function ProjectCard() {
 						key={project.heading}
 						sx={{ justifyContent: "space-around" }}
 					>
-						<Card sx={{ width: 512 }} variant="elevated">
+						<Card
+							sx={{
+								display: "flex",
+								flexDirection: "column",
+								justifyContent: "space-between",
+								width: 512,
+							}}
+							variant="elevated"
+						>
 							<CardContent>
 								<Box sx={{ display: "flex" }}>
 									<Box>
@@ -78,7 +78,6 @@ export default function ProjectCard() {
 							<CardActions sx={{ m: 2 }}>
 								<Button
 									href={project.secondaryAction.link}
-									sx={{ mt: mt }}
 									variant="outlined"
 									target="_blank"
 								>
@@ -86,7 +85,6 @@ export default function ProjectCard() {
 								</Button>
 								<Button
 									href={project.primaryAction.link}
-									sx={{ mt: mt }}
 									variant="filledSmall"
 									target="_blank"
 								>

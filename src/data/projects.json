@@ -29,10 +29,10 @@
 		"icon": "monocons",
 		"primaryAction": {
 			"label": "Download",
-			"link": "https://github.com/k4ustu3h/monocons/releases/latest"
+			"link": "https://github.com/k4ustu3h/monocons-android/releases/latest"
 		},
 		"secondaryAction": {
-			"link": "https://github.com/k4ustu3h/monocons"
+			"link": "https://github.com/k4ustu3h/monocons-android"
 		}
 	},
 	{

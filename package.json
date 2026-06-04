@@ -14,22 +14,22 @@
 		"@emotion/styled": "11.14.1",
 		"@evowizz/material-color-utilities-canary": "0.3.1-canary.2",
 		"@icons-pack/react-simple-icons": "13.13.0",
-		"@m3e/react": "2.5.6",
+		"@m3e/react": "2.5.7",
 		"@mui/lab": "9.0.0-beta.3",
 		"@mui/material": "9.0.1",
 		"@mui/material-nextjs": "9.0.1",
 		"@nine-thirty-five/material-symbols-react": "1.28.2",
 		"@vercel/speed-insights": "2.0.0",
 		"motion": "12.40.0",
-		"next": "16.2.6",
-		"react": "19.2.6",
-		"react-dom": "19.2.6",
+		"next": "16.2.7",
+		"react": "19.2.7",
+		"react-dom": "19.2.7",
 		"react-material": "0.0.1-alpha4",
 		"react-type-animation": "3.2.0",
 		"sharp": "0.34.5"
 	},
 	"devDependencies": {
-		"eslint": "10.4.0",
-		"eslint-config-next": "16.2.6"
+		"eslint": "10.4.1",
+		"eslint-config-next": "16.2.7"
 	}
 }

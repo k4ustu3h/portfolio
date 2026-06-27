@@ -1,5 +1,4 @@
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
+import { M3eIconButton } from "@m3e/react/icon-button";
 
 import {
 	SiDiscord,
@@ -13,9 +12,9 @@ import {
 	SiXdadevelopers,
 } from "@icons-pack/react-simple-icons";
 
-import socials from "@/data/socials.json";
-
 import LinkedIn from "@/assets/svgs/LinkedIn";
+
+import socials from "@/data/socials.json";
 
 const iconMap = {
 	discord: SiDiscord,
@@ -32,8 +31,8 @@ const iconMap = {
 
 export default function SocialIconButton() {
 	return (
-		<Box
-			sx={{
+		<div
+			style={{
 				color: "section.footer.text",
 				display: "flex",
 				flexWrap: "wrap",
@@ -45,16 +44,16 @@ export default function SocialIconButton() {
 				const Icon = iconMap[social.icon];
 
 				return (
-					<IconButton
+					<M3eIconButton
 						aria-label={social.label}
 						color="inherit"
 						href={social.link}
 						key={social.icon}
 					>
 						<Icon size={24} />
-					</IconButton>
+					</M3eIconButton>
 				);
 			})}
-		</Box>
+		</div>
 	);
 }

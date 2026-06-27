@@ -24,6 +24,18 @@
 		}
 	},
 	{
+		"heading": "Material New Tab",
+		"description": "A custom new tab page using the latest Material Design Guidelines.",
+		"icon": "mnt",
+		"primaryAction": {
+			"label": "Download",
+			"link": "https://github.com/k4ustu3h/mnt/releases/latest"
+		},
+		"secondaryAction": {
+			"link": "https://github.com/k4ustu3h/mnt"
+		}
+	},
+	{
 		"heading": "Monocons",
 		"description": "Monochrome brand icons for Android launchers.",
 		"icon": "monocons",

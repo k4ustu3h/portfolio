@@ -1,5 +1,9 @@
 import { FileCopyOff } from "@nine-thirty-five/material-symbols-react/outlined";
-import { Interests } from "@nine-thirty-five/material-symbols-react/rounded";
+import {
+	Home,
+	Interests,
+} from "@nine-thirty-five/material-symbols-react/rounded";
+
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
@@ -19,6 +23,7 @@ import VSCode from "@/assets/svgs/VSCode";
 const iconMap = {
 	dedupe: FileCopyOff,
 	foodtogo: FoodToGo,
+	mnt: Home,
 	monocons: Interests,
 	intellihire: IntelliHire,
 	vscode: VSCode,

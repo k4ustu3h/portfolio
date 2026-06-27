@@ -2,6 +2,7 @@ import Box from "@mui/material/Box";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 import breakpoints from "@/styles/breakpoints.json";
+
 import SocialIconButton from "@/components/buttons/iconButtons/SocialIconButton";
 
 export default function Footer() {

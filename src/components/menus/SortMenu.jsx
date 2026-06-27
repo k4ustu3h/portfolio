@@ -1,11 +1,12 @@
 import { useState } from "react";
 
-import { Sort } from "@nine-thirty-five/material-symbols-react/rounded";
 import Box from "@mui/material/Box";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import ToggleButton from "@mui/material/ToggleButton";
 import Tooltip from "@mui/material/Tooltip";
+
+import { Sort } from "@nine-thirty-five/material-symbols-react/rounded";
 
 export default function SortMenu({ sortBy, onSortChange }) {
 	const [anchorEl, setAnchorEl] = useState(null);

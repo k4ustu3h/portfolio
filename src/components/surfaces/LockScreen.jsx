@@ -1,7 +1,10 @@
 import Box from "@mui/material/Box";
 import useMediaQuery from "@mui/material/useMediaQuery";
+
 import { useWallpaper } from "@/contexts/WallpaperContext";
+
 import breakpoints from "@/styles/breakpoints.json";
+
 import LockScreenOverlay from "@/components/surfaces/lockscreen/LockScreenOverlay";
 
 export default function LockScreen() {

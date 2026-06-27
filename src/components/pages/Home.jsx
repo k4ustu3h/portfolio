@@ -1,16 +1,18 @@
 "use client";
 
-import Box from "@mui/material/Box";
 import dynamic from "next/dynamic";
 
-const About = dynamic(() => import("@/components/sections/About.jsx"), {
+import Box from "@mui/material/Box";
+
+const About = dynamic(() => import("@/components/layout/About.jsx"), {
 	ssr: false,
 });
-const Projects = dynamic(() => import("@/components/sections/Projects.jsx"), {
+const Projects = dynamic(() => import("@/components/layout/Projects.jsx"), {
 	ssr: false,
 });
-import Footer from "@/components/sections/Footer.jsx";
-import Hero from "@/components/sections/Hero.jsx";
+
+import Footer from "@/components/layout/Footer.jsx";
+import Hero from "@/components/layout/Hero.jsx";
 import NavBar from "@/components/surfaces/NavBar.jsx";
 
 export default function Home() {

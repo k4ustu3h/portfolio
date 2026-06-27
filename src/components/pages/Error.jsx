@@ -1,7 +1,7 @@
 "use client";
 
-import Hero from "@/components/sections/error/Hero";
-import Footer from "@/components/sections/Footer";
+import Hero from "@/components/layout/error/Hero";
+import Footer from "@/components/layout/Footer";
 import NavBar from "@/components/surfaces/NavBar";
 
 export default function Error() {

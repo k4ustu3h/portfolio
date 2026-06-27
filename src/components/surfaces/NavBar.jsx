@@ -1,13 +1,15 @@
-import React from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+
 import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
+
 import breakpoints from "@/styles/breakpoints.json";
+
 import ScrollToTop from "@/components/buttons/ScrollToTop";
 
 export default function NavBar() {

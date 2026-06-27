@@ -1,11 +1,13 @@
 import { M3eShape } from "@m3e/react/shape";
+
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-import AboutButton from "@/components/buttons/iconButtons/AboutButton";
 import breakpoints from "@/styles/breakpoints.json";
+
+import AboutButton from "@/components/buttons/iconButtons/AboutButton";
 import MonochromeIcon from "@/components/icons/MonochromeIcon";
 import SkillButton from "@/components/buttons/SkillButton";
 

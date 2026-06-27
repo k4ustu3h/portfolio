@@ -3,8 +3,9 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-import AnimatedShapes from "@/components/shapes/AnimatedShapes";
 import breakpoints from "@/styles/breakpoints.json";
+
+import AnimatedShapes from "@/components/shapes/AnimatedShapes";
 import LockScreen from "@/components/surfaces/LockScreen";
 import Typewriter from "@/components/typography/Typewriter";
 

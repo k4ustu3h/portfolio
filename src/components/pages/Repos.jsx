@@ -3,13 +3,14 @@
 import { useState, useEffect, useMemo } from "react";
 
 import { motion } from "motion/react";
+
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Divider from "@mui/material/Divider";
 import Masonry from "@mui/lab/Masonry";
 import Typography from "@mui/material/Typography";
 
-import Footer from "@/components/sections/Footer.jsx";
+import Footer from "@/components/layout/Footer.jsx";
 import NavBar from "@/components/surfaces/NavBar.jsx";
 import RepoCard from "@/components/cards/RepoCard.jsx";
 import RepoCardSkeleton from "@/components/feedback/RepoCardSkeleton.jsx";

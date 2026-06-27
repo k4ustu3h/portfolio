@@ -1,9 +1,3 @@
-import { FileCopyOff } from "@nine-thirty-five/material-symbols-react/outlined";
-import {
-	Home,
-	Interests,
-} from "@nine-thirty-five/material-symbols-react/rounded";
-
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
@@ -13,12 +7,21 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
+import { FileCopyOff } from "@nine-thirty-five/material-symbols-react/outlined";
+import {
+	Home,
+	Interests,
+} from "@nine-thirty-five/material-symbols-react/rounded";
+
+import projects from "@/data/projects.json";
+
 import breakpoints from "@/styles/breakpoints.json";
+
 import FoodToGo from "@/assets/svgs/FoodToGo";
 import IntelliHire from "@/assets/svgs/IntelliHire";
-import MonochromeIcon from "@/components/icons/MonochromeIcon";
-import projects from "@/data/projects.json";
 import VSCode from "@/assets/svgs/VSCode";
+
+import MonochromeIcon from "@/components/icons/MonochromeIcon";
 
 const iconMap = {
 	dedupe: FileCopyOff,

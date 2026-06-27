@@ -7,8 +7,10 @@ import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 import breakpoints from "@/styles/breakpoints.json";
-import SquigglyLine from "@/components/shapes/SquigglyLine";
+
 import TARDIS from "@/assets/svgs/TARDIS";
+
+import SquigglyLine from "@/components/shapes/SquigglyLine";
 
 export default function Hero() {
 	const sm = useMediaQuery(breakpoints.width.sm);

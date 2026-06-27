@@ -1,3 +1,6 @@
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+
 import {
 	SiAndroid,
 	SiAndroidstudio,
@@ -12,10 +15,9 @@ import {
 	SiNodedotjs,
 	SiReact,
 } from "@icons-pack/react-simple-icons";
-import Button from "@mui/material/Button";
-import Grid from "@mui/material/Grid";
 
 import skills from "@/data/skills.json";
+
 import VSCode from "@/assets/svgs/VSCode";
 
 const iconMap = {

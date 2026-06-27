@@ -1,8 +1,9 @@
-import { KeyboardArrowUp } from "@nine-thirty-five/material-symbols-react/rounded";
 import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
 import Slide from "@mui/material/Slide";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
+
+import { KeyboardArrowUp } from "@nine-thirty-five/material-symbols-react/rounded";
 
 export default function ScrollToTop() {
 	const trigger = useScrollTrigger({

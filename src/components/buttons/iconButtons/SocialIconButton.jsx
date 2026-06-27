@@ -1,3 +1,6 @@
+import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+
 import {
 	SiDiscord,
 	SiGithub,
@@ -9,11 +12,10 @@ import {
 	SiX,
 	SiXdadevelopers,
 } from "@icons-pack/react-simple-icons";
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
+
+import socials from "@/data/socials.json";
 
 import LinkedIn from "@/assets/svgs/LinkedIn";
-import socials from "@/data/socials.json";
 
 const iconMap = {
 	discord: SiDiscord,

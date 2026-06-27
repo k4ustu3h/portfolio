@@ -1,8 +1,9 @@
+import IconButton from "@mui/material/IconButton";
+
 import {
 	LocationOn,
 	Mail,
 } from "@nine-thirty-five/material-symbols-react/rounded";
-import IconButton from "@mui/material/IconButton";
 
 export default function AboutButton() {
 	const buttons = [

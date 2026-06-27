@@ -59,6 +59,7 @@ export default function RepoCard({ repo }) {
 							{repo.name}
 						</Typography>
 						<Archive
+							size={24}
 							style={{
 								display: archivedInBox,
 								marginBottom: 8,
@@ -67,6 +68,7 @@ export default function RepoCard({ repo }) {
 						/>
 					</Box>
 					<Archive
+						size={24}
 						style={{ display: archivedNotInBox, fontSize: 24 }}
 					/>
 					<Typography
@@ -81,15 +83,15 @@ export default function RepoCard({ repo }) {
 			</CardActionArea>
 			<CardActions>
 				<Button href={stargazersUrl}>
-					<StarIcon style={{ marginRight: 8, fontSize: 18 }} />
+					<StarIcon size={24} style={{ marginRight: 8 }} />
 					{repo.stargazers_count}
 				</Button>
 				<Button href={forksUrl}>
-					<ForkRight style={{ marginRight: 8, fontSize: 18 }} />
+					<ForkRight size={24} style={{ marginRight: 8 }} />
 					{repo.forks_count}
 				</Button>
 				<Button sx={{ display: languageOrNot }}>
-					<Code style={{ marginRight: 8, fontSize: 18 }} />
+					<Code size={24} style={{ marginRight: 8 }} />
 					{repo.language}
 				</Button>
 			</CardActions>

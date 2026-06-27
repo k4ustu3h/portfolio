@@ -37,7 +37,7 @@ export default function SortMenu({ sortBy, onSortChange }) {
 					value="sort"
 					variant="tonal"
 				>
-					<Sort />
+					<Sort size={24} />
 				</ToggleButton>
 			</Tooltip>
 			<Menu

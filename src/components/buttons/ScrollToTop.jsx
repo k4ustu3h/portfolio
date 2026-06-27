@@ -23,7 +23,7 @@ export default function ScrollToTop() {
 				sx={{ position: "fixed", zIndex: 20, right: 16, bottom: 16 }}
 			>
 				<Fab variant="scroll-to-top">
-					<KeyboardArrowUp />
+					<KeyboardArrowUp size={24} />
 				</Fab>
 			</Box>
 		</Slide>

@@ -1,4 +1,4 @@
-import IconButton from "@mui/material/IconButton";
+import { M3eIconButton } from "@m3e/react/icon-button";
 
 import {
 	LocationOn,
@@ -25,16 +25,16 @@ export default function AboutButton() {
 		const Icon = button.icon;
 
 		return (
-			<IconButton
+			<M3eIconButton
 				aria-label={button.label}
 				href={button.link}
 				key={button.icon}
-				size="large"
-				sx={{ mr: 2 }}
+				size="medium"
+				style={{ marginRight: 16 }}
 				variant="tonal"
 			>
 				<Icon />
-			</IconButton>
+			</M3eIconButton>
 		);
 	});
 }

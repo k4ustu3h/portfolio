@@ -1,32 +1,37 @@
-import Box from "@mui/material/Box";
-import Stack from "@mui/material/Stack";
-
 import ProjectCard from "@/components/cards/ProjectCard";
 import SquigglyLine from "@/components/shapes/SquigglyLine";
 
 export default function Projects() {
+	const bgColor = "var(--md-sys-color-secondary-fixed)";
+
 	return (
-		<Box
+		<div
 			id="projects"
-			sx={{
-				bgcolor: "section.projects",
-				borderTop: 4,
-				borderColor: "background.default",
+			style={{
+				backgroundColor: bgColor,
+				borderTop: "4px solid var(--md-sys-color-surface)",
 			}}
 		>
-			<Stack spacing={6} sx={{ p: 4 }}>
+			<div
+				style={{
+					display: "flex",
+					flexDirection: "column",
+					gap: "48px",
+					padding: "32px",
+				}}
+			>
 				<ProjectCard />
-			</Stack>
-			<Box
-				sx={{
-					position: "relative",
+			</div>
+			<div
+				style={{
 					bottom: "-14px",
 					left: 0,
+					position: "relative",
 					width: "100%",
 				}}
 			>
-				<SquigglyLine fillColor="var(--mui-palette-section-projects)" />
-			</Box>
-		</Box>
+				<SquigglyLine fillColor={bgColor} />
+			</div>
+		</div>
 	);
 }

@@ -1,5 +1,4 @@
-import Button from "@mui/material/Button";
-import Grid from "@mui/material/Grid";
+import { M3eButton } from "@m3e/react/button";
 
 import {
 	SiAndroid,
@@ -38,28 +37,28 @@ const iconMap = {
 
 export default function SkillButton() {
 	return (
-		<Grid
-			container
-			spacing={1}
-			sx={{
-				mt: 1,
+		<div
+			style={{
+				display: "flex",
+				flexWrap: "wrap",
+				gap: "8px",
+				marginTop: "8px",
 			}}
 		>
 			{skills.map((skill) => {
 				const Icon = iconMap[skill.icon];
 
 				return (
-					<Grid key={skill.label}>
-						<Button
-							href={skill.link}
-							startIcon={<Icon size={18} />}
-							variant="tonal"
-						>
-							{skill.label}
-						</Button>
-					</Grid>
+					<M3eButton
+						href={skill.link}
+						key={skill.label}
+						variant="tonal"
+					>
+						<Icon size={18} slot="icon" />
+						{skill.label}
+					</M3eButton>
 				);
 			})}
-		</Grid>
+		</div>
 	);
 }

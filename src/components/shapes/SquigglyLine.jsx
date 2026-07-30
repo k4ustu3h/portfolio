@@ -1,14 +1,11 @@
-import SvgIcon from "@mui/material/SvgIcon";
-
 export default function SquigglyLine({
-	fillColor = "var(--mui-palette-background-default)",
+	fillColor = "var(--md-sys-color-surface)",
 }) {
 	return (
-		<SvgIcon
+		<svg
 			aria-hidden="true"
 			fill="none"
-			inheritViewBox
-			sx={{ height: "8px", width: "100%" }}
+			style={{ height: "8px", width: "100%" }}
 		>
 			<svg
 				aria-hidden="true"
@@ -29,13 +26,13 @@ export default function SquigglyLine({
 					/>
 					<path
 						d="m38 4c-5.067-4.667-10.133-4.667-15.2 0-5.067 4.667-10.133 4.667-15.2 0-5.067-4.667-10.133-4.667-15.2 0"
-						stroke="var(--mui-palette-primary-main)"
+						stroke="var(--md-sys-color-primary)"
 						strokeLinecap="square"
 						strokeOpacity={0.3}
 					/>
 				</pattern>
 				<rect fill="url(#separator-wave)" height="100%" width="100%" />
 			</svg>
-		</SvgIcon>
+		</svg>
 	);
 }

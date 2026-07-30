@@ -1,73 +1,41 @@
-import { useState } from "react";
-
-import Box from "@mui/material/Box";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import ToggleButton from "@mui/material/ToggleButton";
-import Tooltip from "@mui/material/Tooltip";
+import { M3eIconButton } from "@m3e/react/icon-button";
+import { M3eMenu, M3eMenuItem, M3eMenuTrigger } from "@m3e/react/menu";
+import { M3eTooltip } from "@m3e/react/tooltip";
 
 import { Sort } from "@nine-thirty-five/material-symbols-react/rounded";
 
 export default function SortMenu({ sortBy, onSortChange }) {
-	const [anchorEl, setAnchorEl] = useState(null);
-	const menuOpen = Boolean(anchorEl);
-
-	const handleMenuOpen = (event) => {
-		setAnchorEl(event.currentTarget);
-	};
-
-	const handleMenuClose = () => {
-		setAnchorEl(null);
-	};
-
 	const handleSortSelect = (criteria) => {
 		onSortChange(criteria);
-		handleMenuClose();
 	};
 
 	return (
-		<Box>
-			<Tooltip title="Sort repositories">
-				<ToggleButton
-					aria-controls={menuOpen ? "sort-menu" : undefined}
-					aria-expanded={menuOpen ? "true" : undefined}
-					aria-haspopup="true"
-					onClick={handleMenuOpen}
-					selected={menuOpen}
-					size="medium"
-					value="sort"
-					variant="tonal"
-				>
-					<Sort size={24} />
-				</ToggleButton>
-			</Tooltip>
-			<Menu
-				anchorEl={anchorEl}
-				anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
-				id="sort-menu"
-				onClose={handleMenuClose}
-				open={menuOpen}
-				transformOrigin={{ horizontal: "right", vertical: "top" }}
-			>
-				<MenuItem
+		<>
+			<M3eIconButton id="sort-button" toggle value="sort" variant="tonal">
+				<M3eMenuTrigger htmlFor="sort-menu" />
+				<Sort size={24} />
+			</M3eIconButton>
+			<M3eTooltip htmlFor="sort-button">Sort Repositories</M3eTooltip>
+			<M3eMenu id="sort-menu" variant="vibrant">
+				<M3eMenuItem
 					onClick={() => handleSortSelect("updated")}
 					selected={sortBy === "updated"}
 				>
 					Last Updated
-				</MenuItem>
-				<MenuItem
+				</M3eMenuItem>
+				<M3eMenuItem
 					onClick={() => handleSortSelect("stars")}
 					selected={sortBy === "stars"}
 				>
 					Stars
-				</MenuItem>
-				<MenuItem
+				</M3eMenuItem>
+				<M3eMenuItem
 					onClick={() => handleSortSelect("name")}
 					selected={sortBy === "name"}
 				>
 					Name (A-Z)
-				</MenuItem>
-			</Menu>
-		</Box>
+				</M3eMenuItem>
+			</M3eMenu>
+		</>
 	);
 }

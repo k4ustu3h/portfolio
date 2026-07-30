@@ -1,19 +1,12 @@
-import Box from "@mui/material/Box";
-
-export default function MonochromeIcon({
-	backgroundColor,
-	children,
-	color,
-	size,
-}) {
+export default function MonochromeIcon({ children, size }) {
 	return (
-		<Box
-			sx={{
+		<div
+			style={{
 				alignItems: "center",
 				alignSelf: "center",
-				backgroundColor: backgroundColor,
+				backgroundColor: "var(--md-sys-color-surface)",
 				borderRadius: "50%",
-				color: color,
+				color: "var(--md-sys-color-on-surface)",
 				display: "flex",
 				fontSize: size,
 				height: "100%",
@@ -22,6 +15,6 @@ export default function MonochromeIcon({
 			}}
 		>
 			{children}
-		</Box>
+		</div>
 	);
 }

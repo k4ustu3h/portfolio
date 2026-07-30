@@ -107,11 +107,7 @@ export default function ProjectCard() {
 								width: 256,
 							}}
 						>
-							<MonochromeIcon
-								backgroundColor="background.default"
-								color="primary.main"
-								size={128}
-							>
+							<MonochromeIcon size={128}>
 								<Icon height="1em" width="1em" />
 							</MonochromeIcon>
 						</Box>

@@ -32,11 +32,7 @@ export default function About() {
 		>
 			<Grid size={{ md: 6 }}>
 				<Box sx={{ height: iconSize, width: iconSize }}>
-					<MonochromeIcon
-						backgroundColor="background.default"
-						color="primary.main"
-						size={fontSize}
-					>
+					<MonochromeIcon size={fontSize}>
 						<Typography
 							variant="logoMonochrome"
 							sx={{ fontSize: "inherit" }}

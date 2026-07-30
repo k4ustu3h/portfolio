@@ -1,21 +1,20 @@
-import { usePathname } from "next/navigation";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-import AppBar from "@mui/material/AppBar";
-import Button from "@mui/material/Button";
-import ButtonGroup from "@mui/material/ButtonGroup";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import { M3eAppBar } from "@m3e/react/app-bar";
+import { M3eButton } from "@m3e/react/button";
+import { M3eButtonGroup } from "@m3e/react/button-group";
+import { M3eHeading } from "@m3e/react/heading";
+
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 import breakpoints from "@/styles/breakpoints.json";
 
 import ScrollToTop from "@/components/buttons/ScrollToTop";
 
-export default function NavBar() {
+export default function NavBar({ bgColor = "var(--md-sys-color-surface)" }) {
 	const xs = useMediaQuery(breakpoints.width.xs);
 
-	const pathName = usePathname();
+	const router = useRouter();
 
 	const pages = [
 		{ label: "Home", link: "/" },
@@ -23,48 +22,52 @@ export default function NavBar() {
 		{ label: "Projects", link: "/#projects" },
 		{ label: "Repositories", link: "/repos" },
 	];
+
+	const handleNavigation = (e, link, isNextRoute) => {
+		if (isNextRoute) {
+			e.preventDefault();
+			router.push(link);
+		}
+	};
+
 	return (
-		<AppBar
-			color="transparent"
-			elevation={0}
-			id="back-to-top-anchor"
-			position="static"
-			sx={{ fontVariationSettings: `"ROND" 100`, px: 4, py: 2 }}
-		>
-			<Toolbar>
-				<Typography className="Logo" variant="logo">
+		<>
+			<M3eAppBar
+				id="back-to-top-anchor"
+				style={{
+					fontVariationSettings: `"ROND" 100`,
+					padding: "16px",
+					"--m3e-app-bar-container-color": bgColor,
+				}}
+			>
+				<M3eHeading slot="leading" className="logo">
 					kl.
-				</Typography>
-				<div style={{ flexGrow: 1 }}></div>
-				<ButtonGroup>
-					{pages.map((page, index) => {
-						const aboutAndProjects = index === 1 || index === 2;
+				</M3eHeading>
+				<M3eButtonGroup slot="trailing" variant="connected">
+					{pages.map((page) => {
+						const isNextRoute =
+							page.label === "Home" ||
+							page.label === "Repositories";
+						const hideOnMobile =
+							page.label === "About" || page.label === "Projects";
+
+						if (hideOnMobile && xs) return null;
+
 						return (
-							<Button
-								color={
-									pathName === page.link
-										? "inherit"
-										: "secondary"
-								}
-								component={aboutAndProjects ? Button : Link}
+							<M3eButton
 								href={page.link}
 								key={page.label}
-								size="large"
-								sx={{
-									display: aboutAndProjects
-										? xs
-											? "none"
-											: "inherit"
-										: "",
-								}}
+								onClick={(e) =>
+									handleNavigation(e, page.link, isNextRoute)
+								}
 							>
 								{page.label}
-							</Button>
+							</M3eButton>
 						);
 					})}
-				</ButtonGroup>
-			</Toolbar>
+				</M3eButtonGroup>
+			</M3eAppBar>
 			<ScrollToTop />
-		</AppBar>
+		</>
 	);
 }

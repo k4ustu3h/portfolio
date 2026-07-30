@@ -1,7 +1,7 @@
 import "@/styles/index.css";
 import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 import { getThemeForWallpaper } from "@/utils/theme-server";
-import { googleSansFlex } from "@/app/fonts";
+import { afacad, googleSansFlex } from "@/app/fonts";
 import metadataJSON from "@/data/metadata.json";
 import ThemeWrapper from "@/components/ThemeWrapper";
 import wallpapers from "@/data/wallpapers.json";
@@ -27,7 +27,7 @@ export default async function RootLayout(props) {
 
 	return (
 		<html
-			className={googleSansFlex.variable}
+			className={`${afacad.variable} ${googleSansFlex.variable}`}
 			lang="en"
 			suppressHydrationWarning
 		>

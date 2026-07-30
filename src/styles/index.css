@@ -12,6 +12,22 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+.logo {
+	animation: gradient 8s ease-in-out infinite;
+	background: linear-gradient(90deg, #d50000, #a0f, #2962ff);
+	background-clip: text;
+	background-size: 200% 200%;
+	font-family: var(--font-afacad);
+	font-size: 48px;
+	font-style: italic;
+	font-weight: bold;
+	margin-left: 24px;
+	transition: background 0.5s ease;
+	user-select: none;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;

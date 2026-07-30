@@ -79,7 +79,7 @@ export default function Repos() {
 					pb: 8,
 				}}
 			>
-				<NavBar />
+				<NavBar bgColor="background.default" />
 				<Container
 					sx={{
 						color: "on.surface",

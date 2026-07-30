@@ -5,6 +5,7 @@ export const afacad = Afacad({
 	display: "swap",
 	style: "italic",
 	subsets: ["latin"],
+	variable: "--font-afacad",
 });
 
 export const googleSansFlex = Google_Sans_Flex({

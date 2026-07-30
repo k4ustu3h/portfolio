@@ -28,7 +28,7 @@ export default function AboutButton() {
 			<M3eIconButton
 				aria-label={button.label}
 				href={button.link}
-				key={button.icon}
+				key={button.label}
 				size="medium"
 				style={{ marginRight: 16 }}
 				variant="tonal"

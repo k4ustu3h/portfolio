@@ -2,15 +2,7 @@ import { useState, useEffect } from "react";
 
 import { M3eShape } from "@m3e/react/shape";
 
-import { keyframes } from "@mui/material";
-import Box from "@mui/material/Box";
-
 import shapes from "@/data/shapes.json";
-
-const spin = keyframes`
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-`;
 
 export default function AnimatedShapes({ xs }) {
 	const [shapeOne, setShapeOne] = useState("12-sided-cookie");
@@ -29,39 +21,43 @@ export default function AnimatedShapes({ xs }) {
 	}, []);
 
 	return (
-		<Box sx={{ alignItems: "flex-end", display: "flex", gap: "2vw" }}>
-			<Box
-				sx={{
-					animation: `${spin} 10s linear infinite`,
-					display: "flex",
-					"--m3e-shape-container-color": (theme) =>
-						theme.vars.palette.secondary.main,
-				}}
+		<>
+			<div
+				style={{ alignItems: "flex-end", display: "flex", gap: "2vw" }}
 			>
-				<M3eShape
-					name={shapeOne}
+				<div
 					style={{
-						transition: "all 0.5s ease",
-						"--m3e-shape-size": xs ? "16vw" : "6vw",
+						animation: "spin 10s linear infinite",
+						display: "flex",
+						"--m3e-shape-container-color":
+							"var(--md-sys-color-secondary)",
 					}}
-				/>
-			</Box>
-			<Box
-				sx={{
-					animation: `${spin} 15s linear infinite reverse`,
-					display: "flex",
-					"--m3e-shape-container-color": (theme) =>
-						theme.vars.palette.tertiary.main,
-				}}
-			>
-				<M3eShape
-					name={shapeTwo}
+				>
+					<M3eShape
+						name={shapeOne}
+						style={{
+							transition: "all 0.5s ease",
+							"--m3e-shape-size": xs ? "16vw" : "6vw",
+						}}
+					/>
+				</div>
+				<div
 					style={{
-						transition: "all 0.5s ease",
-						"--m3e-shape-size": xs ? "10vw" : "4vw",
+						animation: "spin 15s linear infinite reverse",
+						display: "flex",
+						"--m3e-shape-container-color":
+							"var(--md-sys-color-tertiary)",
 					}}
-				/>
-			</Box>
-		</Box>
+				>
+					<M3eShape
+						name={shapeTwo}
+						style={{
+							transition: "all 0.5s ease",
+							"--m3e-shape-size": xs ? "10vw" : "4vw",
+						}}
+					/>
+				</div>
+			</div>
+		</>
 	);
 }

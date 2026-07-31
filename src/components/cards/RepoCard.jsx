@@ -1,6 +1,7 @@
 import useMediaQuery from "@/hooks/useMediaQuery";
 
 import { M3eButton } from "@m3e/react/button";
+import { M3eButtonGroup } from "@m3e/react/button-group";
 import { M3eCard } from "@m3e/react/card";
 import { M3eHeading } from "@m3e/react/heading";
 
@@ -43,16 +44,11 @@ export default function RepoCard({ repo }) {
 	const stargazersUrl = `${repo.html_url}/stargazers`;
 
 	return (
-		<M3eCard variant="elevated">
+		<M3eCard actionable href={repo.html_url} variant="elevated">
 			<div slot="header">
-				<a
-					href={repo.html_url}
-					style={{ color: "inherit", textDecoration: "none" }}
-				>
-					<M3eHeading variant="headline" size="medium">
-						{repo.name}
-					</M3eHeading>
-				</a>
+				<M3eHeading variant="headline" size="medium">
+					{repo.name}
+				</M3eHeading>
 				<div style={{ flexGrow: 1 }} />
 				<Archive
 					size={24}
@@ -80,20 +76,20 @@ export default function RepoCard({ repo }) {
 				/>
 				{repo.description}
 			</div>
-			<div end="true" slot="actions">
-				<M3eButton href={stargazersUrl} variant="text">
+			<M3eButtonGroup end slot="actions">
+				<M3eButton href={stargazersUrl} variant="tonal">
 					<StarIcon size={24} slot="icon" />
 					{repo.stargazers_count}
 				</M3eButton>
-				<M3eButton href={forksUrl} variant="text">
+				<M3eButton href={forksUrl} variant="tonal">
 					<ForkRight size={24} slot="icon" />
 					{repo.forks_count}
 				</M3eButton>
-				<M3eButton variant="text" style={{ display: languageOrNot }}>
+				<M3eButton variant="tonal" style={{ display: languageOrNot }}>
 					<Code size={24} slot="icon" />
 					{repo.language}
 				</M3eButton>
-			</div>
+			</M3eButtonGroup>
 		</M3eCard>
 	);
 }

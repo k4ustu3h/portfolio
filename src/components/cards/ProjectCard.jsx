@@ -1,17 +1,15 @@
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import { M3eButton } from "@m3e/react/button";
+import { M3eButtonGroup } from "@m3e/react/button-group";
+import { M3eCard } from "@m3e/react/card";
+import { M3eHeading } from "@m3e/react/heading";
 
 import { FileCopyOff } from "@nine-thirty-five/material-symbols-react/outlined";
 import {
 	Home,
 	Interests,
 } from "@nine-thirty-five/material-symbols-react/rounded";
+
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 import projects from "@/data/projects.json";
 
@@ -43,75 +41,74 @@ export default function ProjectCard() {
 				const Icon = iconMap[project.icon];
 
 				return (
-					<Stack
-						direction="row"
+					<div
 						key={project.heading}
-						sx={{ justifyContent: "space-around" }}
+						style={{
+							display: "flex",
+							flexDirection: "row",
+							justifyContent: "space-around",
+						}}
 					>
-						<Card
-							sx={{
-								display: "flex",
-								flexDirection: "column",
-								justifyContent: "space-between",
-								width: 512,
-							}}
-							variant="elevated"
-						>
-							<CardContent>
-								<Box sx={{ display: "flex" }}>
-									<Box>
-										<Typography variant="h5">
-											{project.heading}
-										</Typography>
-										<Typography
-											sx={{ mt: 2 }}
-											variant="body2"
-										>
-											{project.description}
-										</Typography>
-									</Box>
-									<Box
-										sx={{
-											display: isSmall
-												? "inherit"
-												: "none",
-											fontSize: 48,
-											p: 1,
+						<M3eCard style={{ width: "512px" }} variant="elevated">
+							<M3eHeading
+								className="rounded-heading"
+								size="small"
+								slot="header"
+								style={{ display: "flex", alignItems: "start" }}
+								variant="headline"
+							>
+								{project.heading}
+								<div style={{ flexGrow: 1 }} />
+								{isSmall && (
+									<div
+										style={{
+											fontSize: "48px",
+											padding: "8px",
 										}}
 									>
 										<Icon height="1em" width="1em" />
-									</Box>
-								</Box>
-							</CardContent>
-							<CardActions sx={{ m: 2 }}>
-								<Button
+									</div>
+								)}
+							</M3eHeading>
+							<div
+								slot="content"
+								style={{
+									alignItems: "center",
+									display: "flex",
+								}}
+							>
+								{project.description}
+							</div>
+							<M3eButtonGroup end slot="actions">
+								<M3eButton
 									href={project.secondaryAction.link}
 									variant="outlined"
 									target="_blank"
 								>
 									Source Code
-								</Button>
-								<Button
+								</M3eButton>
+								<M3eButton
 									href={project.primaryAction.link}
-									variant="filledSmall"
+									variant="filled"
 									target="_blank"
 								>
 									{project.primaryAction.label}
-								</Button>
-							</CardActions>
-						</Card>
-						<Box
-							sx={{
-								display: isSmall ? "none" : "inherit",
-								height: 256,
-								width: 256,
-							}}
-						>
-							<MonochromeIcon size={128}>
-								<Icon height="1em" width="1em" />
-							</MonochromeIcon>
-						</Box>
-					</Stack>
+								</M3eButton>
+							</M3eButtonGroup>
+						</M3eCard>
+						{!isSmall && (
+							<div
+								style={{
+									height: "256px",
+									width: "256px",
+								}}
+							>
+								<MonochromeIcon size={"128px"}>
+									<Icon height="1em" width="1em" />
+								</MonochromeIcon>
+							</div>
+						)}
+					</div>
 				);
 			})}
 		</>

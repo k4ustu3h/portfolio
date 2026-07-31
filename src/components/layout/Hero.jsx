@@ -18,7 +18,7 @@ export default function Hero() {
 				display: "flex",
 				flexDirection: xs ? "column" : "row-reverse",
 				gap: xs ? "48px" : "0px",
-				height: "89vh",
+				height: "85vh",
 				paddingBottom: xs ? "80px" : "48px",
 				paddingLeft: xs ? "32px" : "64px",
 				paddingRight: xs ? "32px" : "64px",

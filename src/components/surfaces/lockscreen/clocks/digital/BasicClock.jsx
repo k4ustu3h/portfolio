@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
 
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-
 export default function BasicClock() {
 	const [time, setTime] = useState(new Date());
 
@@ -20,31 +17,31 @@ export default function BasicClock() {
 	const minutes = formattedTime(time.getMinutes());
 
 	const getLetterSpacing = (value) =>
-		String(value).includes("1") ? 2 : "normal";
+		String(value).includes("1") ? "2px" : "normal";
 
 	return (
-		<Box
-			sx={{
+		<div
+			style={{
 				alignItems: "center",
 				display: "flex",
 				flexDirection: "column",
 			}}
 		>
-			<Typography
-				variant="clock"
-				sx={{ letterSpacing: getLetterSpacing(hours) }}
+			<div
+				className="clock-typography"
+				style={{ letterSpacing: getLetterSpacing(hours) }}
 			>
 				{hours}
-			</Typography>
-			<Typography
-				variant="clock"
-				sx={{
-					mt: -8,
+			</div>
+			<div
+				className="clock-typography"
+				style={{
+					marginTop: "-64px",
 					letterSpacing: getLetterSpacing(minutes),
 				}}
 			>
 				{minutes}
-			</Typography>
-		</Box>
+			</div>
+		</div>
 	);
 }

@@ -7,7 +7,7 @@ import { clockDimensions } from "@/styles/dimensions";
 export default function BasicClock() {
 	const [time, setTime] = useState(new Date());
 
-	const breakpoint = useBreakpoint();
+	const breakpoint = useBreakpoint(true);
 	const { fontSize, lineHeight, marginTop } = clockDimensions[breakpoint];
 
 	useEffect(() => {
@@ -32,6 +32,7 @@ export default function BasicClock() {
 				alignItems: "center",
 				display: "flex",
 				flexDirection: "column",
+				gap: "2rem",
 			}}
 		>
 			<div

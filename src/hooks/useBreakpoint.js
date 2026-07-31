@@ -2,16 +2,20 @@ import { useEffect, useState } from "react";
 
 import breakpoints from "@/styles/breakpoints.json";
 
-export default function useBreakpoint() {
+export default function useBreakpoint(height = false) {
 	const [breakpoint, setBreakpoint] = useState("xl");
 
 	useEffect(() => {
+		const activeBreakpoints = height
+			? breakpoints.height
+			: breakpoints.width;
+
 		const queries = {
-			xs: window.matchMedia(breakpoints.width.xs),
-			sm: window.matchMedia(breakpoints.width.sm),
-			md: window.matchMedia(breakpoints.width.md),
-			lg: window.matchMedia(breakpoints.width.lg),
-			xl: window.matchMedia(breakpoints.width.xl),
+			xs: window.matchMedia(activeBreakpoints.xs),
+			sm: window.matchMedia(activeBreakpoints.sm),
+			md: window.matchMedia(activeBreakpoints.md),
+			lg: window.matchMedia(activeBreakpoints.lg),
+			xl: window.matchMedia(activeBreakpoints.xl),
 		};
 
 		const updateBreakpoint = () => {
@@ -33,7 +37,7 @@ export default function useBreakpoint() {
 				q.removeEventListener("change", updateBreakpoint),
 			);
 		};
-	}, []);
+	}, [height]);
 
 	return breakpoint;
 }

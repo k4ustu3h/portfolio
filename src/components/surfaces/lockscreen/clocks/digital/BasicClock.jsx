@@ -1,7 +1,14 @@
 import { useEffect, useState } from "react";
 
+import useBreakpoint from "@/hooks/useBreakpoint";
+
+import { clockDimensions } from "@/styles/dimensions";
+
 export default function BasicClock() {
 	const [time, setTime] = useState(new Date());
+
+	const breakpoint = useBreakpoint();
+	const { fontSize, lineHeight, marginTop } = clockDimensions[breakpoint];
 
 	useEffect(() => {
 		const intervalId = setInterval(() => {
@@ -28,15 +35,19 @@ export default function BasicClock() {
 			}}
 		>
 			<div
-				className="clock-typography"
-				style={{ letterSpacing: getLetterSpacing(hours) }}
+				style={{
+					fontSize,
+					lineHeight,
+					letterSpacing: getLetterSpacing(hours),
+				}}
 			>
 				{hours}
 			</div>
 			<div
-				className="clock-typography"
 				style={{
-					marginTop: "-64px",
+					fontSize,
+					lineHeight,
+					marginTop,
 					letterSpacing: getLetterSpacing(minutes),
 				}}
 			>

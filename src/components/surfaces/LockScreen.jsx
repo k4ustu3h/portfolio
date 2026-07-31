@@ -1,5 +1,4 @@
-import Box from "@mui/material/Box";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 import { useWallpaper } from "@/contexts/WallpaperContext";
 
@@ -12,23 +11,18 @@ export default function LockScreen() {
 	const wallpaper = useWallpaper();
 
 	return (
-		<Box
-			sx={{
-				aspectRatio: 9 / 20,
+		<div
+			className="lock-screen"
+			style={{
+				aspectRatio: "9 / 20",
 				backgroundImage: `url(${wallpaper.src})`,
 				backgroundPosition: "center",
-				backgroundSize: "180%",
-				borderRadius: 8,
-				color: "primary.main",
+				borderRadius: "32px",
+				color: "var(--md-sys-color-primary)",
 				height: xs ? "60vh" : "80vh",
-				transition: "150ms linear",
-				transitionProperty: "background-size",
-				":hover": {
-					backgroundSize: "167%",
-				},
 			}}
 		>
 			<LockScreenOverlay />
-		</Box>
+		</div>
 	);
 }

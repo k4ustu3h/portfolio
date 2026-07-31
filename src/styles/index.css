@@ -28,6 +28,14 @@ body {
 	-webkit-text-fill-color: transparent;
 }
 
+.lock-screen {
+	background-size: 180%;
+	transition: background-size 150ms linear;
+}
+.lock-screen:hover {
+	background-size: 167%;
+}
+
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;

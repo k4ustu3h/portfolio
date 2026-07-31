@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
+import { M3eDivider } from "@m3e/react/divider";
 import { M3eHeading } from "@m3e/react/heading";
 
 import Footer from "@/components/layout/Footer.jsx";
@@ -72,7 +73,7 @@ export default function Repos() {
 			<div
 				style={{
 					backgroundColor: "var(--md-sys-color-background)",
-					paddingBottom: "64px",
+					paddingBottom: "32px",
 					position: "relative",
 					zIndex: 1,
 				}}
@@ -141,22 +142,14 @@ export default function Repos() {
 							</ResponsiveMasonry>
 						)}
 					</div>
-
-					<hr
-						style={{
-							border: "none",
-							borderTop:
-								"1px solid var(--md-sys-color-outline-variant)",
-							margin: "64px 32px",
-						}}
-					/>
-					<div style={{ paddingBottom: "32px" }}>
+					<M3eDivider style={{ marginBlock: "64px" }} />
+					<div>
 						<div
 							style={{
 								alignItems: "center",
 								display: "flex",
 								justifyContent: "space-between",
-								padding: "32px 0",
+								paddingBlock: "32px",
 							}}
 						>
 							<M3eHeading size="small" variant="display">

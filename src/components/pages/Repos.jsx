@@ -4,11 +4,9 @@ import { useState, useEffect, useMemo } from "react";
 
 import { motion } from "motion/react";
 
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import Divider from "@mui/material/Divider";
-import Masonry from "@mui/lab/Masonry";
-import Typography from "@mui/material/Typography";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+
+import { M3eHeading } from "@m3e/react/heading";
 
 import Footer from "@/components/layout/Footer.jsx";
 import NavBar from "@/components/surfaces/NavBar.jsx";
@@ -24,7 +22,7 @@ export default function Repos() {
 	const [sortSourceBy, setSortSourceBy] = useState("updated");
 	const [sortForkedBy, setSortForkedBy] = useState("updated");
 
-	const responsiveColumns = { xs: 1, md: 2, lg: 3 };
+	const breakpoints = { 350: 1, 900: 2, 1200: 3 };
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -71,48 +69,47 @@ export default function Repos() {
 
 	return (
 		<>
-			<Box
-				sx={{
-					bgcolor: "background.default",
+			<div
+				style={{
+					backgroundColor: "var(--md-sys-color-background)",
+					paddingBottom: "64px",
 					position: "relative",
 					zIndex: 1,
-					pb: 8,
 				}}
 			>
-				<NavBar bgColor="background.default" />
-				<Container
-					sx={{
-						color: "on.surface",
-						py: 2,
+				<NavBar />
+				<div
+					style={{
+						color: "var(--md-sys-color-on-surface)",
+						margin: "0 auto",
+						maxWidth: "1200px",
+						padding: "16px 24px",
 					}}
 				>
-					<Container>
-						<Box
-							sx={{
+					<div>
+						<div
+							style={{
 								alignItems: "center",
 								display: "flex",
 								justifyContent: "space-between",
-								py: 4,
+								padding: "32px 0",
 							}}
 						>
-							<Typography variant="h4">
+							<M3eHeading size="small" variant="display">
 								Source Repositories
-							</Typography>
+							</M3eHeading>
 							<SortMenu
 								sortBy={sortSourceBy}
 								onSortChange={setSortSourceBy}
 							/>
-						</Box>
+						</div>
 						{isLoading ? (
-							<Box
-								sx={{
+							<div
+								style={{
 									display: "grid",
-									gap: 4,
-									gridTemplateColumns: {
-										xs: "1fr",
-										md: "repeat(2, 1fr)",
-										lg: "repeat(3, 1fr)",
-									},
+									gap: "32px",
+									gridTemplateColumns:
+										"repeat(auto-fill, minmax(320px, 1fr))",
 								}}
 							>
 								{Array.from(new Array(6)).map((_, index) => (
@@ -120,57 +117,63 @@ export default function Repos() {
 										key={`skeleton-source-${index}`}
 									/>
 								))}
-							</Box>
+							</div>
 						) : (
-							<Masonry
-								columns={responsiveColumns}
-								spacing={4}
-								sx={{ m: 0 }}
+							<ResponsiveMasonry
+								columnsCountBreakPoints={breakpoints}
 							>
-								{sortedSourceRepos.map((repo) => (
-									<motion.div
-										key={repo.id}
-										layout
-										transition={{
-											duration: 0.5,
-											ease: [0.38, 1.21, 0.22, 1],
-										}}
-									>
-										<RepoCard repo={repo} />
-									</motion.div>
-								))}
-							</Masonry>
+								<Masonry gutter="32px">
+									{sortedSourceRepos.map((repo) => (
+										<motion.div
+											key={repo.id}
+											style={{ width: "100%" }}
+											layoutId={repo.id.toString()}
+											transition={{
+												duration: 0.5,
+												ease: [0.38, 1.21, 0.22, 1],
+											}}
+										>
+											<RepoCard repo={repo} />
+										</motion.div>
+									))}
+								</Masonry>
+							</ResponsiveMasonry>
 						)}
-					</Container>
-					<Divider sx={{ py: 4 }} variant="middle" />
-					<Container sx={{ py: 4 }}>
-						<Box
-							sx={{
+					</div>
+
+					<hr
+						style={{
+							border: "none",
+							borderTop:
+								"1px solid var(--md-sys-color-outline-variant)",
+							margin: "64px 32px",
+						}}
+					/>
+					<div style={{ paddingBottom: "32px" }}>
+						<div
+							style={{
 								alignItems: "center",
 								display: "flex",
 								justifyContent: "space-between",
-								py: 4,
+								padding: "32px 0",
 							}}
 						>
-							<Typography variant="h4">
+							<M3eHeading size="small" variant="display">
 								Forked Repositories
-							</Typography>
+							</M3eHeading>
 							<SortMenu
 								onSortChange={setSortForkedBy}
 								sortBy={sortForkedBy}
 							/>
-						</Box>
+						</div>
 
 						{isLoading ? (
-							<Box
-								sx={{
+							<div
+								style={{
 									display: "grid",
-									gap: 4,
-									gridTemplateColumns: {
-										xs: "1fr",
-										md: "repeat(2, 1fr)",
-										lg: "repeat(3, 1fr)",
-									},
+									gap: "32px",
+									gridTemplateColumns:
+										"repeat(auto-fill, minmax(320px, 1fr))",
 								}}
 							>
 								{Array.from(new Array(3)).map((_, index) => (
@@ -178,31 +181,32 @@ export default function Repos() {
 										key={`skeleton-forked-${index}`}
 									/>
 								))}
-							</Box>
+							</div>
 						) : (
-							<Masonry
-								columns={responsiveColumns}
-								spacing={4}
-								sx={{ m: 0 }}
+							<ResponsiveMasonry
+								columnsCountBreakPoints={breakpoints}
 							>
-								{sortedForkedRepos.map((repo) => (
-									<motion.div
-										key={repo.id}
-										layout
-										transition={{
-											duration: 0.5,
-											ease: [0.38, 1.21, 0.22, 1],
-										}}
-									>
-										<RepoCard repo={repo} />
-									</motion.div>
-								))}
-							</Masonry>
+								<Masonry gutter="32px">
+									{sortedForkedRepos.map((repo) => (
+										<motion.div
+											key={repo.id}
+											layoutId={`forked-${repo.id}`}
+											style={{ width: "100%" }}
+											transition={{
+												duration: 0.5,
+												ease: [0.38, 1.21, 0.22, 1],
+											}}
+										>
+											<RepoCard repo={repo} />
+										</motion.div>
+									))}
+								</Masonry>
+							</ResponsiveMasonry>
 						)}
-					</Container>
-				</Container>
-				<Box
-					sx={{
+					</div>
+				</div>
+				<div
+					style={{
 						position: "absolute",
 						bottom: "-14px",
 						left: 0,
@@ -210,8 +214,8 @@ export default function Repos() {
 					}}
 				>
 					<SquigglyLine />
-				</Box>
-			</Box>
+				</div>
+			</div>
 			<Footer />
 		</>
 	);

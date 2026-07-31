@@ -46,7 +46,11 @@ export default function RepoCard({ repo }) {
 	return (
 		<M3eCard actionable href={repo.html_url} variant="elevated">
 			<div slot="header">
-				<M3eHeading variant="headline" size="medium">
+				<M3eHeading
+					className="rounded-heading"
+					variant="headline"
+					size="medium"
+				>
 					{repo.name}
 				</M3eHeading>
 				<div style={{ flexGrow: 1 }} />

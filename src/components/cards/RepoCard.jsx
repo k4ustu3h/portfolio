@@ -62,15 +62,6 @@ export default function RepoCard({ repo }) {
 				/>
 			</div>
 			<div slot="content">
-				<div
-					style={{
-						alignItems: "center",
-						display: "flex",
-						justifyContent: "space-between",
-						marginBottom: "8px",
-					}}
-				></div>
-
 				<Archive
 					size={24}
 					style={{

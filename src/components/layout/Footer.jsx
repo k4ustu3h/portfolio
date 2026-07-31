@@ -1,5 +1,4 @@
-import Box from "@mui/material/Box";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 import breakpoints from "@/styles/breakpoints.json";
 
@@ -10,31 +9,30 @@ export default function Footer() {
 	const xs = useMediaQuery(breakpoints.width.xs);
 
 	return (
-		<Box
-			component="footer"
-			sx={{
+		<footer
+			style={{
 				alignItems: "center",
-				bgcolor: "section.footer.background",
+				backgroundColor: "var(--md-sys-color-tertiary-container)",
 				bottom: 0,
-				color: "section.footer.text",
+				color: "var(--md-sys-color-on-tertiary-container)",
 				display: "flex",
 				flexDirection: "column",
-				gap: 2,
-				p: 8,
+				gap: "16px",
+				padding: "64px",
 				position: "sticky",
 				zIndex: 0,
 			}}
 		>
-			<Box
-				sx={{
+			<div
+				style={{
 					alignItems: "center",
 					display: "flex",
 					flexDirection: sm || xs ? "column" : "row",
-					gap: 1,
+					gap: "8px",
 				}}
 			>
 				<SocialIconButton />
-			</Box>
-		</Box>
+			</div>
+		</footer>
 	);
 }

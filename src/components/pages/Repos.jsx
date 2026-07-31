@@ -99,6 +99,7 @@ export default function Repos() {
 								Source Repositories
 							</M3eHeading>
 							<SortMenu
+								id="source"
 								sortBy={sortSourceBy}
 								onSortChange={setSortSourceBy}
 							/>
@@ -162,6 +163,7 @@ export default function Repos() {
 								Forked Repositories
 							</M3eHeading>
 							<SortMenu
+								id="forked"
 								onSortChange={setSortForkedBy}
 								sortBy={sortForkedBy}
 							/>

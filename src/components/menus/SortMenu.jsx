@@ -4,19 +4,22 @@ import { M3eTooltip } from "@m3e/react/tooltip";
 
 import { Sort } from "@nine-thirty-five/material-symbols-react/rounded";
 
-export default function SortMenu({ sortBy, onSortChange }) {
+export default function SortMenu({ id, sortBy, onSortChange }) {
 	const handleSortSelect = (criteria) => {
 		onSortChange(criteria);
 	};
 
+	const buttonId = `${id}-sort-button`;
+	const menuId = `${id}-sort-menu`;
+
 	return (
 		<>
-			<M3eIconButton id="sort-button" toggle value="sort" variant="tonal">
-				<M3eMenuTrigger htmlFor="sort-menu" />
+			<M3eIconButton id={buttonId} toggle value="sort" variant="tonal">
+				<M3eMenuTrigger htmlFor={menuId} />
 				<Sort size={24} />
 			</M3eIconButton>
-			<M3eTooltip htmlFor="sort-button">Sort Repositories</M3eTooltip>
-			<M3eMenu id="sort-menu" variant="vibrant">
+			<M3eTooltip htmlFor={buttonId}>Sort Repositories</M3eTooltip>
+			<M3eMenu id={menuId} variant="vibrant">
 				<M3eMenuItem
 					onClick={() => handleSortSelect("updated")}
 					selected={sortBy === "updated"}

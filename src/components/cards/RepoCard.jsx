@@ -1,11 +1,8 @@
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Card from "@mui/material/Card";
-import CardActionArea from "@mui/material/CardActionArea";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import useMediaQuery from "@/hooks/useMediaQuery";
+
+import { M3eButton } from "@m3e/react/button";
+import { M3eCard } from "@m3e/react/card";
+import { M3eHeading } from "@m3e/react/heading";
 
 import {
 	Archive,
@@ -18,13 +15,13 @@ import { Star as StarFilled } from "@nine-thirty-five/material-symbols-react/rou
 import breakpoints from "@/styles/breakpoints.json";
 
 export default function RepoCard({ repo }) {
-	const screenSize = { xs: useMediaQuery(breakpoints.width.xs) };
+	const xs = useMediaQuery(breakpoints.width.xs);
 
 	const isArchived = repo.archived;
 	const nameShort = repo.name.length < 16;
 
 	const archivedInBox = isArchived
-		? screenSize.xs
+		? xs
 			? nameShort
 				? ""
 				: "none"
@@ -32,7 +29,7 @@ export default function RepoCard({ repo }) {
 		: "none";
 
 	const archivedNotInBox = isArchived
-		? screenSize.xs
+		? xs
 			? nameShort
 				? "none"
 				: ""
@@ -46,56 +43,57 @@ export default function RepoCard({ repo }) {
 	const stargazersUrl = `${repo.html_url}/stargazers`;
 
 	return (
-		<Card variant="elevated">
-			<CardActionArea href={repo.html_url}>
-				<CardContent>
-					<Box
-						sx={{
-							alignItems: "center",
-							display: "flex",
-							justifyContent: "space-between",
-						}}
-					>
-						<Typography gutterBottom variant="h5">
-							{repo.name}
-						</Typography>
-						<Archive
-							size={24}
-							style={{
-								display: archivedInBox,
-								marginBottom: 8,
-								fontSize: 24,
-							}}
-						/>
-					</Box>
-					<Archive
-						size={24}
-						style={{ display: archivedNotInBox, fontSize: 24 }}
-					/>
-					<Typography
-						variant="body2"
-						sx={{
-							color: "text.secondary",
-						}}
-					>
-						{repo.description}
-					</Typography>
-				</CardContent>
-			</CardActionArea>
-			<CardActions>
-				<Button href={stargazersUrl}>
-					<StarIcon size={24} style={{ marginRight: 8 }} />
+		<M3eCard variant="elevated">
+			<div slot="header">
+				<a
+					href={repo.html_url}
+					style={{ color: "inherit", textDecoration: "none" }}
+				>
+					<M3eHeading variant="headline" size="medium">
+						{repo.name}
+					</M3eHeading>
+				</a>
+				<div style={{ flexGrow: 1 }} />
+				<Archive
+					size={24}
+					style={{
+						display: archivedInBox,
+					}}
+				/>
+			</div>
+			<div slot="content">
+				<div
+					style={{
+						alignItems: "center",
+						display: "flex",
+						justifyContent: "space-between",
+						marginBottom: "8px",
+					}}
+				></div>
+
+				<Archive
+					size={24}
+					style={{
+						display: archivedNotInBox,
+						marginBottom: "8px",
+					}}
+				/>
+				{repo.description}
+			</div>
+			<div end="true" slot="actions">
+				<M3eButton href={stargazersUrl} variant="text">
+					<StarIcon size={24} slot="icon" />
 					{repo.stargazers_count}
-				</Button>
-				<Button href={forksUrl}>
-					<ForkRight size={24} style={{ marginRight: 8 }} />
+				</M3eButton>
+				<M3eButton href={forksUrl} variant="text">
+					<ForkRight size={24} slot="icon" />
 					{repo.forks_count}
-				</Button>
-				<Button sx={{ display: languageOrNot }}>
-					<Code size={24} style={{ marginRight: 8 }} />
+				</M3eButton>
+				<M3eButton variant="text" style={{ display: languageOrNot }}>
+					<Code size={24} slot="icon" />
 					{repo.language}
-				</Button>
-			</CardActions>
-		</Card>
+				</M3eButton>
+			</div>
+		</M3eCard>
 	);
 }

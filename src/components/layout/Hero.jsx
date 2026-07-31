@@ -1,7 +1,4 @@
-import Box from "@mui/material/Box";
-import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 import breakpoints from "@/styles/breakpoints.json";
 
@@ -13,42 +10,44 @@ export default function Hero() {
 	const xs = useMediaQuery(breakpoints.width.xs);
 
 	return (
-		<Stack
-			direction={xs ? "column" : "row-reverse"}
-			spacing={xs ? 6 : 0}
-			sx={{
-				alignItems: xs ? "" : "end",
-				bgcolor: "background.default",
-				color: "on.surface",
+		<div
+			style={{
+				alignItems: xs ? "normal" : "flex-end",
+				backgroundColor: "var(--md-sys-color-background)",
+				color: "var(--md-sys-color-on-surface)",
+				display: "flex",
+				flexDirection: xs ? "column" : "row-reverse",
+				gap: xs ? "48px" : "0px",
 				height: "89vh",
-				pb: xs ? 10 : 6,
-				px: xs ? 4 : 8,
+				paddingBottom: xs ? "80px" : "48px",
+				paddingLeft: xs ? "32px" : "64px",
+				paddingRight: xs ? "32px" : "64px",
 			}}
 		>
-			<Box
-				sx={{
+			<div
+				style={{
 					display: "flex",
 					justifyContent: "center",
-					pb: xs ? 0 : 2,
+					paddingBottom: xs ? "0px" : "16px",
 					width: xs ? "100%" : "50%",
 				}}
 			>
 				<LockScreen />
-			</Box>
-			<Box
+			</div>
+
+			<div
 				className="Hero"
-				sx={{
+				style={{
 					fontSize: xs ? "8vw" : "4vw",
 					width: xs ? "100%" : "50%",
 				}}
 			>
 				<AnimatedShapes xs={xs} />
-				<Typography variant="heroPrimaryHeading">
-					Just another
-				</Typography>
+
+				<span className="hero-primary-heading">Just another</span>
 				<br />
 				<Typewriter />
-			</Box>
-		</Stack>
+			</div>
+		</div>
 	);
 }

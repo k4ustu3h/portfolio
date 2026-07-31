@@ -64,6 +64,24 @@ body {
 	font-weight: 700;
 }
 
+.hero-primary-heading {
+	font-variation-settings:
+		"ROND" 100,
+		"wdth" 110;
+	font-weight: 700;
+	text-decoration: underline;
+	transition: 150ms linear;
+	transition-property: font-weight, letter-spacing, font-variation-settings;
+}
+
+.hero-primary-heading:hover {
+	font-variation-settings:
+		"ROND" 100,
+		"wdth" 120;
+	font-weight: 900;
+	letter-spacing: 1px;
+}
+
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;

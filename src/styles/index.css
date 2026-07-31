@@ -36,6 +36,29 @@ body {
 	background-size: 167%;
 }
 
+.lock-screen-overlay {
+	font-variation-settings:
+		"ROND" 100,
+		"wdth" 100;
+	font-weight: 550;
+	transition: 250ms linear;
+	transition-property:
+		background-color, font-variation-settings, font-weight, color;
+}
+
+.lock-screen-overlay:hover {
+	background-color: rgba(0, 0, 0, 1);
+	color: white;
+	font-variation-settings:
+		"ROND" 100,
+		"wdth" 85;
+	font-weight: 200;
+}
+
+.lock-screen-overlay:active {
+	font-weight: 700;
+}
+
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;

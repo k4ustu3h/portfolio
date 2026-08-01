@@ -5,7 +5,7 @@ export default function Projects() {
 	const bgColor = "var(--md-sys-color-secondary-fixed)";
 
 	return (
-		<div
+		<section
 			id="projects"
 			style={{
 				backgroundColor: bgColor,
@@ -32,6 +32,6 @@ export default function Projects() {
 			>
 				<SquigglyLine fillColor={bgColor} />
 			</div>
-		</div>
+		</section>
 	);
 }

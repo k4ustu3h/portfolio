@@ -10,7 +10,7 @@ export default function Hero() {
 	const xs = useMediaQuery(breakpoints.width.xs);
 
 	return (
-		<div
+		<section
 			style={{
 				alignItems: xs ? "normal" : "flex-end",
 				backgroundColor: "var(--md-sys-color-background)",
@@ -48,6 +48,6 @@ export default function Hero() {
 				<br />
 				<Typewriter />
 			</div>
-		</div>
+		</section>
 	);
 }

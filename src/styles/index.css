@@ -33,6 +33,14 @@ body {
 	-webkit-text-fill-color: transparent;
 }
 
+.logo-monochrome {
+	font-family: var(--font-afacad);
+	font-size: 1em;
+	font-style: italic;
+	font-weight: bold;
+	user-select: none;
+}
+
 .lock-screen {
 	background-size: 180%;
 	transition: background-size 150ms linear;

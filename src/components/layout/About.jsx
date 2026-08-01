@@ -1,9 +1,7 @@
+import { M3eHeading } from "@m3e/react/heading";
 import { M3eShape } from "@m3e/react/shape";
 
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 import breakpoints from "@/styles/breakpoints.json";
 
@@ -13,51 +11,70 @@ import SkillButton from "@/components/buttons/SkillButton";
 
 export default function About() {
 	const md = useMediaQuery(breakpoints.width.md);
+	const sm = useMediaQuery(breakpoints.width.sm);
 	const xs = useMediaQuery(breakpoints.width.xs);
-	const fontSize = md || xs ? "12vw" : "8vw";
-	const iconSize = md || xs ? "24vw" : "16vw";
+
+	const isMobile = xs || sm;
+
+	const isMediumOrSmaller = md || xs;
+	const fontSize = isMediumOrSmaller ? "12vw" : "8vw";
+	const iconSize = isMediumOrSmaller ? "24vw" : "16vw";
 
 	return (
-		<Grid
-			container
+		<section
 			id="about"
-			sx={{
-				bgcolor: "section.about.background",
-				color: "section.about.text",
-				height: md || xs ? "inherit" : "100vh",
-				p: md || xs ? 4 : 8,
-				"--m3e-shape-container-color": (theme) =>
-					theme.vars.palette.section.about.text,
+			style={{
+				backgroundColor: "var(--md-sys-color-primary-container)",
+				boxSizing: "border-box",
+				color: "var(--md-sys-color-on-primary-container)",
+				display: "flex",
+				flexWrap: "wrap",
+				minHeight: isMediumOrSmaller ? "auto" : "100vh",
+				padding: isMediumOrSmaller ? "32px" : "64px",
+				"--m3e-shape-container-color":
+					"var(--md-sys-color-on-primary-container)",
 			}}
 		>
-			<Grid size={{ md: 6 }}>
-				<Box sx={{ height: iconSize, width: iconSize }}>
+			<div style={{ width: isMobile ? "100%" : "50%" }}>
+				<div style={{ height: iconSize, width: iconSize }}>
 					<MonochromeIcon size={fontSize}>
-						<Typography
-							variant="logoMonochrome"
-							sx={{ fontSize: "inherit" }}
-						>
-							kl.
-						</Typography>
+						<div className="logo-monochrome">kl.</div>
 					</MonochromeIcon>
-				</Box>
-			</Grid>
-			<Grid size={{ md: 6 }} sx={{ mt: 4 }}>
-				<Typography variant="h3">About</Typography>
-				<Typography sx={{ my: 2 }}>
+				</div>
+			</div>
+
+			<div
+				style={{
+					marginTop: "1em",
+					width: isMobile ? "100%" : "50%",
+				}}
+			>
+				<M3eHeading className="rounded-heading">About</M3eHeading>
+				<p
+					style={{
+						fontSize: "16px",
+						marginBlock: "16px",
+					}}
+				>
 					Hello there, I’m Kaustubh Ladiya. A quick learner and
 					dedicated student with proficiency in Web development,
 					Android development, Graphic Design, and Linux fundamentals.
-				</Typography>
+				</p>
 				<AboutButton />
-			</Grid>
-			<Grid size={{ md: 8 }} sx={{ mt: 6 }}>
+			</div>
+
+			<div
+				style={{
+					marginTop: "1em",
+					width: isMobile ? "100%" : "66%",
+				}}
+			>
 				<M3eShape name="boom" style={{ "--m3e-shape-size": "4.5em" }} />
-				<Typography align="left" sx={{ my: 2 }} variant="h3">
+				<M3eHeading className="rounded-heading">
 					Skills & Tools
-				</Typography>
+				</M3eHeading>
 				<SkillButton />
-			</Grid>
-		</Grid>
+			</div>
+		</section>
 	);
 }

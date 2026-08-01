@@ -12,27 +12,18 @@ import TARDIS from "@/assets/svgs/TARDIS";
 
 import SquigglyLine from "@/components/shapes/SquigglyLine";
 
+import tardisQuotes from "@/data/tardisQuotes.json";
+
 export default function Hero() {
 	const sm = useMediaQuery(breakpoints.width.sm);
 	const xs = useMediaQuery(breakpoints.width.xs);
 	const alignment = xs ? "center" : "end";
 
-	const quotes = [
-		"Did you just try to access a forbidden dimension? Because that's how you get lost in a labyrinth.",
-		"Exterminate! Exterminate this nonexistent page!",
-		"Oh, brilliant! Just what I always wanted, a blank page. Now where did I put my invisible paint?",
-		"Seems we've landed in a bit of a paradox. This page? It doesn't exist.",
-		"The TARDIS seems lost in the time vortex. This page may be hidden somewhere in time, or perhaps never existed at all.",
-		"The Web of Time stretches far and wide, companion. Perhaps this page has simply fallen through the cracks.",
-		"This anomaly is most curious. Perhaps a rogue Cyberman is manipulating the information flow.",
-		"This path is clearly malfunctioning. Reverse the course!",
-	];
-
 	const [randomQuotes, setRandomQuotes] = useState([]);
 
 	useEffect(() => {
 		const randomiseQuotes =
-			quotes[Math.floor(Math.random() * quotes.length)];
+			tardisQuotes[Math.floor(Math.random() * tardisQuotes.length)];
 		setRandomQuotes(randomiseQuotes);
 	}, []);
 

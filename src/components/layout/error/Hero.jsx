@@ -34,8 +34,8 @@ export default function Hero() {
 				sx={{
 					alignItems: xs ? "" : "end",
 					color: "on.surface",
-					height: "89vh",
-					pb: xs ? 0 : 6,
+					height: "85vh",
+					pb: xs ? 0 : 4,
 					px: xs ? 4 : 8,
 				}}
 			>

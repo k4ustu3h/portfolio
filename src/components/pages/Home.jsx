@@ -2,8 +2,6 @@
 
 import dynamic from "next/dynamic";
 
-import Box from "@mui/material/Box";
-
 const About = dynamic(() => import("@/components/layout/About.jsx"), {
 	ssr: false,
 });
@@ -18,8 +16,8 @@ import NavBar from "@/components/surfaces/NavBar.jsx";
 export default function Home() {
 	return (
 		<>
-			<Box
-				sx={{
+			<div
+				style={{
 					position: "relative",
 					zIndex: 1,
 				}}
@@ -28,7 +26,7 @@ export default function Home() {
 				<Hero />
 				<About />
 				<Projects />
-			</Box>
+			</div>
 			<Footer />
 		</>
 	);

@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import useMediaQuery from "@/hooks/useMediaQuery";
+
+import { M3eButton } from "@m3e/react/button";
+import { M3eHeading } from "@m3e/react/heading";
 
 import breakpoints from "@/styles/breakpoints.json";
 
@@ -17,7 +16,8 @@ import tardisQuotes from "@/data/tardisQuotes.json";
 export default function Hero() {
 	const sm = useMediaQuery(breakpoints.width.sm);
 	const xs = useMediaQuery(breakpoints.width.xs);
-	const alignment = xs ? "center" : "end";
+
+	const alignment = xs ? "center" : "flex-end";
 
 	const [randomQuotes, setRandomQuotes] = useState([]);
 
@@ -28,21 +28,28 @@ export default function Hero() {
 	}, []);
 
 	return (
-		<Box sx={{ position: "relative", bgcolor: "background.default" }}>
-			<Stack
-				direction={xs ? "column" : "row-reverse"}
-				sx={{
-					alignItems: xs ? "" : "end",
-					color: "on.surface",
+		<section
+			style={{
+				backgroundColor: "var(--md-sys-color-background)",
+				position: "relative",
+			}}
+		>
+			<div
+				style={{
+					alignItems: xs ? "normal" : "flex-end",
+					color: "var(--md-sys-color-on-surface)",
+					display: "flex",
+					flexDirection: xs ? "column" : "row-reverse",
 					height: "85vh",
-					pb: xs ? 0 : 4,
-					px: xs ? 4 : 8,
+					paddingBottom: xs ? "0px" : "32px",
+					paddingLeft: xs ? "32px" : "64px",
+					paddingRight: xs ? "32px" : "64px",
 				}}
 			>
-				<Box
-					sx={{
+				<div
+					style={{
 						alignItems: alignment,
-						color: "primary.main",
+						color: "var(--md-sys-color-primary)",
 						display: "flex",
 						fontSize: xs ? "100vw" : "40vw",
 						height: xs ? "60%" : "100%",
@@ -51,37 +58,37 @@ export default function Hero() {
 					}}
 				>
 					<TARDIS />
-				</Box>
-				<Stack
-					spacing={xs ? 2 : 5}
-					sx={{
+				</div>
+				<div
+					style={{
 						display: "flex",
+						flexDirection: "column",
+						gap: xs ? "16px" : "40px",
 						height: xs ? "40%" : "100%",
 						justifyContent: alignment,
 						width: xs ? "100%" : "50%",
 					}}
 				>
-					<Typography sx={{ fontSize: xs ? "6vw" : "4vw" }}>
+					<M3eHeading
+						variant="display"
+						size={xs ? "small" : sm ? "medium" : "large"}
+					>
 						{randomQuotes}
-					</Typography>
-					<Box>
-						<Button
-							variant={
-								xs
-									? "filledSmall"
-									: sm
-										? "filledMedium"
-										: "filledLarge"
-							}
+					</M3eHeading>
+
+					<div>
+						<M3eButton
 							href="/"
+							size={xs ? "small" : sm ? "medium" : "large"}
+							variant="filled"
 						>
 							Use the TARDIS
-						</Button>
-					</Box>
-				</Stack>
-			</Stack>{" "}
-			<Box
-				sx={{
+						</M3eButton>
+					</div>
+				</div>
+			</div>
+			<div
+				style={{
 					bottom: "-14px",
 					left: 0,
 					position: "relative",
@@ -89,7 +96,7 @@ export default function Hero() {
 				}}
 			>
 				<SquigglyLine />
-			</Box>
-		</Box>
+			</div>
+		</section>
 	);
 }

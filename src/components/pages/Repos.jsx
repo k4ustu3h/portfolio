@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { motion } from "motion/react";
+import { domMax, LazyMotion, m } from "motion/react";
 
 import Masonry from "react-masonry-css";
 
@@ -66,7 +66,7 @@ export default function Repos() {
 		: sortedForkedRepos;
 
 	return (
-		<>
+		<LazyMotion features={domMax}>
 			<div
 				style={{
 					backgroundColor: "var(--md-sys-color-background)",
@@ -108,7 +108,7 @@ export default function Repos() {
 							columnClassName="masonry-grid-column"
 						>
 							{displaySourceRepos.map((repo) => (
-								<motion.div
+								<m.div
 									key={repo.id}
 									layoutId={repo.id.toString()}
 									transition={{
@@ -119,7 +119,7 @@ export default function Repos() {
 									<M3eSkeleton loaded={!isLoading}>
 										<RepoCard repo={repo} />
 									</M3eSkeleton>
-								</motion.div>
+								</m.div>
 							))}
 						</Masonry>
 					</div>
@@ -148,7 +148,7 @@ export default function Repos() {
 							columnClassName="masonry-grid-column"
 						>
 							{displayForkedRepos.map((repo) => (
-								<motion.div
+								<m.div
 									key={repo.id}
 									layoutId={repo.id.toString()}
 									transition={{
@@ -159,7 +159,7 @@ export default function Repos() {
 									<M3eSkeleton loaded={!isLoading}>
 										<RepoCard repo={repo} />
 									</M3eSkeleton>
-								</motion.div>
+								</m.div>
 							))}
 						</Masonry>
 					</div>
@@ -176,6 +176,6 @@ export default function Repos() {
 				</div>
 			</div>
 			<Footer />
-		</>
+		</LazyMotion>
 	);
 }

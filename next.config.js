@@ -1,3 +1,3 @@
-const nextConfig = {};
+const nextConfig = { reactCompiler: true };
 
 export default nextConfig;

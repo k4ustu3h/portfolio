@@ -41,7 +41,7 @@ export default function Hero() {
 					display: "flex",
 					flexDirection: "column",
 					fontSize: xs ? "8vw" : "4vw",
-					gap: xs ? "0px" : "16px",
+					gap: xs ? 0 : ".6vw",
 					marginBottom: xs ? "0px" : "32px",
 					width: xs ? "100%" : "50%",
 				}}

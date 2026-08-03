@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState } from "react";
 
 import { motion } from "motion/react";
 
@@ -27,6 +27,8 @@ export default function Repos() {
 	const breakpoints = { 350: 1, 900: 2, 1200: 3 };
 
 	const sortRepos = (reposArray, criteria) => {
+		if (!reposArray) return [];
+
 		const arr = [...reposArray];
 		switch (criteria) {
 			case "name":
@@ -43,14 +45,8 @@ export default function Repos() {
 		}
 	};
 
-	const sortedSourceRepos = useMemo(
-		() => sortRepos(repos.sourceRepos, sortSourceBy),
-		[repos.sourceRepos, sortSourceBy],
-	);
-	const sortedForkedRepos = useMemo(
-		() => sortRepos(repos.forkedRepos, sortForkedBy),
-		[repos.forkedRepos, sortForkedBy],
-	);
+	const sortedSourceRepos = sortRepos(repos.sourceRepos, sortSourceBy);
+	const sortedForkedRepos = sortRepos(repos.forkedRepos, sortForkedBy);
 
 	const displaySourceRepos = isLoading
 		? Array.from(new Array(6)).map((_, index) => ({

@@ -1,16 +1,14 @@
 import { M3eIconButton } from "@m3e/react/icon-button";
 
-import {
-	SiDiscord,
-	SiGithub,
-	SiInstagram,
-	SiSnapchat,
-	SiSteam,
-	SiTelegram,
-	SiTvtime,
-	SiX,
-	SiXdadevelopers,
-} from "@icons-pack/react-simple-icons";
+import SiDiscord from "@icons-pack/react-simple-icons/icons/SiDiscord";
+import SiGithub from "@icons-pack/react-simple-icons/icons/SiGithub";
+import SiInstagram from "@icons-pack/react-simple-icons/icons/SiInstagram";
+import SiSnapchat from "@icons-pack/react-simple-icons/icons/SiSnapchat";
+import SiSteam from "@icons-pack/react-simple-icons/icons/SiSteam";
+import SiTelegram from "@icons-pack/react-simple-icons/icons/SiTelegram";
+import SiTvtime from "@icons-pack/react-simple-icons/icons/SiTvtime";
+import SiX from "@icons-pack/react-simple-icons/icons/SiX";
+import SiXdadevelopers from "@icons-pack/react-simple-icons/icons/SiXdadevelopers";
 
 import LinkedIn from "@/assets/svgs/LinkedIn";
 

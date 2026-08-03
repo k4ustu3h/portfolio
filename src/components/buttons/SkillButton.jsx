@@ -1,19 +1,17 @@
 import { M3eButton } from "@m3e/react/button";
 
-import {
-	SiAndroid,
-	SiAndroidstudio,
-	SiFigma,
-	SiFlutter,
-	SiInkscape,
-	SiJavascript,
-	SiKotlin,
-	SiManjaro,
-	SiMaterialdesign,
-	SiMui,
-	SiNodedotjs,
-	SiReact,
-} from "@icons-pack/react-simple-icons";
+import SiAndroid from "@icons-pack/react-simple-icons/icons/SiAndroid";
+import SiAndroidstudio from "@icons-pack/react-simple-icons/icons/SiAndroidstudio";
+import SiFigma from "@icons-pack/react-simple-icons/icons/SiFigma";
+import SiFlutter from "@icons-pack/react-simple-icons/icons/SiFlutter";
+import SiInkscape from "@icons-pack/react-simple-icons/icons/SiInkscape";
+import SiJavascript from "@icons-pack/react-simple-icons/icons/SiJavascript";
+import SiKotlin from "@icons-pack/react-simple-icons/icons/SiKotlin";
+import SiManjaro from "@icons-pack/react-simple-icons/icons/SiManjaro";
+import SiMaterialdesign from "@icons-pack/react-simple-icons/icons/SiMaterialdesign";
+import SiMui from "@icons-pack/react-simple-icons/icons/SiMui";
+import SiNodedotjs from "@icons-pack/react-simple-icons/icons/SiNodedotjs";
+import SiReact from "@icons-pack/react-simple-icons/icons/SiReact";
 
 import skills from "@/data/skills.json";
 

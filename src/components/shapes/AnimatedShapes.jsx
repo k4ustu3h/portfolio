@@ -23,7 +23,12 @@ export default function AnimatedShapes({ xs }) {
 	return (
 		<>
 			<div
-				style={{ alignItems: "flex-end", display: "flex", gap: "2vw" }}
+				style={{
+					alignItems: "flex-end",
+					display: "flex",
+					gap: "2vw",
+					paddingBottom: xs ? "12px" : "32px",
+				}}
 			>
 				<div
 					style={{

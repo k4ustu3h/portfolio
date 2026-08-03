@@ -38,12 +38,15 @@ export default function Hero() {
 			<div
 				className="Hero"
 				style={{
+					display: "flex",
+					flexDirection: "column",
 					fontSize: xs ? "8vw" : "4vw",
+					gap: xs ? "0px" : "16px",
+					marginBottom: xs ? "0px" : "32px",
 					width: xs ? "100%" : "50%",
 				}}
 			>
 				<AnimatedShapes xs={xs} />
-
 				<span className="hero-primary-heading">Just another</span>
 				<br />
 				<Typewriter />

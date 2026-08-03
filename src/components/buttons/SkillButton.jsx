@@ -17,6 +17,7 @@ import {
 
 import skills from "@/data/skills.json";
 
+import M3E from "@/assets/svgs/M3E";
 import VSCode from "@/assets/svgs/VSCode";
 
 const iconMap = {
@@ -27,6 +28,7 @@ const iconMap = {
 	inkscape: SiInkscape,
 	javascript: SiJavascript,
 	kotlin: SiKotlin,
+	m3e: M3E,
 	manjaro: SiManjaro,
 	materialdesign: SiMaterialdesign,
 	mui: SiMui,

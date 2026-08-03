@@ -35,6 +35,11 @@
 		"link": "https://manjaro.org/"
 	},
 	{
+		"icon": "m3e",
+		"label": "M3E Components",
+		"link": "https://matraic.github.io/m3e"
+	},
+	{
 		"icon": "materialdesign",
 		"label": "Material Design",
 		"link": "https://material.io/"

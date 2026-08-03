@@ -78,13 +78,13 @@ body {
 	letter-spacing: 1px;
 }
 
-.lock-screen {
-	background-size: 180%;
-	transition: background-size 150ms linear;
+.lock-screen-image {
+	transform: scale(1.8);
+	transition: transform 150ms linear;
 }
 
-.lock-screen:hover {
-	background-size: 167%;
+div:hover > .lock-screen-image {
+	transform: scale(1.67);
 }
 
 .lock-screen-overlay {

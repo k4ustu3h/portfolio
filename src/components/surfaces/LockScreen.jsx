@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import useMediaQuery from "@/hooks/useMediaQuery";
 
 import { useWallpaper } from "@/contexts/WallpaperContext";
@@ -12,17 +14,29 @@ export default function LockScreen() {
 
 	return (
 		<div
-			className="lock-screen"
 			style={{
 				aspectRatio: "9 / 20",
-				backgroundImage: `url(${wallpaper.src})`,
-				backgroundPosition: "center",
 				borderRadius: "32px",
 				color: "var(--md-sys-color-primary)",
 				height: xs ? "60vh" : "80vh",
+				overflow: "hidden",
+				position: "relative",
 			}}
 		>
-			<LockScreenOverlay />
+			<Image
+				alt="Lock screen wallpaper"
+				className="lock-screen-image"
+				fill
+				priority
+				src={wallpaper.src}
+				style={{
+					objectFit: "cover",
+					objectPosition: "center",
+				}}
+			/>
+			<div style={{ height: "100%", position: "relative" }}>
+				<LockScreenOverlay />
+			</div>
 		</div>
 	);
 }

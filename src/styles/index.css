@@ -6,6 +6,7 @@
 }
 
 body {
+	background-color: var(--md-sys-color-surface, #0a0d1b);
 	font-family: var(--font-google-sans-flex);
 	margin: 0;
 	-moz-osx-font-smoothing: grayscale;
@@ -15,6 +16,11 @@ body {
 .rounded-heading {
 	font-variation-settings: "ROND" 100;
 	font-weight: bold;
+}
+
+.type::after {
+	animation: cursor 1.1s infinite step-start;
+	content: "_";
 }
 
 .logo {
@@ -41,10 +47,37 @@ body {
 	user-select: none;
 }
 
+.Hero {
+	font-variation-settings:
+		"ROND" 100,
+		"wdth" 110;
+	font-weight: 700;
+	user-select: none;
+}
+
+.hero-primary-heading {
+	font-variation-settings:
+		"ROND" 100,
+		"wdth" 110;
+	font-weight: 700;
+	text-decoration: underline;
+	transition: 150ms linear;
+	transition-property: font-weight, letter-spacing, font-variation-settings;
+}
+
+.hero-primary-heading:hover {
+	font-variation-settings:
+		"ROND" 100,
+		"wdth" 120;
+	font-weight: 900;
+	letter-spacing: 1px;
+}
+
 .lock-screen {
 	background-size: 180%;
 	transition: background-size 150ms linear;
 }
+
 .lock-screen:hover {
 	background-size: 167%;
 }
@@ -72,54 +105,21 @@ body {
 	font-weight: 700;
 }
 
-.hero-primary-heading {
-	font-variation-settings:
-		"ROND" 100,
-		"wdth" 110;
-	font-weight: 700;
-	text-decoration: underline;
-	transition: 150ms linear;
-	transition-property: font-weight, letter-spacing, font-variation-settings;
-}
-
-.hero-primary-heading:hover {
-	font-variation-settings:
-		"ROND" 100,
-		"wdth" 120;
-	font-weight: 900;
-	letter-spacing: 1px;
+@keyframes cursor {
+	50% {
+		opacity: 0;
+	}
 }
 
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
 	}
-
 	50% {
 		background-position: 100% 50%;
 	}
-
 	100% {
 		background-position: 0% 50%;
-	}
-}
-
-.Hero {
-	font-variation-settings:
-		"ROND" 100,
-		"wdth" 110;
-	font-weight: 700;
-	user-select: none;
-}
-
-.type::after {
-	animation: cursor 1.1s infinite step-start;
-	content: "_";
-}
-
-@keyframes cursor {
-	50% {
-		opacity: 0;
 	}
 }
 

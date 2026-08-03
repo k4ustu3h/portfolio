@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useMemo } from "react";
 
 import { motion } from "motion/react";
 
@@ -10,6 +10,8 @@ import { M3eDivider } from "@m3e/react/divider";
 import { M3eHeading } from "@m3e/react/heading";
 import { M3eSkeleton } from "@m3e/react/skeleton";
 
+import useGithubRepos from "@/hooks/useGithubRepos";
+
 import Footer from "@/components/layout/Footer.jsx";
 import NavBar from "@/components/surfaces/NavBar.jsx";
 import RepoCard from "@/components/cards/RepoCard.jsx";
@@ -17,30 +19,12 @@ import SortMenu from "@/components/menus/SortMenu.jsx";
 import SquigglyLine from "@/components/shapes/SquigglyLine";
 
 export default function Repos() {
-	const [repos, setRepos] = useState({ forkedRepos: [], sourceRepos: [] });
-	const [isLoading, setIsLoading] = useState(true);
+	const { repos, isLoading } = useGithubRepos("k4ustu3h");
 
 	const [sortSourceBy, setSortSourceBy] = useState("updated");
 	const [sortForkedBy, setSortForkedBy] = useState("updated");
 
 	const breakpoints = { 350: 1, 900: 2, 1200: 3 };
-
-	useEffect(() => {
-		const fetchData = async () => {
-			const response = await fetch(
-				`https://api.github.com/users/k4ustu3h/repos`,
-			);
-			const data = await response.json();
-
-			setRepos({
-				forkedRepos: data.filter((repo) => repo.fork),
-				sourceRepos: data.filter((repo) => !repo.fork),
-			});
-			setIsLoading(false);
-		};
-
-		fetchData();
-	}, []);
 
 	const sortRepos = (reposArray, criteria) => {
 		const arr = [...reposArray];

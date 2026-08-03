@@ -14,7 +14,7 @@ export default function SortMenu({ id, sortBy, onSortChange }) {
 
 	return (
 		<>
-			<M3eIconButton id={buttonId} variant="tonal">
+			<M3eIconButton id={buttonId} variant="tonal" width="wide">
 				<M3eMenuTrigger htmlFor={menuId} />
 				<Sort size={24} />
 			</M3eIconButton>

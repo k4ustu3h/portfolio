@@ -8,11 +8,11 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 import { M3eDivider } from "@m3e/react/divider";
 import { M3eHeading } from "@m3e/react/heading";
+import { M3eSkeleton } from "@m3e/react/skeleton";
 
 import Footer from "@/components/layout/Footer.jsx";
 import NavBar from "@/components/surfaces/NavBar.jsx";
 import RepoCard from "@/components/cards/RepoCard.jsx";
-import RepoCardSkeleton from "@/components/feedback/RepoCardSkeleton.jsx";
 import SortMenu from "@/components/menus/SortMenu.jsx";
 import SquigglyLine from "@/components/shapes/SquigglyLine";
 
@@ -68,6 +68,18 @@ export default function Repos() {
 		[repos.forkedRepos, sortForkedBy],
 	);
 
+	const displaySourceRepos = isLoading
+		? Array.from(new Array(6)).map((_, index) => ({
+				id: `skeleton-source-${index}`,
+			}))
+		: sortedSourceRepos;
+
+	const displayForkedRepos = isLoading
+		? Array.from(new Array(3)).map((_, index) => ({
+				id: `skeleton-forked-${index}`,
+			}))
+		: sortedForkedRepos;
+
 	return (
 		<>
 			<div
@@ -105,42 +117,27 @@ export default function Repos() {
 								onSortChange={setSortSourceBy}
 							/>
 						</div>
-						{isLoading ? (
-							<div
-								style={{
-									display: "grid",
-									gap: "32px",
-									gridTemplateColumns:
-										"repeat(auto-fill, minmax(320px, 1fr))",
-								}}
-							>
-								{Array.from(new Array(6)).map((_, index) => (
-									<RepoCardSkeleton
-										key={`skeleton-source-${index}`}
-									/>
-								))}
-							</div>
-						) : (
-							<ResponsiveMasonry
-								columnsCountBreakPoints={breakpoints}
-							>
-								<Masonry gutter="32px">
-									{sortedSourceRepos.map((repo) => (
-										<motion.div
-											key={repo.id}
-											style={{ width: "100%" }}
-											layoutId={repo.id.toString()}
-											transition={{
-												duration: 0.5,
-												ease: [0.38, 1.21, 0.22, 1],
-											}}
-										>
+						<ResponsiveMasonry
+							columnsCountBreakPoints={breakpoints}
+						>
+							<Masonry gutter="32px">
+								{displaySourceRepos.map((repo) => (
+									<motion.div
+										key={repo.id}
+										style={{ width: "100%" }}
+										layoutId={repo.id.toString()}
+										transition={{
+											duration: 0.5,
+											ease: [0.38, 1.21, 0.22, 1],
+										}}
+									>
+										<M3eSkeleton loaded={!isLoading}>
 											<RepoCard repo={repo} />
-										</motion.div>
-									))}
-								</Masonry>
-							</ResponsiveMasonry>
-						)}
+										</M3eSkeleton>
+									</motion.div>
+								))}
+							</Masonry>
+						</ResponsiveMasonry>
 					</div>
 					<M3eDivider style={{ marginBlock: "64px" }} />
 					<div>
@@ -161,43 +158,27 @@ export default function Repos() {
 								sortBy={sortForkedBy}
 							/>
 						</div>
-
-						{isLoading ? (
-							<div
-								style={{
-									display: "grid",
-									gap: "32px",
-									gridTemplateColumns:
-										"repeat(auto-fill, minmax(320px, 1fr))",
-								}}
-							>
-								{Array.from(new Array(3)).map((_, index) => (
-									<RepoCardSkeleton
-										key={`skeleton-forked-${index}`}
-									/>
-								))}
-							</div>
-						) : (
-							<ResponsiveMasonry
-								columnsCountBreakPoints={breakpoints}
-							>
-								<Masonry gutter="32px">
-									{sortedForkedRepos.map((repo) => (
-										<motion.div
-											key={repo.id}
-											layoutId={`forked-${repo.id}`}
-											style={{ width: "100%" }}
-											transition={{
-												duration: 0.5,
-												ease: [0.38, 1.21, 0.22, 1],
-											}}
-										>
+						<ResponsiveMasonry
+							columnsCountBreakPoints={breakpoints}
+						>
+							<Masonry gutter="32px">
+								{displayForkedRepos.map((repo) => (
+									<motion.div
+										key={repo.id}
+										layoutId={repo.id.toString()}
+										style={{ width: "100%" }}
+										transition={{
+											duration: 0.5,
+											ease: [0.38, 1.21, 0.22, 1],
+										}}
+									>
+										<M3eSkeleton loaded={!isLoading}>
 											<RepoCard repo={repo} />
-										</motion.div>
-									))}
-								</Masonry>
-							</ResponsiveMasonry>
-						)}
+										</M3eSkeleton>
+									</motion.div>
+								))}
+							</Masonry>
+						</ResponsiveMasonry>
 					</div>
 				</div>
 				<div

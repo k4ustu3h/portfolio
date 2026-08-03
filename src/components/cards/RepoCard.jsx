@@ -18,8 +18,15 @@ import breakpoints from "@/styles/breakpoints.json";
 export default function RepoCard({ repo }) {
 	const xs = useMediaQuery(breakpoints.width.xs);
 
-	const isArchived = repo.archived;
-	const nameShort = repo.name.length < 16;
+	const description = repo?.description || " ";
+	const forksCount = repo?.forks_count || 0;
+	const htmlUrl = repo?.html_url || "#";
+	const isArchived = repo?.archived || false;
+	const language = repo?.language || "Lang";
+	const name = repo?.name || "Repository Name";
+	const stargazersCount = repo?.stargazers_count || 0;
+
+	const nameShort = name.length < 16;
 
 	const archivedInBox = isArchived
 		? xs
@@ -37,21 +44,22 @@ export default function RepoCard({ repo }) {
 			: "none"
 		: "none";
 
-	const StarIcon = repo.stargazers_count > 0 ? StarFilled : Star;
-	const languageOrNot = repo.language ? "" : "none";
+	const StarIcon = stargazersCount > 0 ? StarFilled : Star;
 
-	const forksUrl = `${repo.html_url}/forks`;
-	const stargazersUrl = `${repo.html_url}/stargazers`;
+	const languageOrNot = language !== "Lang" && language !== "" ? "" : "none";
+
+	const forksUrl = `${htmlUrl}/forks`;
+	const stargazersUrl = `${htmlUrl}/stargazers`;
 
 	return (
-		<M3eCard actionable href={repo.html_url} variant="elevated">
+		<M3eCard actionable href={htmlUrl} variant="elevated">
 			<div slot="header">
 				<M3eHeading
 					className="rounded-heading"
 					variant="headline"
 					size="medium"
 				>
-					{repo.name}
+					{name}
 				</M3eHeading>
 				<div style={{ flexGrow: 1 }} />
 				<Archive
@@ -69,20 +77,20 @@ export default function RepoCard({ repo }) {
 						marginBottom: "8px",
 					}}
 				/>
-				{repo.description}
+				{description}
 			</div>
 			<M3eButtonGroup end slot="actions">
 				<M3eButton href={stargazersUrl} variant="tonal">
 					<StarIcon size={24} slot="icon" />
-					{repo.stargazers_count}
+					{stargazersCount}
 				</M3eButton>
 				<M3eButton href={forksUrl} variant="tonal">
 					<ForkRight size={24} slot="icon" />
-					{repo.forks_count}
+					{forksCount}
 				</M3eButton>
 				<M3eButton variant="tonal" style={{ display: languageOrNot }}>
 					<Code size={24} slot="icon" />
-					{repo.language}
+					{language}
 				</M3eButton>
 			</M3eButtonGroup>
 		</M3eCard>

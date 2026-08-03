@@ -6,7 +6,6 @@ import SiInstagram from "@icons-pack/react-simple-icons/icons/SiInstagram";
 import SiSnapchat from "@icons-pack/react-simple-icons/icons/SiSnapchat";
 import SiSteam from "@icons-pack/react-simple-icons/icons/SiSteam";
 import SiTelegram from "@icons-pack/react-simple-icons/icons/SiTelegram";
-import SiTvtime from "@icons-pack/react-simple-icons/icons/SiTvtime";
 import SiX from "@icons-pack/react-simple-icons/icons/SiX";
 import SiXdadevelopers from "@icons-pack/react-simple-icons/icons/SiXdadevelopers";
 
@@ -22,7 +21,6 @@ const iconMap = {
 	snapchat: SiSnapchat,
 	steam: SiSteam,
 	telegram: SiTelegram,
-	tvtime: SiTvtime,
 	x: SiX,
 	xdadevelopers: SiXdadevelopers,
 };

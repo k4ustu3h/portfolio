@@ -1,10 +1,13 @@
 import "@/styles/index.css";
-import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
-import { getThemeForWallpaper } from "@/utils/theme-server";
+
 import { afacad, googleSansFlex } from "@/app/fonts";
+
 import metadataJSON from "@/data/metadata.json";
-import ThemeWrapper from "@/components/ThemeWrapper";
 import wallpapers from "@/data/wallpapers.json";
+
+import { getSourceColorForWallpaper } from "@/utils/monet";
+
+import ThemeWrapper from "@/components/ThemeWrapper";
 
 export const dynamic = "force-dynamic";
 
@@ -23,7 +26,8 @@ function getRandomWallpaper(arr) {
 
 export default async function RootLayout(props) {
 	const { wallpaper } = getRandomWallpaper(wallpapersArray);
-	const theme = await getThemeForWallpaper(wallpaper.src);
+
+	const sourceColor = await getSourceColorForWallpaper(wallpaper.src);
 
 	return (
 		<html
@@ -35,8 +39,7 @@ export default async function RootLayout(props) {
 				<link rel="me" href="https://mastodon.social/@k4ustu3h" />
 			</head>
 			<body>
-				<InitColorSchemeScript attribute="class" />
-				<ThemeWrapper theme={theme} wallpaper={wallpaper}>
+				<ThemeWrapper sourceColor={sourceColor} wallpaper={wallpaper}>
 					{props.children}
 				</ThemeWrapper>
 			</body>

@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import { motion } from "motion/react";
 
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import Masonry from "react-masonry-css";
 
 import { M3eDivider } from "@m3e/react/divider";
 import { M3eHeading } from "@m3e/react/heading";
@@ -24,7 +24,12 @@ export default function Repos() {
 	const [sortSourceBy, setSortSourceBy] = useState("updated");
 	const [sortForkedBy, setSortForkedBy] = useState("updated");
 
-	const breakpoints = { 350: 1, 900: 2, 1200: 3 };
+	const breakpointColumnsObj = {
+		default: 3,
+		1200: 3,
+		900: 2,
+		600: 1,
+	};
 
 	const sortRepos = (reposArray, criteria) => {
 		if (!reposArray) return [];
@@ -97,27 +102,26 @@ export default function Repos() {
 								onSortChange={setSortSourceBy}
 							/>
 						</div>
-						<ResponsiveMasonry
-							columnsCountBreakPoints={breakpoints}
+						<Masonry
+							breakpointCols={breakpointColumnsObj}
+							className="masonry-grid"
+							columnClassName="masonry-grid-column"
 						>
-							<Masonry gutter="32px">
-								{displaySourceRepos.map((repo) => (
-									<motion.div
-										key={repo.id}
-										style={{ width: "100%" }}
-										layoutId={repo.id.toString()}
-										transition={{
-											duration: 0.5,
-											ease: [0.38, 1.21, 0.22, 1],
-										}}
-									>
-										<M3eSkeleton loaded={!isLoading}>
-											<RepoCard repo={repo} />
-										</M3eSkeleton>
-									</motion.div>
-								))}
-							</Masonry>
-						</ResponsiveMasonry>
+							{displaySourceRepos.map((repo) => (
+								<motion.div
+									key={repo.id}
+									layoutId={repo.id.toString()}
+									transition={{
+										duration: 0.5,
+										ease: [0.38, 1.21, 0.22, 1],
+									}}
+								>
+									<M3eSkeleton loaded={!isLoading}>
+										<RepoCard repo={repo} />
+									</M3eSkeleton>
+								</motion.div>
+							))}
+						</Masonry>
 					</div>
 					<M3eDivider style={{ marginBlock: "64px" }} />
 					<div>
@@ -138,27 +142,26 @@ export default function Repos() {
 								sortBy={sortForkedBy}
 							/>
 						</div>
-						<ResponsiveMasonry
-							columnsCountBreakPoints={breakpoints}
+						<Masonry
+							breakpointCols={breakpointColumnsObj}
+							className="masonry-grid"
+							columnClassName="masonry-grid-column"
 						>
-							<Masonry gutter="32px">
-								{displayForkedRepos.map((repo) => (
-									<motion.div
-										key={repo.id}
-										layoutId={repo.id.toString()}
-										style={{ width: "100%" }}
-										transition={{
-											duration: 0.5,
-											ease: [0.38, 1.21, 0.22, 1],
-										}}
-									>
-										<M3eSkeleton loaded={!isLoading}>
-											<RepoCard repo={repo} />
-										</M3eSkeleton>
-									</motion.div>
-								))}
-							</Masonry>
-						</ResponsiveMasonry>
+							{displayForkedRepos.map((repo) => (
+								<motion.div
+									key={repo.id}
+									layoutId={repo.id.toString()}
+									transition={{
+										duration: 0.5,
+										ease: [0.38, 1.21, 0.22, 1],
+									}}
+								>
+									<M3eSkeleton loaded={!isLoading}>
+										<RepoCard repo={repo} />
+									</M3eSkeleton>
+								</motion.div>
+							))}
+						</Masonry>
 					</div>
 				</div>
 				<div

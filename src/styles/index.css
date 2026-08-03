@@ -110,6 +110,21 @@ div:hover > .lock-screen-image {
 	font-weight: 700;
 }
 
+.masonry-grid {
+	display: flex;
+	margin-left: -16px;
+	width: auto;
+}
+
+.masonry-grid-column {
+	background-clip: padding-box;
+	padding-left: 16px;
+}
+
+.masonry-grid-column > div {
+	margin-bottom: 16px;
+}
+
 @keyframes cursor {
 	50% {
 		opacity: 0;

@@ -59,7 +59,7 @@ export default function Repos() {
 		: sortedSourceRepos;
 
 	const displayForkedRepos = isLoading
-		? Array.from(new Array(3)).map((_, index) => ({
+		? Array.from(new Array(6)).map((_, index) => ({
 				id: `skeleton-forked-${index}`,
 			}))
 		: sortedForkedRepos;

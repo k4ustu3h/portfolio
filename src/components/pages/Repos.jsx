@@ -21,8 +21,8 @@ import SquigglyLine from "@/components/shapes/SquigglyLine";
 export default function Repos() {
 	const { repos, isLoading } = useGithubRepos("k4ustu3h");
 
-	const [sortSourceBy, setSortSourceBy] = useState("updated");
-	const [sortForkedBy, setSortForkedBy] = useState("updated");
+	const [sortSourceBy, setSortSourceBy] = useState("stars");
+	const [sortForkedBy, setSortForkedBy] = useState("stars");
 
 	const breakpointColumnsObj = {
 		default: 3,
